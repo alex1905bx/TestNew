@@ -1785,7 +1785,7 @@
         <AttributeList>
           <DataTypeName>Bool</DataTypeName>
           <LogicalAddress>%Q900.0</LogicalAddress>
-          <Name>SO_spare9000</Name>
+          <Name>SO_safetynew</Name>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="11E" CompositionName="Comment">
@@ -1797,6 +1797,31 @@
                 </AttributeList>
               </MultilingualTextItem>
               <MultilingualTextItem ID="120" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Tags.PlcTag>
+      <SW.Tags.PlcTag ID="121" CompositionName="Tags">
+        <AttributeList>
+          <DataTypeName>Bool</DataTypeName>
+          <LogicalAddress>%I5.0</LogicalAddress>
+          <Name>I_test</Name>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="122" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="123" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="124" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text />

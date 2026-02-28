@@ -1667,7 +1667,7 @@
   <Blank UId="34" />
   <Access Scope="GlobalVariable" UId="35">
     <Symbol UId="36">
-      <Component Name="SO_spare9000" UId="37">
+      <Component Name="SO_safetynew" UId="37">
         <BooleanAttribute Name="HasQuotes" UId="38">true</BooleanAttribute>
       </Component>
     </Symbol>

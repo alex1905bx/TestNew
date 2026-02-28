@@ -135,20 +135,36 @@
     </Access>
     <Access Scope="GlobalVariable" UId="22">
       <Symbol>
+        <Component Name="I_test" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
         <Component Name="G" />
         <Component Name="settingMode" />
       </Symbol>
     </Access>
-    <Part Name="Coil" UId="23" />
+    <Part Name="A" UId="24">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="25" />
   </Parts>
   <Wires>
-    <Wire UId="24">
+    <Wire UId="26">
       <IdentCon UId="21" />
-      <NameCon UId="23" Name="in" />
+      <NameCon UId="24" Name="in1" />
     </Wire>
-    <Wire UId="25">
+    <Wire UId="27">
       <IdentCon UId="22" />
-      <NameCon UId="23" Name="operand" />
+      <NameCon UId="24" Name="in2" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="operand" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
