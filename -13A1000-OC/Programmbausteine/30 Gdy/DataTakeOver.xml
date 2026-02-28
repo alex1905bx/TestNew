@@ -1,0 +1,1962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="Var" Datatype="&quot;TypeVar&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>DataTakeOver</Name>
+      <Namespace />
+      <Number>302</Number>
+      <ProgrammingLanguage>FBD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <Token Text="IF" UId="21" />
+  <Blank UId="22" />
+  <Access Scope="GlobalVariable" UId="23">
+    <Symbol UId="24">
+      <Component Name="ComRd" UId="25">
+        <BooleanAttribute Name="HasQuotes" UId="26">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="27" />
+      <Component Name="Data" UId="28" />
+      <Token Text="." UId="29" />
+      <Component Name="Config" UId="30" />
+      <Token Text="." UId="31" />
+      <Component Name="active" UId="32" />
+    </Symbol>
+  </Access>
+  <Blank UId="33" />
+  <Token Text="AND" UId="34" />
+  <Blank UId="35" />
+  <Access Scope="GlobalVariable" UId="36">
+    <Symbol UId="37">
+      <Component Name="G" UId="38">
+        <BooleanAttribute Name="HasQuotes" UId="39">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="40" />
+      <Component Name="comOk" UId="41" />
+    </Symbol>
+  </Access>
+  <Blank UId="42" />
+  <Token Text="THEN" UId="43" />
+  <NewLine UId="44" />
+  <Blank Num="4" UId="45" />
+  <NewLine UId="46" />
+  <Blank Num="4" UId="47" />
+  <LineComment UId="48">
+    <Text UId="49"> config for mode</Text>
+  </LineComment>
+  <NewLine UId="50" />
+  <Blank Num="4" UId="51" />
+  <Access Scope="GlobalVariable" UId="52">
+    <Symbol UId="53">
+      <Component Name="G" UId="54">
+        <BooleanAttribute Name="HasQuotes" UId="55">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="56" />
+      <Component Name="Cfg" UId="57" />
+      <Token Text="." UId="58" />
+      <Component Name="adjScannerActive" UId="59" />
+    </Symbol>
+  </Access>
+  <Blank UId="60" />
+  <Token Text=":=" UId="61" />
+  <Blank UId="62" />
+  <Access Scope="GlobalVariable" UId="63">
+    <Symbol UId="64">
+      <Component Name="ComRd" UId="65">
+        <BooleanAttribute Name="HasQuotes" UId="66">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="67" />
+      <Component Name="Data" UId="68" />
+      <Token Text="." UId="69" />
+      <Component Name="Config" UId="70" />
+      <Token Text="." UId="71" />
+      <Component Name="adjScannerActive" UId="72" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="73" />
+  <NewLine UId="74" />
+  <Blank Num="4" UId="75" />
+  <Access Scope="GlobalVariable" UId="76">
+    <Symbol UId="77">
+      <Component Name="G" UId="78">
+        <BooleanAttribute Name="HasQuotes" UId="79">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="80" />
+      <Component Name="Cfg" UId="81" />
+      <Token Text="." UId="82" />
+      <Component Name="adjTopActive" UId="83" />
+    </Symbol>
+  </Access>
+  <Blank UId="84" />
+  <Token Text=":=" UId="85" />
+  <Blank UId="86" />
+  <Access Scope="GlobalVariable" UId="87">
+    <Symbol UId="88">
+      <Component Name="ComRd" UId="89">
+        <BooleanAttribute Name="HasQuotes" UId="90">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="91" />
+      <Component Name="Data" UId="92" />
+      <Token Text="." UId="93" />
+      <Component Name="Config" UId="94" />
+      <Token Text="." UId="95" />
+      <Component Name="adjTopActive" UId="96" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="97" />
+  <NewLine UId="98" />
+  <Blank Num="4" UId="99" />
+  <Access Scope="GlobalVariable" UId="100">
+    <Symbol UId="101">
+      <Component Name="G" UId="102">
+        <BooleanAttribute Name="HasQuotes" UId="103">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="104" />
+      <Component Name="Cfg" UId="105" />
+      <Token Text="." UId="106" />
+      <Component Name="adjLeftActive" UId="107" />
+    </Symbol>
+  </Access>
+  <Blank UId="108" />
+  <Token Text=":=" UId="109" />
+  <Blank UId="110" />
+  <Access Scope="GlobalVariable" UId="111">
+    <Symbol UId="112">
+      <Component Name="ComRd" UId="113">
+        <BooleanAttribute Name="HasQuotes" UId="114">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="115" />
+      <Component Name="Data" UId="116" />
+      <Token Text="." UId="117" />
+      <Component Name="Config" UId="118" />
+      <Token Text="." UId="119" />
+      <Component Name="adjLeftActive" UId="120" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="121" />
+  <NewLine UId="122" />
+  <Blank Num="4" UId="123" />
+  <Access Scope="GlobalVariable" UId="124">
+    <Symbol UId="125">
+      <Component Name="G" UId="126">
+        <BooleanAttribute Name="HasQuotes" UId="127">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="128" />
+      <Component Name="Cfg" UId="129" />
+      <Token Text="." UId="130" />
+      <Component Name="adjRightActive" UId="131" />
+    </Symbol>
+  </Access>
+  <Blank UId="132" />
+  <Token Text=":=" UId="133" />
+  <Blank UId="134" />
+  <Access Scope="GlobalVariable" UId="135">
+    <Symbol UId="136">
+      <Component Name="ComRd" UId="137">
+        <BooleanAttribute Name="HasQuotes" UId="138">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="139" />
+      <Component Name="Data" UId="140" />
+      <Token Text="." UId="141" />
+      <Component Name="Config" UId="142" />
+      <Token Text="." UId="143" />
+      <Component Name="adjRightActive" UId="144" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="145" />
+  <NewLine UId="146" />
+  <Blank Num="4" UId="147" />
+  <NewLine UId="148" />
+  <Blank Num="4" UId="149" />
+  <Access Scope="GlobalVariable" UId="150">
+    <Symbol UId="151">
+      <Component Name="G" UId="152">
+        <BooleanAttribute Name="HasQuotes" UId="153">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="154" />
+      <Component Name="Cfg" UId="155" />
+      <Token Text="." UId="156" />
+      <Component Name="adjTopActiveLinMot" UId="157" />
+    </Symbol>
+  </Access>
+  <Blank UId="158" />
+  <Token Text=":=" UId="159" />
+  <Blank UId="160" />
+  <Access Scope="GlobalVariable" UId="161">
+    <Symbol UId="162">
+      <Component Name="ComRd" UId="163">
+        <BooleanAttribute Name="HasQuotes" UId="164">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="165" />
+      <Component Name="Data" UId="166" />
+      <Token Text="." UId="167" />
+      <Component Name="Config" UId="168" />
+      <Token Text="." UId="169" />
+      <Component Name="adjTopLinMotActive" UId="170" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="171" />
+  <NewLine UId="172" />
+  <Blank Num="4" UId="173" />
+  <Access Scope="GlobalVariable" UId="174">
+    <Symbol UId="175">
+      <Component Name="G" UId="176">
+        <BooleanAttribute Name="HasQuotes" UId="177">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="178" />
+      <Component Name="Cfg" UId="179" />
+      <Token Text="." UId="180" />
+      <Component Name="adjLeftActiveLinMot" UId="181" />
+    </Symbol>
+  </Access>
+  <Blank UId="182" />
+  <Token Text=":=" UId="183" />
+  <Blank UId="184" />
+  <Access Scope="GlobalVariable" UId="185">
+    <Symbol UId="186">
+      <Component Name="ComRd" UId="187">
+        <BooleanAttribute Name="HasQuotes" UId="188">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="189" />
+      <Component Name="Data" UId="190" />
+      <Token Text="." UId="191" />
+      <Component Name="Config" UId="192" />
+      <Token Text="." UId="193" />
+      <Component Name="adjLeftLinMotActive" UId="194" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="195" />
+  <NewLine UId="196" />
+  <Blank Num="4" UId="197" />
+  <Access Scope="GlobalVariable" UId="198">
+    <Symbol UId="199">
+      <Component Name="G" UId="200">
+        <BooleanAttribute Name="HasQuotes" UId="201">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="202" />
+      <Component Name="Cfg" UId="203" />
+      <Token Text="." UId="204" />
+      <Component Name="adjRightActiveLinMot" UId="205" />
+    </Symbol>
+  </Access>
+  <Blank UId="206" />
+  <Token Text=":=" UId="207" />
+  <Blank UId="208" />
+  <Access Scope="GlobalVariable" UId="209">
+    <Symbol UId="210">
+      <Component Name="ComRd" UId="211">
+        <BooleanAttribute Name="HasQuotes" UId="212">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="213" />
+      <Component Name="Data" UId="214" />
+      <Token Text="." UId="215" />
+      <Component Name="Config" UId="216" />
+      <Token Text="." UId="217" />
+      <Component Name="adjRightLinMotActive" UId="218" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="219" />
+  <NewLine UId="220" />
+  <Blank Num="4" UId="221" />
+  <NewLine UId="222" />
+  <Blank Num="4" UId="223" />
+  <Access Scope="GlobalVariable" UId="224">
+    <Symbol UId="225">
+      <Component Name="G" UId="226">
+        <BooleanAttribute Name="HasQuotes" UId="227">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="228" />
+      <Component Name="Cfg" UId="229" />
+      <Token Text="." UId="230" />
+      <Component Name="xrayActive" UId="231" />
+    </Symbol>
+  </Access>
+  <Blank UId="232" />
+  <Token Text=":=" UId="233" />
+  <Blank UId="234" />
+  <Access Scope="GlobalVariable" UId="235">
+    <Symbol UId="236">
+      <Component Name="ComRd" UId="237">
+        <BooleanAttribute Name="HasQuotes" UId="238">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="239" />
+      <Component Name="Data" UId="240" />
+      <Token Text="." UId="241" />
+      <Component Name="Config" UId="242" />
+      <Token Text="." UId="243" />
+      <Component Name="xrayActive" UId="244" />
+    </Symbol>
+  </Access>
+  <Blank UId="245" />
+  <Token Text=";" UId="246" />
+  <NewLine UId="247" />
+  <Blank Num="4" UId="248" />
+  <NewLine UId="249" />
+  <Blank Num="4" UId="250" />
+  <LineComment UId="251">
+    <Text UId="252"> config for mode</Text>
+  </LineComment>
+  <NewLine UId="253" />
+  <Blank Num="4" UId="254" />
+  <Access Scope="GlobalVariable" UId="255">
+    <Symbol UId="256">
+      <Component Name="G" UId="257">
+        <BooleanAttribute Name="HasQuotes" UId="258">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="259" />
+      <Component Name="Cfg" UId="260" />
+      <Token Text="." UId="261" />
+      <Component Name="modeBoardPassing" UId="262" />
+    </Symbol>
+  </Access>
+  <Token Text=":=" UId="263" />
+  <Blank UId="264" />
+  <Access Scope="GlobalVariable" UId="265">
+    <Symbol UId="266">
+      <Component Name="ComRd" UId="267">
+        <BooleanAttribute Name="HasQuotes" UId="268">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="269" />
+      <Component Name="Data" UId="270" />
+      <Token Text="." UId="271" />
+      <Component Name="Config" UId="272" />
+      <Token Text="." UId="273" />
+      <Component Name="modeBoardPassing" UId="274" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="275" />
+  <NewLine UId="276" />
+  <Blank Num="4" UId="277" />
+  <Access Scope="GlobalVariable" UId="278">
+    <Symbol UId="279">
+      <Component Name="G" UId="280">
+        <BooleanAttribute Name="HasQuotes" UId="281">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="282" />
+      <Component Name="Cfg" UId="283" />
+      <Token Text="." UId="284" />
+      <Component Name="modeDimension" UId="285" />
+    </Symbol>
+  </Access>
+  <Blank UId="286" />
+  <Token Text=":=" UId="287" />
+  <Blank UId="288" />
+  <Access Scope="GlobalVariable" UId="289">
+    <Symbol UId="290">
+      <Component Name="ComRd" UId="291">
+        <BooleanAttribute Name="HasQuotes" UId="292">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="293" />
+      <Component Name="Data" UId="294" />
+      <Token Text="." UId="295" />
+      <Component Name="Config" UId="296" />
+      <Token Text="." UId="297" />
+      <Component Name="modeDimension" UId="298" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="299" />
+  <NewLine UId="300" />
+  <Blank Num="4" UId="301" />
+  <Access Scope="GlobalVariable" UId="302">
+    <Symbol UId="303">
+      <Component Name="G" UId="304">
+        <BooleanAttribute Name="HasQuotes" UId="305">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="306" />
+      <Component Name="Cfg" UId="307" />
+      <Token Text="." UId="308" />
+      <Component Name="modeRandomAdj" UId="309" />
+    </Symbol>
+  </Access>
+  <Blank UId="310" />
+  <Token Text=":=" UId="311" />
+  <Blank UId="312" />
+  <Access Scope="GlobalVariable" UId="313">
+    <Symbol UId="314">
+      <Component Name="ComRd" UId="315">
+        <BooleanAttribute Name="HasQuotes" UId="316">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="317" />
+      <Component Name="Data" UId="318" />
+      <Token Text="." UId="319" />
+      <Component Name="Config" UId="320" />
+      <Token Text="." UId="321" />
+      <Component Name="modeRandomAdj" UId="322" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="323" />
+  <NewLine UId="324" />
+  <Blank Num="4" UId="325" />
+  <NewLine UId="326" />
+  <Blank Num="4" UId="327" />
+  <LineComment UId="328">
+    <Text UId="329"> config for sensor for random adjustment</Text>
+  </LineComment>
+  <NewLine UId="330" />
+  <Blank Num="4" UId="331" />
+  <Token Text="IF" UId="332" />
+  <Blank UId="333" />
+  <Access Scope="GlobalVariable" UId="334">
+    <Symbol UId="335">
+      <Component Name="ComRd" UId="336">
+        <BooleanAttribute Name="HasQuotes" UId="337">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="338" />
+      <Component Name="Data" UId="339" />
+      <Token Text="." UId="340" />
+      <Component Name="Config" UId="341" />
+      <Token Text="." UId="342" />
+      <Component Name="modeDimension" UId="343" />
+    </Symbol>
+  </Access>
+  <Blank UId="344" />
+  <Token Text="=" UId="345" />
+  <Blank UId="346" />
+  <Access Scope="LiteralConstant" UId="347">
+    <Constant UId="348">
+      <ConstantValue UId="350">3</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="351" />
+  <Token Text="OR" UId="352" />
+  <Blank UId="353" />
+  <Access Scope="GlobalVariable" UId="354">
+    <Symbol UId="355">
+      <Component Name="ComRd" UId="356">
+        <BooleanAttribute Name="HasQuotes" UId="357">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="358" />
+      <Component Name="Data" UId="359" />
+      <Token Text="." UId="360" />
+      <Component Name="Config" UId="361" />
+      <Token Text="." UId="362" />
+      <Component Name="modeDimension" UId="363" />
+    </Symbol>
+  </Access>
+  <Blank UId="364" />
+  <Token Text="=" UId="365" />
+  <Blank UId="366" />
+  <Access Scope="LiteralConstant" UId="367">
+    <Constant UId="368">
+      <ConstantValue UId="370">4</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="371" />
+  <Token Text="THEN" UId="372" />
+  <NewLine UId="373" />
+  <Blank Num="8" UId="374" />
+  <Access Scope="GlobalVariable" UId="375">
+    <Symbol UId="376">
+      <Component Name="G" UId="377">
+        <BooleanAttribute Name="HasQuotes" UId="378">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="379" />
+      <Component Name="Cfg" UId="380" />
+      <Token Text="." UId="381" />
+      <Component Name="senTopActive" UId="382" />
+    </Symbol>
+  </Access>
+  <Blank UId="383" />
+  <Token Text=":=" UId="384" />
+  <Blank UId="385" />
+  <Access Scope="LiteralConstant" UId="386">
+    <Constant UId="387">
+      <ConstantValue UId="389">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="390" />
+  <NewLine UId="391" />
+  <Blank Num="4" UId="392" />
+  <Token Text="ELSE" UId="393" />
+  <NewLine UId="394" />
+  <Blank Num="8" UId="395" />
+  <Access Scope="GlobalVariable" UId="396">
+    <Symbol UId="397">
+      <Component Name="G" UId="398">
+        <BooleanAttribute Name="HasQuotes" UId="399">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="400" />
+      <Component Name="Cfg" UId="401" />
+      <Token Text="." UId="402" />
+      <Component Name="senTopActive" UId="403" />
+    </Symbol>
+  </Access>
+  <Blank UId="404" />
+  <Token Text=":=" UId="405" />
+  <Blank UId="406" />
+  <Access Scope="LiteralConstant" UId="407">
+    <Constant UId="408">
+      <ConstantValue UId="410">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="411" />
+  <NewLine UId="412" />
+  <Blank Num="4" UId="413" />
+  <Token Text="END_IF" UId="414" />
+  <Token Text=";" UId="415" />
+  <NewLine UId="416" />
+  <Blank Num="4" UId="417" />
+  <Token Text="IF" UId="418" />
+  <Blank UId="419" />
+  <Access Scope="GlobalVariable" UId="420">
+    <Symbol UId="421">
+      <Component Name="ComRd" UId="422">
+        <BooleanAttribute Name="HasQuotes" UId="423">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="424" />
+      <Component Name="Data" UId="425" />
+      <Token Text="." UId="426" />
+      <Component Name="Config" UId="427" />
+      <Token Text="." UId="428" />
+      <Component Name="modeDimension" UId="429" />
+    </Symbol>
+  </Access>
+  <Blank UId="430" />
+  <Token Text="=" UId="431" />
+  <Blank UId="432" />
+  <Access Scope="LiteralConstant" UId="433">
+    <Constant UId="434">
+      <ConstantValue UId="436">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="437" />
+  <Token Text="OR" UId="438" />
+  <Blank UId="439" />
+  <Access Scope="GlobalVariable" UId="440">
+    <Symbol UId="441">
+      <Component Name="ComRd" UId="442">
+        <BooleanAttribute Name="HasQuotes" UId="443">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="444" />
+      <Component Name="Data" UId="445" />
+      <Token Text="." UId="446" />
+      <Component Name="Config" UId="447" />
+      <Token Text="." UId="448" />
+      <Component Name="modeDimension" UId="449" />
+    </Symbol>
+  </Access>
+  <Blank UId="450" />
+  <Token Text="=" UId="451" />
+  <Blank UId="452" />
+  <Access Scope="LiteralConstant" UId="453">
+    <Constant UId="454">
+      <ConstantValue UId="456">4</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="457" />
+  <Token Text="THEN" UId="458" />
+  <NewLine UId="459" />
+  <Blank Num="8" UId="460" />
+  <Token Text="IF" UId="461" />
+  <Blank UId="462" />
+  <Access Scope="GlobalVariable" UId="463">
+    <Symbol UId="464">
+      <Component Name="ComRd" UId="465">
+        <BooleanAttribute Name="HasQuotes" UId="466">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="467" />
+      <Component Name="Data" UId="468" />
+      <Token Text="." UId="469" />
+      <Component Name="Config" UId="470" />
+      <Token Text="." UId="471" />
+      <Component Name="modeBoardPassing" UId="472" />
+    </Symbol>
+  </Access>
+  <Blank UId="473" />
+  <Token Text="=" UId="474" />
+  <Blank UId="475" />
+  <Access Scope="LiteralConstant" UId="476">
+    <Constant UId="477">
+      <ConstantValue UId="479">3</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="480" />
+  <Token Text="THEN" UId="481" />
+  <NewLine UId="482" />
+  <Blank Num="12" UId="483" />
+  <Access Scope="GlobalVariable" UId="484">
+    <Symbol UId="485">
+      <Component Name="G" UId="486">
+        <BooleanAttribute Name="HasQuotes" UId="487">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="488" />
+      <Component Name="Cfg" UId="489" />
+      <Token Text="." UId="490" />
+      <Component Name="senLeftActive" UId="491" />
+    </Symbol>
+  </Access>
+  <Blank UId="492" />
+  <Token Text=":=" UId="493" />
+  <Blank UId="494" />
+  <Access Scope="LiteralConstant" UId="495">
+    <Constant UId="496">
+      <ConstantValue UId="498">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="499" />
+  <NewLine UId="500" />
+  <Blank Num="12" UId="501" />
+  <Access Scope="GlobalVariable" UId="502">
+    <Symbol UId="503">
+      <Component Name="G" UId="504">
+        <BooleanAttribute Name="HasQuotes" UId="505">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="506" />
+      <Component Name="Cfg" UId="507" />
+      <Token Text="." UId="508" />
+      <Component Name="senRightActive" UId="509" />
+    </Symbol>
+  </Access>
+  <Blank UId="510" />
+  <Token Text=":=" UId="511" />
+  <Blank UId="512" />
+  <Access Scope="LiteralConstant" UId="513">
+    <Constant UId="514">
+      <ConstantValue UId="516">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="517" />
+  <NewLine UId="518" />
+  <Blank Num="8" UId="519" />
+  <Token Text="ELSIF" UId="520" />
+  <Blank UId="521" />
+  <Access Scope="GlobalVariable" UId="522">
+    <Symbol UId="523">
+      <Component Name="ComRd" UId="524">
+        <BooleanAttribute Name="HasQuotes" UId="525">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="526" />
+      <Component Name="Data" UId="527" />
+      <Token Text="." UId="528" />
+      <Component Name="Config" UId="529" />
+      <Token Text="." UId="530" />
+      <Component Name="modeBoardPassing" UId="531" />
+    </Symbol>
+  </Access>
+  <Blank UId="532" />
+  <Token Text="=" UId="533" />
+  <Blank UId="534" />
+  <Access Scope="LiteralConstant" UId="535">
+    <Constant UId="536">
+      <ConstantValue UId="538">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="539" />
+  <Token Text="THEN" UId="540" />
+  <NewLine UId="541" />
+  <Blank Num="12" UId="542" />
+  <Access Scope="GlobalVariable" UId="543">
+    <Symbol UId="544">
+      <Component Name="G" UId="545">
+        <BooleanAttribute Name="HasQuotes" UId="546">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="547" />
+      <Component Name="Cfg" UId="548" />
+      <Token Text="." UId="549" />
+      <Component Name="senLeftActive" UId="550" />
+    </Symbol>
+  </Access>
+  <Blank UId="551" />
+  <Token Text=":=" UId="552" />
+  <Blank UId="553" />
+  <Access Scope="LiteralConstant" UId="554">
+    <Constant UId="555">
+      <ConstantValue UId="557">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="558" />
+  <NewLine UId="559" />
+  <Blank Num="12" UId="560" />
+  <Access Scope="GlobalVariable" UId="561">
+    <Symbol UId="562">
+      <Component Name="G" UId="563">
+        <BooleanAttribute Name="HasQuotes" UId="564">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="565" />
+      <Component Name="Cfg" UId="566" />
+      <Token Text="." UId="567" />
+      <Component Name="senRightActive" UId="568" />
+    </Symbol>
+  </Access>
+  <Blank UId="569" />
+  <Token Text=":=" UId="570" />
+  <Blank UId="571" />
+  <Access Scope="LiteralConstant" UId="572">
+    <Constant UId="573">
+      <ConstantValue UId="575">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="576" />
+  <NewLine UId="577" />
+  <Blank Num="8" UId="578" />
+  <Token Text="ELSIF" UId="579" />
+  <Blank UId="580" />
+  <Access Scope="GlobalVariable" UId="581">
+    <Symbol UId="582">
+      <Component Name="ComRd" UId="583">
+        <BooleanAttribute Name="HasQuotes" UId="584">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="585" />
+      <Component Name="Data" UId="586" />
+      <Token Text="." UId="587" />
+      <Component Name="Config" UId="588" />
+      <Token Text="." UId="589" />
+      <Component Name="modeBoardPassing" UId="590" />
+    </Symbol>
+  </Access>
+  <Blank UId="591" />
+  <Token Text="=" UId="592" />
+  <Blank UId="593" />
+  <Access Scope="LiteralConstant" UId="594">
+    <Constant UId="595">
+      <ConstantValue UId="597">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="598" />
+  <Token Text="THEN" UId="599" />
+  <NewLine UId="600" />
+  <Blank Num="12" UId="601" />
+  <Access Scope="GlobalVariable" UId="602">
+    <Symbol UId="603">
+      <Component Name="G" UId="604">
+        <BooleanAttribute Name="HasQuotes" UId="605">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="606" />
+      <Component Name="Cfg" UId="607" />
+      <Token Text="." UId="608" />
+      <Component Name="senLeftActive" UId="609" />
+    </Symbol>
+  </Access>
+  <Blank UId="610" />
+  <Token Text=":=" UId="611" />
+  <Blank UId="612" />
+  <Access Scope="LiteralConstant" UId="613">
+    <Constant UId="614">
+      <ConstantValue UId="616">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="617" />
+  <NewLine UId="618" />
+  <Blank Num="12" UId="619" />
+  <Access Scope="GlobalVariable" UId="620">
+    <Symbol UId="621">
+      <Component Name="G" UId="622">
+        <BooleanAttribute Name="HasQuotes" UId="623">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="624" />
+      <Component Name="Cfg" UId="625" />
+      <Token Text="." UId="626" />
+      <Component Name="senRightActive" UId="627" />
+    </Symbol>
+  </Access>
+  <Blank UId="628" />
+  <Token Text=":=" UId="629" />
+  <Blank UId="630" />
+  <Access Scope="LiteralConstant" UId="631">
+    <Constant UId="632">
+      <ConstantValue UId="634">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="635" />
+  <NewLine UId="636" />
+  <Blank Num="8" UId="637" />
+  <Token Text="END_IF" UId="638" />
+  <Token Text=";" UId="639" />
+  <NewLine UId="640" />
+  <Blank Num="4" UId="641" />
+  <Token Text="ELSE" UId="642" />
+  <NewLine UId="643" />
+  <Blank Num="8" UId="644" />
+  <Access Scope="GlobalVariable" UId="645">
+    <Symbol UId="646">
+      <Component Name="G" UId="647">
+        <BooleanAttribute Name="HasQuotes" UId="648">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="649" />
+      <Component Name="Cfg" UId="650" />
+      <Token Text="." UId="651" />
+      <Component Name="senLeftActive" UId="652" />
+    </Symbol>
+  </Access>
+  <Blank UId="653" />
+  <Token Text=":=" UId="654" />
+  <Blank UId="655" />
+  <Access Scope="LiteralConstant" UId="656">
+    <Constant UId="657">
+      <ConstantValue UId="659">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="660" />
+  <NewLine UId="661" />
+  <Blank Num="8" UId="662" />
+  <Access Scope="GlobalVariable" UId="663">
+    <Symbol UId="664">
+      <Component Name="G" UId="665">
+        <BooleanAttribute Name="HasQuotes" UId="666">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="667" />
+      <Component Name="Cfg" UId="668" />
+      <Token Text="." UId="669" />
+      <Component Name="senRightActive" UId="670" />
+    </Symbol>
+  </Access>
+  <Blank UId="671" />
+  <Token Text=":=" UId="672" />
+  <Blank UId="673" />
+  <Access Scope="LiteralConstant" UId="674">
+    <Constant UId="675">
+      <ConstantValue UId="677">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="678" />
+  <NewLine UId="679" />
+  <Blank Num="4" UId="680" />
+  <Token Text="END_IF" UId="681" />
+  <Token Text=";" UId="682" />
+  <NewLine UId="683" />
+  <Blank Num="3" UId="684" />
+  <NewLine UId="685" />
+  <Blank Num="4" UId="686" />
+  <LineComment UId="687">
+    <Text UId="688"> config for encoder 1</Text>
+  </LineComment>
+  <NewLine UId="689" />
+  <Blank Num="4" UId="690" />
+  <Token Text="IF" UId="691" />
+  <Blank UId="692" />
+  <Access Scope="GlobalVariable" UId="693">
+    <Symbol UId="694">
+      <Component Name="ComRd" UId="695">
+        <BooleanAttribute Name="HasQuotes" UId="696">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="697" />
+      <Component Name="Data" UId="698" />
+      <Token Text="." UId="699" />
+      <Component Name="Config" UId="700" />
+      <Token Text="." UId="701" />
+      <Component Name="enc1QuadEvalActive" UId="702" />
+    </Symbol>
+  </Access>
+  <Blank UId="703" />
+  <Token Text="THEN" UId="704" />
+  <NewLine UId="705" />
+  <Blank Num="8" UId="706" />
+  <Access Scope="GlobalVariable" UId="707">
+    <Symbol UId="708">
+      <Component Name="G" UId="709">
+        <BooleanAttribute Name="HasQuotes" UId="710">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="711" />
+      <Component Name="Cfg" UId="712" />
+      <Token Text="." UId="713" />
+      <Component Name="enc1Gain" UId="714" />
+    </Symbol>
+  </Access>
+  <Blank UId="715" />
+  <Token Text=":=" UId="716" />
+  <Blank UId="717" />
+  <Token Text="(" UId="718" />
+  <Access Scope="LiteralConstant" UId="719">
+    <Constant UId="720">
+      <ConstantValue UId="722">1.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="723" />
+  <Token Text="/" UId="724" />
+  <Blank UId="725" />
+  <Access Scope="Call" UId="726">
+    <Instruction Name="INT_TO_REAL" UId="727">
+      <Token Text="(" UId="728" />
+      <NamelessParameter UId="729">
+        <Access Scope="GlobalVariable" UId="730">
+          <Symbol UId="731">
+            <Component Name="ComRd" UId="732">
+              <BooleanAttribute Name="HasQuotes" UId="733">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="734" />
+            <Component Name="Data" UId="735" />
+            <Token Text="." UId="736" />
+            <Component Name="Config" UId="737" />
+            <Token Text="." UId="738" />
+            <Component Name="enc1Factor" UId="739" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="741" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="742" />
+  <Blank UId="743" />
+  <Token Text="*" UId="744" />
+  <Blank UId="745" />
+  <Access Scope="LiteralConstant" UId="746">
+    <Constant UId="747">
+      <ConstantValue UId="749">1.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="750" />
+  <NewLine UId="751" />
+  <Blank Num="4" UId="752" />
+  <Token Text="ELSE" UId="753" />
+  <NewLine UId="754" />
+  <Blank Num="8" UId="755" />
+  <Access Scope="GlobalVariable" UId="756">
+    <Symbol UId="757">
+      <Component Name="G" UId="758">
+        <BooleanAttribute Name="HasQuotes" UId="759">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="760" />
+      <Component Name="Cfg" UId="761" />
+      <Token Text="." UId="762" />
+      <Component Name="enc1Gain" UId="763" />
+    </Symbol>
+  </Access>
+  <Blank UId="764" />
+  <Token Text=":=" UId="765" />
+  <Blank UId="766" />
+  <Token Text="(" UId="767" />
+  <Access Scope="LiteralConstant" UId="768">
+    <Constant UId="769">
+      <ConstantValue UId="771">1.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="772" />
+  <Token Text="/" UId="773" />
+  <Blank UId="774" />
+  <Access Scope="Call" UId="775">
+    <Instruction Name="INT_TO_REAL" UId="776">
+      <Token Text="(" UId="777" />
+      <NamelessParameter UId="778">
+        <Access Scope="GlobalVariable" UId="779">
+          <Symbol UId="780">
+            <Component Name="ComRd" UId="781">
+              <BooleanAttribute Name="HasQuotes" UId="782">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="783" />
+            <Component Name="Data" UId="784" />
+            <Token Text="." UId="785" />
+            <Component Name="Config" UId="786" />
+            <Token Text="." UId="787" />
+            <Component Name="enc1Factor" UId="788" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="790" />
+    </Instruction>
+  </Access>
+  <Token Text=")" UId="791" />
+  <Blank UId="792" />
+  <Token Text="*" UId="793" />
+  <Blank UId="794" />
+  <Access Scope="LiteralConstant" UId="795">
+    <Constant UId="796">
+      <ConstantValue UId="798">1.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="799" />
+  <NewLine UId="800" />
+  <Blank Num="4" UId="801" />
+  <Token Text="END_IF" UId="802" />
+  <Token Text=";" UId="803" />
+  <NewLine UId="804" />
+  <Blank Num="4" UId="805" />
+  <Token Text="IF" UId="806" />
+  <Blank UId="807" />
+  <Access Scope="GlobalVariable" UId="808">
+    <Symbol UId="809">
+      <Component Name="ComRd" UId="810">
+        <BooleanAttribute Name="HasQuotes" UId="811">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="812" />
+      <Component Name="Data" UId="813" />
+      <Token Text="." UId="814" />
+      <Component Name="Config" UId="815" />
+      <Token Text="." UId="816" />
+      <Component Name="enc1Factor" UId="817" />
+    </Symbol>
+  </Access>
+  <Blank UId="818" />
+  <Token Text="=" UId="819" />
+  <Blank UId="820" />
+  <Access Scope="LiteralConstant" UId="821">
+    <Constant UId="822">
+      <ConstantValue UId="824">-1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="825" />
+  <Token Text="THEN" UId="826" />
+  <NewLine UId="827" />
+  <Blank Num="8" UId="828" />
+  <Access Scope="GlobalVariable" UId="829">
+    <Symbol UId="830">
+      <Component Name="G" UId="831">
+        <BooleanAttribute Name="HasQuotes" UId="832">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="833" />
+      <Component Name="Cfg" UId="834" />
+      <Token Text="." UId="835" />
+      <Component Name="enc1Active" UId="836" />
+    </Symbol>
+  </Access>
+  <Blank UId="837" />
+  <Token Text=":=" UId="838" />
+  <Blank UId="839" />
+  <Access Scope="LiteralConstant" UId="840">
+    <Constant UId="841">
+      <ConstantValue UId="843">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="844" />
+  <NewLine UId="845" />
+  <Blank Num="4" UId="846" />
+  <Token Text="ELSE" UId="847" />
+  <NewLine UId="848" />
+  <Blank Num="8" UId="849" />
+  <Access Scope="GlobalVariable" UId="850">
+    <Symbol UId="851">
+      <Component Name="G" UId="852">
+        <BooleanAttribute Name="HasQuotes" UId="853">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="854" />
+      <Component Name="Cfg" UId="855" />
+      <Token Text="." UId="856" />
+      <Component Name="enc1Active" UId="857" />
+    </Symbol>
+  </Access>
+  <Blank UId="858" />
+  <Token Text=":=" UId="859" />
+  <Blank UId="860" />
+  <Access Scope="LiteralConstant" UId="861">
+    <Constant UId="862">
+      <ConstantValue UId="864">TRUE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="865" />
+  <NewLine UId="866" />
+  <Blank Num="4" UId="867" />
+  <Token Text="END_IF" UId="868" />
+  <Token Text=";" UId="869" />
+  <NewLine UId="870" />
+  <Blank Num="4" UId="871" />
+  <NewLine UId="872" />
+  <Token Text="END_IF" UId="873" />
+  <Token Text=";" UId="874" />
+  <NewLine UId="875" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>config data from pc</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <Token Text="IF" UId="21" />
+  <Blank UId="22" />
+  <Access Scope="GlobalVariable" UId="23">
+    <Symbol UId="24">
+      <Component Name="G" UId="25">
+        <BooleanAttribute Name="HasQuotes" UId="26">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="27" />
+      <Component Name="comOk" UId="28" />
+    </Symbol>
+  </Access>
+  <Blank UId="29" />
+  <Token Text="THEN" UId="30" />
+  <NewLine UId="31" />
+  <Blank Num="4" UId="32" />
+  <LineComment UId="33">
+    <Text UId="34"> Width</Text>
+  </LineComment>
+  <NewLine UId="35" />
+  <Blank Num="4" UId="36" />
+  <Token Text="IF" UId="37" />
+  <Blank UId="38" />
+  <Access Scope="GlobalVariable" UId="39">
+    <Symbol UId="40">
+      <Component Name="ComRd" UId="41">
+        <BooleanAttribute Name="HasQuotes" UId="42">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="43" />
+      <Component Name="Data" UId="44" />
+      <Token Text="." UId="45" />
+      <Component Name="batch" UId="46" />
+      <Token Text="." UId="47" />
+      <Component Name="MinWidth" UId="48" />
+    </Symbol>
+  </Access>
+  <Blank UId="49" />
+  <Token Text="=" UId="50" />
+  <Blank UId="51" />
+  <Access Scope="GlobalVariable" UId="52">
+    <Symbol UId="53">
+      <Component Name="ComRd" UId="54">
+        <BooleanAttribute Name="HasQuotes" UId="55">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="56" />
+      <Component Name="Data" UId="57" />
+      <Token Text="." UId="58" />
+      <Component Name="batch" UId="59" />
+      <Token Text="." UId="60" />
+      <Component Name="MaxWidth" UId="61" />
+    </Symbol>
+  </Access>
+  <Blank UId="62" />
+  <Token Text="THEN" UId="63" />
+  <NewLine UId="64" />
+  <Blank Num="8" UId="65" />
+  <Access Scope="GlobalVariable" UId="66">
+    <Symbol UId="67">
+      <Component Name="G" UId="68">
+        <BooleanAttribute Name="HasQuotes" UId="69">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="70" />
+      <Component Name="Batch" UId="71" />
+      <Token Text="." UId="72" />
+      <Component Name="widthMin" UId="73" />
+    </Symbol>
+  </Access>
+  <Blank UId="74" />
+  <Token Text=":=" UId="75" />
+  <Blank UId="76" />
+  <Access Scope="Call" UId="77">
+    <Instruction Name="DINT_TO_REAL" UId="78">
+      <Token Text="(" UId="79" />
+      <NamelessParameter UId="80">
+        <Access Scope="GlobalVariable" UId="81">
+          <Symbol UId="82">
+            <Component Name="ComRd" UId="83">
+              <BooleanAttribute Name="HasQuotes" UId="84">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="85" />
+            <Component Name="Data" UId="86" />
+            <Token Text="." UId="87" />
+            <Component Name="batch" UId="88" />
+            <Token Text="." UId="89" />
+            <Component Name="MinWidth" UId="90" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="92" />
+    </Instruction>
+  </Access>
+  <Blank UId="93" />
+  <Token Text="/" UId="94" />
+  <Blank UId="95" />
+  <Access Scope="LiteralConstant" UId="96">
+    <Constant UId="97">
+      <ConstantValue UId="99">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="100" />
+  <NewLine UId="101" />
+  <Blank Num="8" UId="102" />
+  <Access Scope="GlobalVariable" UId="103">
+    <Symbol UId="104">
+      <Component Name="G" UId="105">
+        <BooleanAttribute Name="HasQuotes" UId="106">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="107" />
+      <Component Name="Batch" UId="108" />
+      <Token Text="." UId="109" />
+      <Component Name="widthMax" UId="110" />
+    </Symbol>
+  </Access>
+  <Blank UId="111" />
+  <Token Text=":=" UId="112" />
+  <Blank UId="113" />
+  <Access Scope="Call" UId="114">
+    <Instruction Name="DINT_TO_REAL" UId="115">
+      <Token Text="(" UId="116" />
+      <NamelessParameter UId="117">
+        <Access Scope="GlobalVariable" UId="118">
+          <Symbol UId="119">
+            <Component Name="ComRd" UId="120">
+              <BooleanAttribute Name="HasQuotes" UId="121">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="122" />
+            <Component Name="Data" UId="123" />
+            <Token Text="." UId="124" />
+            <Component Name="batch" UId="125" />
+            <Token Text="." UId="126" />
+            <Component Name="MaxWidth" UId="127" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="129" />
+    </Instruction>
+  </Access>
+  <Blank UId="130" />
+  <Token Text="/" UId="131" />
+  <Blank UId="132" />
+  <Access Scope="LiteralConstant" UId="133">
+    <Constant UId="134">
+      <ConstantValue UId="136">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="137" />
+  <NewLine UId="138" />
+  <Blank Num="8" UId="139" />
+  <Access Scope="GlobalVariable" UId="140">
+    <Symbol UId="141">
+      <Component Name="G" UId="142">
+        <BooleanAttribute Name="HasQuotes" UId="143">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="144" />
+      <Component Name="Batch" UId="145" />
+      <Token Text="." UId="146" />
+      <Component Name="width" UId="147" />
+    </Symbol>
+  </Access>
+  <Blank UId="148" />
+  <Token Text=":=" UId="149" />
+  <Blank UId="150" />
+  <Access Scope="Call" UId="151">
+    <Instruction Name="DINT_TO_REAL" UId="152">
+      <Token Text="(" UId="153" />
+      <NamelessParameter UId="154">
+        <Access Scope="GlobalVariable" UId="155">
+          <Symbol UId="156">
+            <Component Name="ComRd" UId="157">
+              <BooleanAttribute Name="HasQuotes" UId="158">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="159" />
+            <Component Name="Data" UId="160" />
+            <Token Text="." UId="161" />
+            <Component Name="batch" UId="162" />
+            <Token Text="." UId="163" />
+            <Component Name="MinWidth" UId="164" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="166" />
+    </Instruction>
+  </Access>
+  <Blank UId="167" />
+  <Token Text="/" UId="168" />
+  <Blank UId="169" />
+  <Access Scope="LiteralConstant" UId="170">
+    <Constant UId="171">
+      <ConstantValue UId="173">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="174" />
+  <NewLine UId="175" />
+  <Blank Num="4" UId="176" />
+  <Token Text="ELSIF" UId="177" />
+  <Blank UId="178" />
+  <Access Scope="GlobalVariable" UId="179">
+    <Symbol UId="180">
+      <Component Name="ComRd" UId="181">
+        <BooleanAttribute Name="HasQuotes" UId="182">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="183" />
+      <Component Name="Data" UId="184" />
+      <Token Text="." UId="185" />
+      <Component Name="batch" UId="186" />
+      <Token Text="." UId="187" />
+      <Component Name="MinWidth" UId="188" />
+    </Symbol>
+  </Access>
+  <Blank UId="189" />
+  <Token Text="&lt;&gt;" UId="190" />
+  <Blank UId="191" />
+  <Access Scope="GlobalVariable" UId="192">
+    <Symbol UId="193">
+      <Component Name="ComRd" UId="194">
+        <BooleanAttribute Name="HasQuotes" UId="195">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="196" />
+      <Component Name="Data" UId="197" />
+      <Token Text="." UId="198" />
+      <Component Name="batch" UId="199" />
+      <Token Text="." UId="200" />
+      <Component Name="MaxWidth" UId="201" />
+    </Symbol>
+  </Access>
+  <Blank UId="202" />
+  <Token Text="THEN" UId="203" />
+  <NewLine UId="204" />
+  <Blank Num="8" UId="205" />
+  <Access Scope="GlobalVariable" UId="206">
+    <Symbol UId="207">
+      <Component Name="G" UId="208">
+        <BooleanAttribute Name="HasQuotes" UId="209">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="210" />
+      <Component Name="Batch" UId="211" />
+      <Token Text="." UId="212" />
+      <Component Name="widthMin" UId="213" />
+    </Symbol>
+  </Access>
+  <Blank UId="214" />
+  <Token Text=":=" UId="215" />
+  <Blank UId="216" />
+  <Access Scope="Call" UId="217">
+    <Instruction Name="DINT_TO_REAL" UId="218">
+      <Token Text="(" UId="219" />
+      <NamelessParameter UId="220">
+        <Access Scope="GlobalVariable" UId="221">
+          <Symbol UId="222">
+            <Component Name="ComRd" UId="223">
+              <BooleanAttribute Name="HasQuotes" UId="224">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="225" />
+            <Component Name="Data" UId="226" />
+            <Token Text="." UId="227" />
+            <Component Name="batch" UId="228" />
+            <Token Text="." UId="229" />
+            <Component Name="MinWidth" UId="230" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="232" />
+    </Instruction>
+  </Access>
+  <Blank UId="233" />
+  <Token Text="/" UId="234" />
+  <Blank UId="235" />
+  <Access Scope="LiteralConstant" UId="236">
+    <Constant UId="237">
+      <ConstantValue UId="239">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="240" />
+  <NewLine UId="241" />
+  <Blank Num="8" UId="242" />
+  <Access Scope="GlobalVariable" UId="243">
+    <Symbol UId="244">
+      <Component Name="G" UId="245">
+        <BooleanAttribute Name="HasQuotes" UId="246">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="247" />
+      <Component Name="Batch" UId="248" />
+      <Token Text="." UId="249" />
+      <Component Name="widthMax" UId="250" />
+    </Symbol>
+  </Access>
+  <Blank UId="251" />
+  <Token Text=":=" UId="252" />
+  <Blank UId="253" />
+  <Access Scope="Call" UId="254">
+    <Instruction Name="DINT_TO_REAL" UId="255">
+      <Token Text="(" UId="256" />
+      <NamelessParameter UId="257">
+        <Access Scope="GlobalVariable" UId="258">
+          <Symbol UId="259">
+            <Component Name="ComRd" UId="260">
+              <BooleanAttribute Name="HasQuotes" UId="261">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="262" />
+            <Component Name="Data" UId="263" />
+            <Token Text="." UId="264" />
+            <Component Name="batch" UId="265" />
+            <Token Text="." UId="266" />
+            <Component Name="MaxWidth" UId="267" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="269" />
+    </Instruction>
+  </Access>
+  <Blank UId="270" />
+  <Token Text="/" UId="271" />
+  <Blank UId="272" />
+  <Access Scope="LiteralConstant" UId="273">
+    <Constant UId="274">
+      <ConstantValue UId="276">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="277" />
+  <NewLine UId="278" />
+  <Blank Num="8" UId="279" />
+  <Access Scope="GlobalVariable" UId="280">
+    <Symbol UId="281">
+      <Component Name="G" UId="282">
+        <BooleanAttribute Name="HasQuotes" UId="283">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="284" />
+      <Component Name="Batch" UId="285" />
+      <Token Text="." UId="286" />
+      <Component Name="width" UId="287" />
+    </Symbol>
+  </Access>
+  <Blank UId="288" />
+  <Token Text=":=" UId="289" />
+  <Blank UId="290" />
+  <Access Scope="Call" UId="291">
+    <Instruction Name="DINT_TO_REAL" UId="292">
+      <Token Text="(" UId="293" />
+      <NamelessParameter UId="294">
+        <Token Text="(" UId="295" />
+        <Access Scope="GlobalVariable" UId="296">
+          <Symbol UId="297">
+            <Component Name="ComRd" UId="298">
+              <BooleanAttribute Name="HasQuotes" UId="299">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="300" />
+            <Component Name="Data" UId="301" />
+            <Token Text="." UId="302" />
+            <Component Name="batch" UId="303" />
+            <Token Text="." UId="304" />
+            <Component Name="MinWidth" UId="305" />
+          </Symbol>
+        </Access>
+        <Blank UId="306" />
+        <Token Text="+" UId="307" />
+        <Blank UId="308" />
+        <Access Scope="GlobalVariable" UId="309">
+          <Symbol UId="310">
+            <Component Name="ComRd" UId="311">
+              <BooleanAttribute Name="HasQuotes" UId="312">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="313" />
+            <Component Name="Data" UId="314" />
+            <Token Text="." UId="315" />
+            <Component Name="batch" UId="316" />
+            <Token Text="." UId="317" />
+            <Component Name="MaxWidth" UId="318" />
+          </Symbol>
+        </Access>
+        <Token Text=")" UId="319" />
+        <Blank UId="320" />
+        <Token Text="/" UId="321" />
+        <Blank UId="322" />
+        <Access Scope="LiteralConstant" UId="323">
+          <Constant UId="324">
+            <ConstantValue UId="326">2</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="328" />
+    </Instruction>
+  </Access>
+  <Blank UId="329" />
+  <Token Text="/" UId="330" />
+  <Blank UId="331" />
+  <Access Scope="LiteralConstant" UId="332">
+    <Constant UId="333">
+      <ConstantValue UId="335">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="336" />
+  <NewLine UId="337" />
+  <Blank Num="4" UId="338" />
+  <Token Text="END_IF" UId="339" />
+  <Token Text=";" UId="340" />
+  <NewLine UId="341" />
+  <Blank Num="4" UId="342" />
+  <NewLine UId="343" />
+  <Blank Num="4" UId="344" />
+  <LineComment UId="345">
+    <Text UId="346"> Thickness</Text>
+  </LineComment>
+  <NewLine UId="347" />
+  <Blank Num="4" UId="348" />
+  <Token Text="IF" UId="349" />
+  <Blank UId="350" />
+  <Access Scope="GlobalVariable" UId="351">
+    <Symbol UId="352">
+      <Component Name="ComRd" UId="353">
+        <BooleanAttribute Name="HasQuotes" UId="354">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="355" />
+      <Component Name="Data" UId="356" />
+      <Token Text="." UId="357" />
+      <Component Name="batch" UId="358" />
+      <Token Text="." UId="359" />
+      <Component Name="MinThickness" UId="360" />
+    </Symbol>
+  </Access>
+  <Blank UId="361" />
+  <Token Text="=" UId="362" />
+  <Blank UId="363" />
+  <Access Scope="GlobalVariable" UId="364">
+    <Symbol UId="365">
+      <Component Name="ComRd" UId="366">
+        <BooleanAttribute Name="HasQuotes" UId="367">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="368" />
+      <Component Name="Data" UId="369" />
+      <Token Text="." UId="370" />
+      <Component Name="batch" UId="371" />
+      <Token Text="." UId="372" />
+      <Component Name="MaxThickness" UId="373" />
+    </Symbol>
+  </Access>
+  <Blank UId="374" />
+  <Token Text="THEN" UId="375" />
+  <NewLine UId="376" />
+  <Blank Num="8" UId="377" />
+  <Access Scope="GlobalVariable" UId="378">
+    <Symbol UId="379">
+      <Component Name="G" UId="380">
+        <BooleanAttribute Name="HasQuotes" UId="381">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="382" />
+      <Component Name="Batch" UId="383" />
+      <Token Text="." UId="384" />
+      <Component Name="thicknessMin" UId="385" />
+    </Symbol>
+  </Access>
+  <Blank UId="386" />
+  <Token Text=":=" UId="387" />
+  <Blank UId="388" />
+  <Access Scope="Call" UId="389">
+    <Instruction Name="DINT_TO_REAL" UId="390">
+      <Token Text="(" UId="391" />
+      <NamelessParameter UId="392">
+        <Access Scope="GlobalVariable" UId="393">
+          <Symbol UId="394">
+            <Component Name="ComRd" UId="395">
+              <BooleanAttribute Name="HasQuotes" UId="396">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="397" />
+            <Component Name="Data" UId="398" />
+            <Token Text="." UId="399" />
+            <Component Name="batch" UId="400" />
+            <Token Text="." UId="401" />
+            <Component Name="MinThickness" UId="402" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="404" />
+    </Instruction>
+  </Access>
+  <Blank UId="405" />
+  <Token Text="/" UId="406" />
+  <Blank UId="407" />
+  <Access Scope="LiteralConstant" UId="408">
+    <Constant UId="409">
+      <ConstantValue UId="411">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="412" />
+  <NewLine UId="413" />
+  <Blank Num="8" UId="414" />
+  <Access Scope="GlobalVariable" UId="415">
+    <Symbol UId="416">
+      <Component Name="G" UId="417">
+        <BooleanAttribute Name="HasQuotes" UId="418">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="419" />
+      <Component Name="Batch" UId="420" />
+      <Token Text="." UId="421" />
+      <Component Name="thicknessMax" UId="422" />
+    </Symbol>
+  </Access>
+  <Blank UId="423" />
+  <Token Text=":=" UId="424" />
+  <Blank UId="425" />
+  <Access Scope="Call" UId="426">
+    <Instruction Name="DINT_TO_REAL" UId="427">
+      <Token Text="(" UId="428" />
+      <NamelessParameter UId="429">
+        <Access Scope="GlobalVariable" UId="430">
+          <Symbol UId="431">
+            <Component Name="ComRd" UId="432">
+              <BooleanAttribute Name="HasQuotes" UId="433">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="434" />
+            <Component Name="Data" UId="435" />
+            <Token Text="." UId="436" />
+            <Component Name="batch" UId="437" />
+            <Token Text="." UId="438" />
+            <Component Name="MaxThickness" UId="439" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="441" />
+    </Instruction>
+  </Access>
+  <Blank UId="442" />
+  <Token Text="/" UId="443" />
+  <Blank UId="444" />
+  <Access Scope="LiteralConstant" UId="445">
+    <Constant UId="446">
+      <ConstantValue UId="448">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="449" />
+  <NewLine UId="450" />
+  <Blank Num="8" UId="451" />
+  <Access Scope="GlobalVariable" UId="452">
+    <Symbol UId="453">
+      <Component Name="G" UId="454">
+        <BooleanAttribute Name="HasQuotes" UId="455">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="456" />
+      <Component Name="Batch" UId="457" />
+      <Token Text="." UId="458" />
+      <Component Name="thickness" UId="459" />
+    </Symbol>
+  </Access>
+  <Blank UId="460" />
+  <Token Text=":=" UId="461" />
+  <Blank UId="462" />
+  <Access Scope="Call" UId="463">
+    <Instruction Name="DINT_TO_REAL" UId="464">
+      <Token Text="(" UId="465" />
+      <NamelessParameter UId="466">
+        <Access Scope="GlobalVariable" UId="467">
+          <Symbol UId="468">
+            <Component Name="ComRd" UId="469">
+              <BooleanAttribute Name="HasQuotes" UId="470">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="471" />
+            <Component Name="Data" UId="472" />
+            <Token Text="." UId="473" />
+            <Component Name="batch" UId="474" />
+            <Token Text="." UId="475" />
+            <Component Name="MinThickness" UId="476" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="478" />
+    </Instruction>
+  </Access>
+  <Blank UId="479" />
+  <Token Text="/" UId="480" />
+  <Blank UId="481" />
+  <Access Scope="LiteralConstant" UId="482">
+    <Constant UId="483">
+      <ConstantValue UId="485">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="486" />
+  <NewLine UId="487" />
+  <Blank Num="4" UId="488" />
+  <Token Text="ELSIF" UId="489" />
+  <Blank UId="490" />
+  <Access Scope="GlobalVariable" UId="491">
+    <Symbol UId="492">
+      <Component Name="ComRd" UId="493">
+        <BooleanAttribute Name="HasQuotes" UId="494">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="495" />
+      <Component Name="Data" UId="496" />
+      <Token Text="." UId="497" />
+      <Component Name="batch" UId="498" />
+      <Token Text="." UId="499" />
+      <Component Name="MinThickness" UId="500" />
+    </Symbol>
+  </Access>
+  <Blank UId="501" />
+  <Token Text="&lt;&gt;" UId="502" />
+  <Blank UId="503" />
+  <Access Scope="GlobalVariable" UId="504">
+    <Symbol UId="505">
+      <Component Name="ComRd" UId="506">
+        <BooleanAttribute Name="HasQuotes" UId="507">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="508" />
+      <Component Name="Data" UId="509" />
+      <Token Text="." UId="510" />
+      <Component Name="batch" UId="511" />
+      <Token Text="." UId="512" />
+      <Component Name="MaxThickness" UId="513" />
+    </Symbol>
+  </Access>
+  <Blank UId="514" />
+  <Token Text="THEN" UId="515" />
+  <NewLine UId="516" />
+  <Blank Num="8" UId="517" />
+  <Access Scope="GlobalVariable" UId="518">
+    <Symbol UId="519">
+      <Component Name="G" UId="520">
+        <BooleanAttribute Name="HasQuotes" UId="521">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="522" />
+      <Component Name="Batch" UId="523" />
+      <Token Text="." UId="524" />
+      <Component Name="thicknessMin" UId="525" />
+    </Symbol>
+  </Access>
+  <Blank UId="526" />
+  <Token Text=":=" UId="527" />
+  <Blank UId="528" />
+  <Access Scope="Call" UId="529">
+    <Instruction Name="DINT_TO_REAL" UId="530">
+      <Token Text="(" UId="531" />
+      <NamelessParameter UId="532">
+        <Access Scope="GlobalVariable" UId="533">
+          <Symbol UId="534">
+            <Component Name="ComRd" UId="535">
+              <BooleanAttribute Name="HasQuotes" UId="536">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="537" />
+            <Component Name="Data" UId="538" />
+            <Token Text="." UId="539" />
+            <Component Name="batch" UId="540" />
+            <Token Text="." UId="541" />
+            <Component Name="MinThickness" UId="542" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="544" />
+    </Instruction>
+  </Access>
+  <Blank UId="545" />
+  <Token Text="/" UId="546" />
+  <Blank UId="547" />
+  <Access Scope="LiteralConstant" UId="548">
+    <Constant UId="549">
+      <ConstantValue UId="551">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="552" />
+  <NewLine UId="553" />
+  <Blank Num="8" UId="554" />
+  <Access Scope="GlobalVariable" UId="555">
+    <Symbol UId="556">
+      <Component Name="G" UId="557">
+        <BooleanAttribute Name="HasQuotes" UId="558">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="559" />
+      <Component Name="Batch" UId="560" />
+      <Token Text="." UId="561" />
+      <Component Name="thicknessMax" UId="562" />
+    </Symbol>
+  </Access>
+  <Blank UId="563" />
+  <Token Text=":=" UId="564" />
+  <Blank UId="565" />
+  <Access Scope="Call" UId="566">
+    <Instruction Name="DINT_TO_REAL" UId="567">
+      <Token Text="(" UId="568" />
+      <NamelessParameter UId="569">
+        <Access Scope="GlobalVariable" UId="570">
+          <Symbol UId="571">
+            <Component Name="ComRd" UId="572">
+              <BooleanAttribute Name="HasQuotes" UId="573">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="574" />
+            <Component Name="Data" UId="575" />
+            <Token Text="." UId="576" />
+            <Component Name="batch" UId="577" />
+            <Token Text="." UId="578" />
+            <Component Name="MaxThickness" UId="579" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="581" />
+    </Instruction>
+  </Access>
+  <Blank UId="582" />
+  <Token Text="/" UId="583" />
+  <Blank UId="584" />
+  <Access Scope="LiteralConstant" UId="585">
+    <Constant UId="586">
+      <ConstantValue UId="588">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="589" />
+  <NewLine UId="590" />
+  <Blank Num="8" UId="591" />
+  <Access Scope="GlobalVariable" UId="592">
+    <Symbol UId="593">
+      <Component Name="G" UId="594">
+        <BooleanAttribute Name="HasQuotes" UId="595">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="596" />
+      <Component Name="Batch" UId="597" />
+      <Token Text="." UId="598" />
+      <Component Name="thickness" UId="599" />
+    </Symbol>
+  </Access>
+  <Blank UId="600" />
+  <Token Text=":=" UId="601" />
+  <Blank UId="602" />
+  <Access Scope="Call" UId="603">
+    <Instruction Name="DINT_TO_REAL" UId="604">
+      <Token Text="(" UId="605" />
+      <NamelessParameter UId="606">
+        <Token Text="(" UId="607" />
+        <Access Scope="GlobalVariable" UId="608">
+          <Symbol UId="609">
+            <Component Name="ComRd" UId="610">
+              <BooleanAttribute Name="HasQuotes" UId="611">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="612" />
+            <Component Name="Data" UId="613" />
+            <Token Text="." UId="614" />
+            <Component Name="batch" UId="615" />
+            <Token Text="." UId="616" />
+            <Component Name="MinThickness" UId="617" />
+          </Symbol>
+        </Access>
+        <Blank UId="618" />
+        <Token Text="+" UId="619" />
+        <Blank UId="620" />
+        <Access Scope="GlobalVariable" UId="621">
+          <Symbol UId="622">
+            <Component Name="ComRd" UId="623">
+              <BooleanAttribute Name="HasQuotes" UId="624">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="625" />
+            <Component Name="Data" UId="626" />
+            <Token Text="." UId="627" />
+            <Component Name="batch" UId="628" />
+            <Token Text="." UId="629" />
+            <Component Name="MaxThickness" UId="630" />
+          </Symbol>
+        </Access>
+        <Token Text=")" UId="631" />
+        <Blank UId="632" />
+        <Token Text="/" UId="633" />
+        <Blank UId="634" />
+        <Access Scope="LiteralConstant" UId="635">
+          <Constant UId="636">
+            <ConstantValue UId="638">2</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="640" />
+    </Instruction>
+  </Access>
+  <Blank UId="641" />
+  <Token Text="/" UId="642" />
+  <Blank UId="643" />
+  <Access Scope="LiteralConstant" UId="644">
+    <Constant UId="645">
+      <ConstantValue UId="647">10.0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="648" />
+  <NewLine UId="649" />
+  <Blank Num="4" UId="650" />
+  <Token Text="END_IF" UId="651" />
+  <Token Text=";" UId="652" />
+  <NewLine UId="653" />
+  <Token Text="END_IF" UId="654" />
+  <Token Text=";" UId="655" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>batch from pc</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="12" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="13" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="14" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

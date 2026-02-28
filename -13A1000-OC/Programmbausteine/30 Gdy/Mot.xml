@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="8M1.B" Datatype="&quot;TypeMotor&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment scanner</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Motor Aufgabeförderer 1 - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8M1.T" Datatype="&quot;TypeMotor&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment top - normal drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Motor Aufgabeförderer 2 - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8M1.L" Datatype="&quot;TypeMotor&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment left - normal drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Motor Zerteiler - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8M1.R" Datatype="&quot;TypeMotor&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment right - normal drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Motor Überbrückungsförderer - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8U1.T" Datatype="&quot;TypeMotor&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment top - linear drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Motor Aufgabeförderer 2 - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8U1.L" Datatype="&quot;TypeMotor&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment left - linear drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Motor Zerteiler - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8U1.R" Datatype="&quot;TypeMotor&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment right - linear drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Motor Überbrückungsförderer - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <IsRetainMemResEnabled>true</IsRetainMemResEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>500</MemoryReserve>
+      <Name>Mot</Name>
+      <Namespace />
+      <Number>322</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+      <RetainMemoryReserve>500</RetainMemoryReserve>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

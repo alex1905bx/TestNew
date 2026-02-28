@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="valid" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">valid</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="watchdog" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">watchdog</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="bit40" Datatype="Bool" />
+    <Member Name="ack" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">acknowledge</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="bit42" Datatype="Bool" />
+    <Member Name="bit43" Datatype="Bool" />
+    <Member Name="bit44" Datatype="Bool" />
+    <Member Name="bit45" Datatype="Bool" />
+    <Member Name="bit46" Datatype="Bool" />
+    <Member Name="bit47" Datatype="Bool" />
+    <Member Name="word6" Datatype="Word" />
+    <Member Name="word8" Datatype="Word" />
+  </Section>
+</Sections></Interface>
+      <Name>TypeHeaderPcGld</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

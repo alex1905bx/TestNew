@@ -1,0 +1,1645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="1BCI1" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder infeed scanner</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>0.0005025126</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>11.31196</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>-10.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>16#7FBF_FFFF</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="1BCM1" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder scanner</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>112</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>-50.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>50.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>11.31196</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>-10.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="1BCO1" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder outfeed scanner</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>112</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>-50.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>50.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>11.31196</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>-10.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8B1.B" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">light barrier measuring distance for the position of the scanner</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>-2360</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>1.0</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>-505.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>505.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>60.0</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>-236.0</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>-500.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>500.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>-500.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>500.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#''</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#''</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8BC1.T" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder adjustment top - normal drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>1</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>1563</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>52.98273</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>-0.0275</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>5.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>215.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>12.0</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>-32.98265</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>210.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>210.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>16#7FBF_FFFF</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8BC1.L" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder adjustment left - normal drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>638</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>9.972851</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>-0.0275</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>5.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>215.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>87.5</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>87.52025</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>210.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>210.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>16#7FBF_FFFF</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8BC1.R" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder adjustment right - normal drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>636</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>10.00027</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>-0.0275</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>5.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>215.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>82.6</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>82.62568</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>210.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>10.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>210.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>16#7FBF_FFFF</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8U1.T" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder adjustment top - linear drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>112</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>1.0</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>-5.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>155.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>42.0</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>150.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>150.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8U1.L" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder adjustment left - linear drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>112</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>1.0</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>-5.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>155.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>82.5</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>150.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>150.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="8U1.R" Datatype="&quot;TypeEncoder&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">encoder adjustment right - linear drive</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="ref" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refMode" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="refRun" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="refOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="ready" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="posOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="notInPos" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="tarMin" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="tarMax" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="min" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="max" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="minTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="maxTar" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="sync" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="comOk" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOverflow" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRunCheck" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errLim" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="errCom" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errOffDel" Datatype="Bool">
+            <StartValue>TRUE</StartValue>
+          </Member>
+          <Member Name="dirUp" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="dirDn" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errNr" Datatype="UInt">
+            <StartValue>112</StartValue>
+          </Member>
+          <Member Name="encAct" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="resetPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calOffset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calGain" Datatype="Real">
+            <StartValue>1.0</StartValue>
+          </Member>
+          <Member Name="refPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP1Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP1Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="calP2Inc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="calP2Mm" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="limMin" Datatype="Real">
+            <StartValue>-5.0</StartValue>
+          </Member>
+          <Member Name="limMax" Datatype="Real">
+            <StartValue>155.0</StartValue>
+          </Member>
+          <Member Name="tar" Datatype="Real">
+            <StartValue>82.5</StartValue>
+          </Member>
+          <Member Name="act" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="offset" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="deltaInc" Datatype="DInt">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="delta" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMinPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="tarMaxPos" Datatype="Real">
+            <StartValue>150.0</StartValue>
+          </Member>
+          <Member Name="minPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="maxPos" Datatype="Real">
+            <StartValue>150.0</StartValue>
+          </Member>
+          <Member Name="gPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="ePos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="sPos" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="speed" Datatype="Real">
+            <StartValue>0.0</StartValue>
+          </Member>
+          <Member Name="name" Datatype="WString[30]">
+            <StartValue>WSTRING#'35BC11'</StartValue>
+          </Member>
+          <Member Name="description" Datatype="WString[90]">
+            <StartValue>WSTRING#'Encoder Zuteiler Anschlag - Zubringung'</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <IsRetainMemResEnabled>true</IsRetainMemResEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>500</MemoryReserve>
+      <Name>Enc</Name>
+      <Namespace />
+      <Number>323</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+      <RetainMemoryReserve>500</RetainMemoryReserve>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

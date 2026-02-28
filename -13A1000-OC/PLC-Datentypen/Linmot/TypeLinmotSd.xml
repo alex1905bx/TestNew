@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Ctrl" Datatype="Struct">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">control word</MultiLanguageText>
+      </Comment>
+      <Member Name="SwitchOn" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">0 = A-Stop, -&gt; Current = 0, power switches disabled</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="VoltageEnable" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">0 = Power switches disabled without microcontroller action</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="QuickStop" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">0 = Quick Stop -&gt; Current = 0 -&gt; H-Bridges disabled</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="EnableOperation" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Position controller active Motion Commands enabled</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Abort" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">0 = Quick Stop position control rests active, motion</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Freeze" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">0 = Quick Stop position control rests active, Target position</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="GoToPosition" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Go to fixed parameterized Position. Wait for release of signal</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="ErrorAcknoledge" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Rising edge of signal acknowledges error</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="JogMovePlus" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Jog Move +</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="JogMoveMinus" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Jog Move -</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="SpecialMove" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Special Mode</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Home" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = At startup bit 11 Status word is cleared, until procedure</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="ClearanceCheck" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Enable Clearance Check Movement</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="GoToInitialPosition" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Rising edge will start go to initial position</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Linearizing" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Reserved</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="PhaseSearch" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Enable Phase Search Movements</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+    <Member Name="McHd" Datatype="Struct">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">motion command header</MultiLanguageText>
+      </Comment>
+      <Member Name="CC0" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Command Count bit 0</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="CC1" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Command Count bit 1</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="CC2" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Command Count bit 2</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="CC3" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Command Count bit 3</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="SubID0" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Sub ID bit 0</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="SubID1" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Sub ID bit 1</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="SubID2" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Sub ID bit 2</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="SubID3" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Sub ID bit 3</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="MasterID" Datatype="Byte">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Master ID</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+    <Member Name="McPar1" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">motion command parameter 1</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="McPar2" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">motion command parameter 2</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="McPar3" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">motion command parameter 3</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="McPar4" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">motion command parameter 4</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="McPar5" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">motion command parameter 5</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CgfHd" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Config Header</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CfgId" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Config Index</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CfgVal" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Config Value</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>TypeLinmotSd</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

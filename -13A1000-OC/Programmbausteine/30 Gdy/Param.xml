@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Plc" Datatype="&quot;TypeHeaderPlc&quot;" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Header Plc</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="conActive" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="err" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errWd" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errSd" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="errRd" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="bit05" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="bit06" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="bit07" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="sdBusy" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="sdDone" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="rdBusy" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="rdDone" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="sdOverload" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="statistic" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="bit16" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="bit17" Datatype="Bool">
+            <StartValue>FALSE</StartValue>
+          </Member>
+          <Member Name="sdState" Datatype="Word">
+            <StartValue>16#0000</StartValue>
+          </Member>
+          <Member Name="sdLastErrState" Datatype="Word">
+            <StartValue>16#0000</StartValue>
+          </Member>
+          <Member Name="sdLenght" Datatype="Int">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="sdCps" Datatype="Int">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="rdState" Datatype="Word">
+            <StartValue>16#0000</StartValue>
+          </Member>
+          <Member Name="rdLastErrState" Datatype="Word">
+            <StartValue>16#0000</StartValue>
+          </Member>
+          <Member Name="rdLenght" Datatype="Int">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="rdCps" Datatype="Int">
+            <StartValue>0</StartValue>
+          </Member>
+          <Member Name="in18" Datatype="Int">
+            <StartValue>0</StartValue>
+          </Member>
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="Rd" Datatype="Struct" Remanence="Retain">
+      <Member Name="watchdog" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">watchdog</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="adjHousingOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment scanner housing off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="adjTopOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment camera top off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="adjLeftOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment camera left off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="adjRightOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment camera  right off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="adjLaserTopLeftStepMotOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment laser top left off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjLaserTopRightStepMotOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment laser top right off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjLaserLeftTopStepMotOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment laser left top off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjLaserLeftBottomStepMotOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment laser left bottom off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjLaserRightTopStepMotOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment laser right top off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjLaserRightBottomStepMotOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment laser right bottom off (only manual movement possible ) [On/Off]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="param1" Datatype="Int" />
+      <Member Name="param2" Datatype="Int" />
+      <Member Name="param3" Datatype="Int" />
+      <Member Name="param4" Datatype="Int" />
+      <Member Name="air1Off" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner 1 scannerhousing visual measurement [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="air2Off" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner 2 scannerhousing visual measurement [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="airXrayOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner scannerhousing x-ray measurement [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="airDehOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air dehumidifier</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="param5" Datatype="Int">
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="param6" Datatype="Int">
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="blowOffImpuls" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off impulse [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>400</StartValue>
+      </Member>
+      <Member Name="blowOffIbreak" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off minimum break to start new cycle [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>400</StartValue>
+      </Member>
+      <Member Name="blowOffintervall" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off interval if no board pass [s]</MultiLanguageText>
+        </Comment>
+        <StartValue>120</StartValue>
+      </Member>
+      <Member Name="param10" Datatype="Int">
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="air1Active" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner 1 scannerhousing visual measurement active [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>1</StartValue>
+      </Member>
+      <Member Name="air1InputNo" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner 1 scannerhousing visual measurement input normal [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="air2Active" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner 2 scannerhousing visual measurement active [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="air2InputNo" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner 2 scannerhousing visual measurement input normal [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="airXrayActive" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner scannerhousing x-ray measurement active [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>1</StartValue>
+      </Member>
+      <Member Name="airXrayInputNo" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air conditioner scannerhousing x-ray measurement input normal [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="airDehActive" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air dehumidifier active [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="airDehInputNo" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">air dehumidifier input normal open [On/Off]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="param11" Datatype="Int">
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="blowOffintervallOff" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off interval if no board pass switches off after this time [s]</MultiLanguageText>
+        </Comment>
+        <StartValue>600</StartValue>
+      </Member>
+      <Member Name="blowOffDelayStartBottom" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off delay start for valve bottom [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="blowOffDelayStartLeft" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off delay start for valve left [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="blowOffDelayStartRight" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off delay start for valve right [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="blowOffDelayStartXray" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off delay start for valve xray [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="blowOffImpulsBottom" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off impulse for valve bottom [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>400</StartValue>
+      </Member>
+      <Member Name="blowOffImpulsLeft" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off impulse for valve left [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>400</StartValue>
+      </Member>
+      <Member Name="blowOffImpulsRight" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off impulse for valve right [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>400</StartValue>
+      </Member>
+      <Member Name="blowOffImpulsXray" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">blow off impulse for valve xray [ms]</MultiLanguageText>
+        </Comment>
+        <StartValue>400</StartValue>
+      </Member>
+      <Member Name="ParamRes" Datatype="Array[1..58] of Int">
+        <Subelement Path="1">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="3">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="4">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="5">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="6">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="7">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="8">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="9">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="10">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="11">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="12">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="13">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="14">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="15">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="16">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="17">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="18">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="19">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="20">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="21">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="22">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="23">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="24">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="25">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="26">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="27">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="28">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="29">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="30">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="31">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="32">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="33">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="34">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="35">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="36">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="37">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="38">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="39">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="40">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="41">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="42">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="43">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="44">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="45">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="46">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="47">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="48">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="49">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="50">
+          <StartValue>0</StartValue>
+        </Subelement>
+      </Member>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>Param</Name>
+      <Namespace />
+      <Number>352</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

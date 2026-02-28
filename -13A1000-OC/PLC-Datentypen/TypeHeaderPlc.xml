@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="conActive" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">connection is established</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="err" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault general</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errWd" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault watchdog</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errSd" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault send</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errRd" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault receive</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="bit05" Datatype="Bool" />
+    <Member Name="bit06" Datatype="Bool" />
+    <Member Name="bit07" Datatype="Bool" />
+    <Member Name="sdBusy" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">new data is sending</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sdDone" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">new data sended</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="rdBusy" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">new data is receiving</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="rdDone" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">new data received</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sdOverload" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">new data could not be sent because the Cp overloaded</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="statistic" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">statistic information are aviable</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="bit16" Datatype="Bool" />
+    <Member Name="bit17" Datatype="Bool" />
+    <Member Name="sdState" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">send state</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sdLastErrState" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">send last fault state</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sdLenght" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">send lenght [byte]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="sdCps" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">send counter per second</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="rdState" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">receive state</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="rdLastErrState" Datatype="Word">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">receive last fault state</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="rdLenght" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">receive lenght [byte]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="rdCps" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">receive counter per second</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="in18" Datatype="Int" />
+  </Section>
+</Sections></Interface>
+      <Name>TypeHeaderPlc</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

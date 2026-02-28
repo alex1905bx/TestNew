@@ -1,0 +1,291 @@
+﻿FUNCTION_BLOCK "Diag_PLCCheck"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      plcHwId { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : HW_DEVICE;   // Hardware ID
+   END_VAR
+
+   VAR_OUTPUT 
+      error { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool := FALSE;   // Rising edge informs that an error occurred during the execution of the FB
+      status { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word := #STATUS_EXECUTION_FINISHED;   // Current status of FB
+      statusID { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word;   // Current status ID of calling instruction
+   END_VAR
+
+   VAR_IN_OUT 
+      plcData : "UserDiag_typePLC";   // PLC diagnostics data
+   END_VAR
+
+   VAR 
+      statError { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool := FALSE;   // Static value for output error
+      statStatus { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word := #STATUS_EXECUTION_FINISHED;   // Static value for output status
+      statStatusID { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word;   // Static value for output statusID
+      statGeoAddr {InstructionName := 'GEOADDR'; LibVersion := '1.0'; ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : GEOADDR;   // Slot information
+      statGeoLaddr { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : HW_ANY := 16#0000;   // GEO2LOG hardware identifier
+      statProblemPlcModulStates { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#MODULES_STATES_UPPER_LIM] of Bool;   // Storage of the status of all modules in the PLC central station --> State: Problem
+      statFaultyPlcModulStates { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#MODULES_STATES_UPPER_LIM] of Bool;   // Storage of the status of all modules in the PLC central station --> State: Faulty
+      statExistingPlcModulStates { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#MODULES_STATES_UPPER_LIM] of Bool;   // Storage of the status of all modules in the PLC central station --> State: Exists
+      statActualCentralModules { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : USInt := 0;   // Actual number of modules in the central station (PLC)
+   END_VAR
+
+   VAR_TEMP 
+      tempSlotNum : Int;   // Index slot number
+      tempRetValGeo : Int;   // GEO2LOG error information
+      tempRetValLed : Int;   // Return value of system function LED
+      tempRetValModuleStates : Int;   // Return value system function ModuleStates
+   END_VAR
+
+   VAR CONSTANT 
+      STATUS_EXECUTION_FINISHED : Word := 16#0000;   // Execution finished without errors
+      ERR_MAX_SLOTS_PER_PLC : Word := 16#8400;   // There are more modules configured as defined with the user constant: USERDIAG_SLOTS_PER_PLC_UPPER_LIM
+      ID_LOCAL : Word := 1;   // StatusID local
+      ID_MODULE_STATES_CONFIGURED : Word := 2;   // StatusID during ModuleStates command (configured mode)
+      ID_MODULE_STATES_FAULTY : Word := 3;   // StatusID during ModuleStates command (faulty mode)
+      ID_MODULE_STATES_PROBLEM : Word := 4;   // StatusID during ModuleStates command (problem mode)
+      ID_MODULE_STATES_EXISTING : Word := 5;   // StatusID during ModuleStates command (existing mode)
+      ID_LED : Word := 12;   // StatusID occurred during LED command
+      MODE_FAULTY : USInt := 2;   // Used for instruction DeviceStates, read out all faulty devices
+      MODE_EXIST : USInt := 4;   // Used for instruction DeviceStates, read out all devices not reachable
+      MODE_PROBLEM : USInt := 5;   // Used for instruction DeviceStates, read out all devices with several problems
+      STATE_OK : USInt := 1;   // Module state: ok
+      STATE_FAULT : USInt := 2;   // Modulestate: fault
+      STATE_PROBLEM : USInt := 5;   // Module state: problem
+      STATE_WAS_FAULT : USInt := 12;   // Module state: was fault
+      STATE_PROBLEM_GONE : USInt := 15;   // Module state: had a problem
+      MODULE_OF_PLC : USInt := 4;   // GEO2LOG structure: HW type = 4
+      CPU : USInt := 0;   // GEO2LOG structure: Area = 0
+      CENTRAL_SYSTEM : USInt := 0;   // GEO2LOG structure: IO System = 0
+      CENTRAL_STATION : USInt := 0;   // GEO2LOG structure: Station = 0
+      NO_LED : Int := 0;   // LED does not exist
+      LED_OFF : Int := 1;   // LED is permanently switched off
+      LED_NO_INFO : Int := 9;   // LED exists, but status information not available
+      MODULES_STATES_UPPER_LIM : Int := 127;   // Upper array limit for output tag of instruction ModuleStates
+      ERROR_LED : UInt := 2;   // Identification number of the LED
+   END_VAR
+
+
+BEGIN
+	//=============================================================================
+	//SIEMENS AG
+	//(c)Copyright 2017 All Rights Reserved
+	//-----------------------------------------------------------------------------
+	//Library: 
+	//Tested with: S7-1516-3 PN/DP FW 2.0
+	//Engineering: TIA Portal V14 Update1
+	//Restrictions: Call in cyclic OB
+	//Requirements: -
+	//Functionality: Determine plc state and local module states
+	//-----------------------------------------------------------------------------
+	//Change log table:
+	//Version  Date       Expert in charge                Changes applied
+	//01.00.00 27.01.2017 Siemens Industry Online Support First released version
+	//=============================================================================
+	
+	IF (#plcHwId <> #plcData.hardwareId)
+	THEN
+	  #statGeoAddr.HWTYPE := #MODULE_OF_PLC;      // Hardware type 4: module
+	  #statGeoAddr.AREA := #CPU;                  // Area ID 0: CPU
+	  #statGeoAddr.IOSYSTEM := #CENTRAL_SYSTEM;   // PROFINET IO system (0 = central unit in the rack)
+	  #statGeoAddr.STATION := #CENTRAL_STATION;   // Number of the rack if area identifier AREA = 0 (central module)
+	  
+	  #statStatus := #STATUS_EXECUTION_FINISHED;
+	  #statStatusID := 0;
+	  #statError := FALSE;
+	  #statActualCentralModules := 0;
+	  
+	  // Reset PLC error state
+	  #plcData.error := FALSE;
+	  #plcData.errorLedActive := FALSE;
+	  
+	  FOR #tempSlotNum := 0 TO "USERDIAG_SLOTS_PER_PLC_UPPER_LIM" DO
+	    // Slot number
+	    #statGeoAddr.SLOT := INT_TO_UINT(#tempSlotNum);
+	    // read LADDR from local modules
+	    #tempRetValGeo := GEO2LOG(GEOADDR := #statGeoAddr,
+	                              LADDR => #statGeoLaddr);
+	    // Check Retval
+	    IF ((#tempRetValGeo = 0)
+	      AND (#statGeoLaddr <> 16#0))
+	    THEN
+	      // Store LADDR from local modules in diagnostic data block
+	      IF (#tempSlotNum = 1)
+	      THEN
+	        #plcData.hardwareId := #statGeoLaddr;
+	      END_IF;
+	      #plcData.slots[#tempSlotNum].hardwareId := #statGeoLaddr;
+	      #statActualCentralModules := #statActualCentralModules + 1;
+	      #plcData.slots[#tempSlotNum].configured := TRUE;
+	    ELSE
+	      // If the return value ist not = 0 --> the device/system/module is not
+	      // configured --> No error handling
+	      // set LADDR from local modules to 0 in diagnostic data block
+	      #plcData.slots[#tempSlotNum].hardwareId := 0;
+	      #plcData.slots[#tempSlotNum].configured := FALSE;
+	    END_IF;
+	    // Store the actual configured devices in the diagnostics DB
+	    #plcData.actualConfiguredSlots := #statActualCentralModules;
+	  END_FOR;
+	  
+	  // Check if further slots are configured
+	  #statGeoAddr.SLOT := INT_TO_UINT(#tempSlotNum);
+	  
+	  #tempRetValGeo := GEO2LOG(GEOADDR := #statGeoAddr,
+	                            LADDR => #statGeoLaddr);
+	  
+	  IF ((#tempRetValGeo = 0)
+	    AND (#statGeoLaddr <> 16#0))
+	  THEN
+	    // In the PLC are more slots configured as defined with the user constant
+	    #statStatus := #ERR_MAX_SLOTS_PER_PLC;
+	    #statStatusID := #ID_LOCAL;
+	    #statError := TRUE;
+	  END_IF;
+	  
+	END_IF;
+	
+	//=============================================================================
+	// Check LED status of PLC (only if FB is called in cyclically)
+	//=============================================================================
+	// #tempRetValLed := LED(LADDR := "Local~Common", LED := #ERROR_LED);
+	
+	// IF ((#tempRetValLed >= #NO_LED)
+	//   AND (#tempRetValLed <= #LED_NO_INFO))
+	// THEN
+	//   IF ((#tempRetValLed > #LED_OFF)
+	//     AND (#tempRetValLed < #LED_NO_INFO))
+	//   THEN
+	//     #plcData.errorLedActive := TRUE;
+	//   ELSE
+	//     #plcData.errorLedActive := FALSE;
+	//   END_IF;
+	// ELSE
+	//   // Error handling
+	//   #statStatus := INT_TO_WORD(#tempRetValLed);
+	//   #statStatusID := #ID_LED;
+	//   #statError := TRUE;
+	// END_IF;
+	
+	//=============================================================================
+	// Check modul states from LOCAL MODULES
+	//=============================================================================
+	// Check if central module are available - at least one module is always
+	// configured, the PLC itself
+	IF (#plcData.actualConfiguredSlots > 1)
+	THEN
+	  
+	  // Check the status of the local modules
+	  #tempRetValModuleStates := ModuleStates(LADDR := #plcHwId,
+	                                          MODE := #MODE_PROBLEM,
+	                                          STATE := #statProblemPlcModulStates);
+	  
+	  // Check if the block call was successful
+	  IF (#tempRetValModuleStates <> 0)
+	  THEN
+	    // Error handling
+	    #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	    #statStatusID := #ID_MODULE_STATES_PROBLEM;
+	    #statError := TRUE;
+	  ELSE
+	    ; // Everything is ok!
+	  END_IF;
+	  
+	  #tempRetValModuleStates := ModuleStates(LADDR := #plcHwId,
+	                                          MODE := #MODE_FAULTY,
+	                                          STATE := #statFaultyPlcModulStates);
+	  
+	  // Check if the block call was successful
+	  IF (#tempRetValModuleStates <> 0)
+	  THEN
+	    // Error handling
+	    #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	    #statStatusID := #ID_MODULE_STATES_FAULTY;
+	    #statError := TRUE;
+	  ELSE
+	    ; // Everything is ok!
+	  END_IF;
+	  
+	  #tempRetValModuleStates := ModuleStates(LADDR := #plcHwId,
+	                                          MODE := #MODE_EXIST,
+	                                          STATE := #statExistingPlcModulStates);
+	  
+	  // Check if the block call was successful
+	  IF (#tempRetValModuleStates <> 0)
+	  THEN
+	    // Error handling
+	    #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	    #statStatusID := #ID_MODULE_STATES_EXISTING;
+	    #statError := TRUE;
+	  ELSE
+	    ; // Everything is ok!
+	  END_IF;
+	  
+	ELSE
+	  ; // There are no central moduls configured
+	END_IF;
+	
+	//=============================================================================
+	// Set module states of LOCAL MODULES
+	//=============================================================================
+	#tempSlotNum := 0;
+	WHILE (#tempSlotNum <= #plcData.actualConfiguredSlots)
+	DO
+	  IF (#plcData.slots[#tempSlotNum].configured)
+	  THEN
+	    IF (#statExistingPlcModulStates[#tempSlotNum + 1] = TRUE)
+	    THEN
+	      #plcData.slots[#tempSlotNum].exists := TRUE;
+	      CASE #plcData.slots[#tempSlotNum].state OF
+	        #STATE_WAS_FAULT,
+	        #STATE_PROBLEM_GONE:
+	          ;
+	        #STATE_FAULT:
+	          #plcData.slots[#tempSlotNum].state := #STATE_WAS_FAULT;
+	        #STATE_PROBLEM:
+	          #plcData.slots[#tempSlotNum].state := #STATE_PROBLEM_GONE;
+	        ELSE
+	          #plcData.slots[#tempSlotNum].state := #STATE_OK;
+	      END_CASE;
+	    ELSE
+	      #plcData.slots[#tempSlotNum].error := TRUE;
+	      #plcData.error := TRUE;
+	      #plcData.slots[#tempSlotNum].exists := FALSE;
+	    END_IF;
+	    
+	    IF (#statFaultyPlcModulStates[#tempSlotNum + 1] = TRUE)
+	    THEN
+	      // Modul has a problem
+	      #plcData.slots[#tempSlotNum].faulty := TRUE;
+	      #plcData.slots[#tempSlotNum].problem := TRUE;
+	      #plcData.slots[#tempSlotNum].error := TRUE;
+	      #plcData.slots[#tempSlotNum].state := #STATE_FAULT;
+	    ELSIF (#statProblemPlcModulStates[#tempSlotNum + 1] = TRUE)
+	    THEN
+	      // Modul is faulty
+	      #plcData.slots[#tempSlotNum].problem := TRUE;
+	      #plcData.slots[#tempSlotNum].error := TRUE;
+	      #plcData.slots[#tempSlotNum].state := #STATE_PROBLEM;
+	    ELSE
+	      // Modul is OK
+	      #plcData.slots[#tempSlotNum].error := FALSE;
+	      #plcData.slots[#tempSlotNum].problem := FALSE;
+	      #plcData.slots[#tempSlotNum].faulty := FALSE;
+	    END_IF;
+	    
+	    // Error in PLC - Slot = 1, but index musst be increased by 1, because of bit 0 = group display
+	    // --> used index = 2
+	    IF (#statProblemPlcModulStates[2] = TRUE)
+	    THEN
+	      #plcData.error := TRUE;
+	    END_IF;
+	  END_IF;
+	  
+	  #tempSlotNum := #tempSlotNum + 1;
+	END_WHILE;
+	
+	// Write static values to outputs
+	#error := #statError;
+	#status := #statStatus;
+	#statusID := #statStatusID;
+	
+	//----------------------------------------------------------------------------------------------
+END_FUNCTION_BLOCK
+

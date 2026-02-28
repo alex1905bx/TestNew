@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="StatVar" Datatype="Struct">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">State Var</MultiLanguageText>
+      </Comment>
+      <Member Name="SubState" Datatype="Byte">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">main state</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="MainState" Datatype="Byte">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">sub state</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+    <Member Name="StatWord" Datatype="Struct">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Status Word</MultiLanguageText>
+      </Comment>
+      <Member Name="OperationEnabled" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = State Nr 8 or higher (copied to drive EN LED )</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="SwitchOnActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Control Word Bit 0</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="EnableOperation" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Control Word Bit 3</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Error" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Error</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="VoltageEnable" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Control Word Bit 1</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="QuickStop" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = Control Word Bit 2</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="SwitchOnLocked" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1= Release with 0 of Control word bit 0 (Switch On)</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Warning" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1 = One or more bits in the Warn Word are set</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="EventHandlerActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Event Handler setup</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="SpecialMotionActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Special motion commands (Homing, ..) runs</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="InTargetPosition" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Actual position after motion in window</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Homed" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Position sensor system valid</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="FatalError" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">A fatal error can not be acknowledged!</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="MotionActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Setpoint generation (VAI, curve) active</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="RangeIndicator1" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Defined UPID is in Range 1</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="RangeIndicator2" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">Defined UPID is in Range 2</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+    <Member Name="WarnWord" Datatype="Struct">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Warning Word</MultiLanguageText>
+      </Comment>
+      <Member Name="MotorHotSensor" Datatype="Bool" />
+      <Member Name="MotorShortTimerOverload" Datatype="Bool" />
+      <Member Name="MotorSupplyVoltageLow" Datatype="Bool" />
+      <Member Name="MotorSupplyVoltageHigh" Datatype="Bool" />
+      <Member Name="PositionLagAlways" Datatype="Bool" />
+      <Member Name="Res5" Datatype="Bool" />
+      <Member Name="DriveHot" Datatype="Bool" />
+      <Member Name="MotorNotHomed" Datatype="Bool" />
+      <Member Name="PTC_Sensor1Hot" Datatype="Bool" />
+      <Member Name="PTC_Sensor2Hot" Datatype="Bool" />
+      <Member Name="Res10" Datatype="Bool" />
+      <Member Name="Res11" Datatype="Bool" />
+      <Member Name="Res12" Datatype="Bool" />
+      <Member Name="Res13" Datatype="Bool" />
+      <Member Name="InterfaceWarnFlag" Datatype="Bool" />
+      <Member Name="ApplicationWarnFlag" Datatype="Bool" />
+    </Member>
+    <Member Name="Tarpos" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">target position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Actpos" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">actual position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="TarCurrent" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">target current</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CfgStatWord" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">config status word</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CfgId" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">config index response</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CfgVal" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">config value response</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>TypeLinmotRd</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

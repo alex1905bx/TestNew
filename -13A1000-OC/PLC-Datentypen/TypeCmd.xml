@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="auto" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">automatic mode</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="autoP" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">automatic plus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="autoM" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">automatic minus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="autoLift" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">automatic lift</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="autoLower" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">automatic lower</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="man" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual mode</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="manP" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual plus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="manM" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual minus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="manLift" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual lift</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="manLower" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual lower</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enable" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enPlus" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release plus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enMinus" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release minus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enLift" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release lift</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enLower" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release lower</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enAutoP" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release automatic plus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enAutoM" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release automatic minus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enAutoLift" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release automatic lift</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="enAutoLower" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release automatic lower</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="slow" Datatype="Bool" />
+    <Member Name="lamp" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">indication lamp</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ack" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault acknowledge</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="cycle" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">cycle start</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="goToGpos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">go to groundposition</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="goToCpos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">go to cm-position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="goToEpos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">go to endpos</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="goToWPos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">go to  wait/fly position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="inGpos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">in groundposition</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="inCpos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">in cm-position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="inEpos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">in endpos</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="inWPos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">in wait/fly position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="speed" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Desired speed raw in Hz or Upm</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="tarSpeed" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">target speed</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="mmCycle" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">milimeter per cycle</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="gain" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">gain</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ramp" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">ramp</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="startRamp" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">start ramp</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="stopRamp" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">stop ramp</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="gPos" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Desired value basic position [mm]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="cPos" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Desired value cm position [mm]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ePos" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Desired value end position [mm]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wPos" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Desired value wait/fly position [mm]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="tarMax" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">target maximum</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="tarMin" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">target minimum</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="target" Datatype="Real" />
+    <Member Name="actual" Datatype="Real" />
+  </Section>
+</Sections></Interface>
+      <Name>TypeCmd</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

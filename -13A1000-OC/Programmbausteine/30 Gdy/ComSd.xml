@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Plc" Datatype="&quot;TypeHeaderPlc&quot;">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Header Plc</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Pc" Datatype="&quot;TypeHeaderPcGld&quot;">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Header Pc</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Data" Datatype="Struct">
+      <Member Name="config" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">config</MultiLanguageText>
+        </Comment>
+        <Member Name="Version" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">version info</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="spare2" Datatype="Int" />
+        <Member Name="spare3" Datatype="Int" />
+        <Member Name="spare4" Datatype="Int" />
+      </Member>
+      <Member Name="control" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">control</MultiLanguageText>
+        </Comment>
+        <Member Name="spare" Datatype="Bool" />
+      </Member>
+      <Member Name="safety" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">safety</MultiLanguageText>
+        </Comment>
+        <Member Name="AreaLaserOn" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">area laser on</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="AreaAdjustmentOn" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">area adjustment on</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="AreaXrayOn" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">area X-Ray on</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="spare" Datatype="Bool" />
+      </Member>
+      <Member Name="status" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">status</MultiLanguageText>
+        </Comment>
+        <Member Name="ready" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">plc ready</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="err" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">plc error</MultiLanguageText>
+          </Comment>
+        </Member>
+      </Member>
+      <Member Name="Scanner" Datatype="&quot;TypeAxisSd&quot;">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment scanner</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Top" Datatype="&quot;TypeAxisSd&quot;">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment top</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Left" Datatype="&quot;TypeAxisSd&quot;">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment left</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Right" Datatype="&quot;TypeAxisSd&quot;">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment right</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Measure" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">measuring sensor for random width/thickness</MultiLanguageText>
+        </Comment>
+        <Member Name="ActValueTop" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">actual value [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="ActValueLeft" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">actual value [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="ActValueRight" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">actual value [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="Thickness" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">thickness [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="Width" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">width [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="SetCalibratePosTopOk" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">set calibrated position for sensor top ok</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="SetCalibratePosLeftOk" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">set calibrated position for sensor left ok</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="SetCalibratePosRightOk" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">set calibrated position for sensor right ok</MultiLanguageText>
+          </Comment>
+        </Member>
+      </Member>
+      <Member Name="PlcInputNormal" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">plc Input normal</MultiLanguageText>
+        </Comment>
+        <Member Name="I0.0" Datatype="Bool" />
+        <Member Name="I0.1" Datatype="Bool" />
+        <Member Name="I0.2" Datatype="Bool" />
+        <Member Name="I0.3" Datatype="Bool" />
+        <Member Name="I0.4" Datatype="Bool" />
+        <Member Name="I0.5" Datatype="Bool" />
+        <Member Name="I0.6" Datatype="Bool" />
+        <Member Name="I0.7" Datatype="Bool" />
+        <Member Name="I1.0" Datatype="Bool" />
+        <Member Name="I1.1" Datatype="Bool" />
+        <Member Name="I1.2" Datatype="Bool" />
+        <Member Name="I1.3" Datatype="Bool" />
+        <Member Name="I1.4" Datatype="Bool" />
+        <Member Name="I1.5" Datatype="Bool" />
+        <Member Name="I1.6" Datatype="Bool" />
+        <Member Name="I1.7" Datatype="Bool" />
+        <Member Name="I2.0" Datatype="Bool" />
+        <Member Name="I2.1" Datatype="Bool" />
+        <Member Name="I2.2" Datatype="Bool" />
+        <Member Name="I2.3" Datatype="Bool" />
+        <Member Name="I2.4" Datatype="Bool" />
+        <Member Name="I2.5" Datatype="Bool" />
+        <Member Name="I2.6" Datatype="Bool" />
+        <Member Name="I2.7" Datatype="Bool" />
+      </Member>
+      <Member Name="PlcInputSafety" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">plc Input safety</MultiLanguageText>
+        </Comment>
+        <Member Name="I800.0" Datatype="Bool" />
+        <Member Name="I800.1" Datatype="Bool" />
+        <Member Name="I800.2" Datatype="Bool" />
+        <Member Name="I800.3" Datatype="Bool" />
+        <Member Name="I808.0" Datatype="Bool" />
+        <Member Name="I808.1" Datatype="Bool" />
+        <Member Name="I808.2" Datatype="Bool" />
+        <Member Name="I808.3" Datatype="Bool" />
+        <Member Name="I816.0" Datatype="Bool" />
+        <Member Name="I816.1" Datatype="Bool" />
+        <Member Name="I816.2" Datatype="Bool" />
+        <Member Name="I816.3" Datatype="Bool" />
+        <Member Name="I824.0" Datatype="Bool" />
+        <Member Name="I824.1" Datatype="Bool" />
+        <Member Name="I824.2" Datatype="Bool" />
+        <Member Name="I824.3" Datatype="Bool" />
+      </Member>
+      <Member Name="PlcOutputNormal" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">plc output normal</MultiLanguageText>
+        </Comment>
+        <Member Name="Q0.0" Datatype="Bool" />
+        <Member Name="Q0.1" Datatype="Bool" />
+        <Member Name="Q0.2" Datatype="Bool" />
+        <Member Name="Q0.3" Datatype="Bool" />
+        <Member Name="Q0.4" Datatype="Bool" />
+        <Member Name="Q0.5" Datatype="Bool" />
+        <Member Name="Q0.6" Datatype="Bool" />
+        <Member Name="Q0.7" Datatype="Bool" />
+        <Member Name="Q1.0" Datatype="Bool" />
+        <Member Name="Q1.1" Datatype="Bool" />
+        <Member Name="Q1.2" Datatype="Bool" />
+        <Member Name="Q1.3" Datatype="Bool" />
+        <Member Name="Q1.4" Datatype="Bool" />
+        <Member Name="Q1.5" Datatype="Bool" />
+        <Member Name="Q1.6" Datatype="Bool" />
+        <Member Name="Q1.7" Datatype="Bool" />
+        <Member Name="Q2.0" Datatype="Bool" />
+        <Member Name="Q2.1" Datatype="Bool" />
+        <Member Name="Q2.2" Datatype="Bool" />
+        <Member Name="Q2.3" Datatype="Bool" />
+        <Member Name="Q2.4" Datatype="Bool" />
+        <Member Name="Q2.5" Datatype="Bool" />
+        <Member Name="Q2.6" Datatype="Bool" />
+        <Member Name="Q2.7" Datatype="Bool" />
+      </Member>
+      <Member Name="PlcOutputSafety" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">plc output safety</MultiLanguageText>
+        </Comment>
+        <Member Name="Q900.0" Datatype="Bool" />
+        <Member Name="Q900.1" Datatype="Bool" />
+        <Member Name="Q900.2" Datatype="Bool" />
+        <Member Name="Q900.3" Datatype="Bool" />
+        <Member Name="Q908.0" Datatype="Bool" />
+        <Member Name="Q908.1" Datatype="Bool" />
+        <Member Name="Q908.2" Datatype="Bool" />
+        <Member Name="Q908.3" Datatype="Bool" />
+      </Member>
+      <Member Name="res" Datatype="Array[1..200] of Byte" />
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>ComSd</Name>
+      <Namespace />
+      <Number>362</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="lampTest" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">lamp test</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="settingMode" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">setting mode active</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="jogMode" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">jog mode active</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="scannerReady" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">scanner ready</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="scannerErr" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">scanner error</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="scannerEmpty" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">scanner empty</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="releaseInfeed" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">release infeed</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="auto" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">automatic mode adjustment</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ack" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">reset faults general</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ackPC" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">reset faults pc</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="err" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault general</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="war" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">warning general</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="info" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">info general</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="pneOk" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">pneumatic ok</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="comOk" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">communication ok</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errPs-0F1.1+SGV" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault voltage monitoring for power supply</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errAc-0E1+SGV" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault air conditioner 1 visual</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errAc-0E2+SGX" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault air conditioner Xray</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errAc-0E1.1+SGV" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault air conditioner 2 visual</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errComPc" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault communication with pc</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errProfinet" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault profinet</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errAdjScanner" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault adjustment scanner</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errAdjTop" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault adjustment top</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errAdjLeft" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault adjustment left</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errAdjRight" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault adjustment right</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errVersion" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault version</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errSafetyModules" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault safety modules</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errNoReleaseInf" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault no release from plc to infeed</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Batch" Datatype="Struct" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">batch info - board data</MultiLanguageText>
+      </Comment>
+      <Member Name="stdActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">standardisation batch active</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="width" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">board width [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="widthMin" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">board width min [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="widthMax" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">board width max [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="thickness" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">board thickness [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="thicknessMin" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">board thickness min [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="thicknessMax" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">board thickness max [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="widthMeasure" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">board width measured value from sensors [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="thicknessMeasure" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">board thickness measured value from sensor [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="senLeftVal" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">sensor left value [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="senRightVal" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">sensor right value [mm]</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="offsetBoard" Datatype="Real">
+        <AttributeList>
+          <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+        </AttributeList>
+        <Comment>
+          <MultiLanguageText Lang="de-DE">offset board to middle [mm] - bigger then zero then board is shifted to the left side</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+    <Member Name="Cfg" Datatype="Struct" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">config</MultiLanguageText>
+      </Comment>
+      <Member Name="adjScannerActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment scanner housing active</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjTopActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment camera top active</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjLeftActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment camera left active</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjRightActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment camera  right active</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjTopActiveLinMot" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment top active - linear drive</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjLeftActiveLinMot" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment left active - linear drive</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="adjRightActiveLinMot" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment right active - linear drive</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="xrayActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">xray active</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="enc1Active" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">encoder 1 active (infeed)</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="senTopActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">sensor top active for random adjustment</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="senLeftActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">sensor left active for random adjustment</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="senRightActive" Datatype="Bool">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">sensor right active for random adjustment</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="modeBoardPassing" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1=left / 2=right / 3=middle</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="modeDimension" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1=fixed / 2=random width / 3=random thickness / 4=random width + thickness</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="modeRandomAdj" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1=with sensor / 2=with external data</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="enc1Gain" Datatype="Real">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">encoder 1 gain (infeed)</MultiLanguageText>
+        </Comment>
+      </Member>
+    </Member>
+    <Member Name="adjScannerOff" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment scanner housing off (only manual movement possible )</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="adjTopOff" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment camera top off (only manual movement possible )</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="adjLeftOff" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment camera left off (only manual movement possible )</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="adjRightOff" Datatype="Bool" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment camera  right off (only manual movement possible )</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="air1Off" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="air2Off" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="airXrayOff" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="airDehOff" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <IsRetainMemResEnabled>true</IsRetainMemResEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>G</Name>
+      <Namespace />
+      <Number>350</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+      <RetainMemoryReserve>100</RetainMemoryReserve>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

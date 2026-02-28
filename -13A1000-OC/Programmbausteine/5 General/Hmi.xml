@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <DBAccessibleFromOPCUA>false</DBAccessibleFromOPCUA>
+      <HeaderAuthor>MICROTEC</HeaderAuthor>
+      <HeaderFamily>HMI</HeaderFamily>
+      <HeaderName>HMI</HeaderName>
+      <HeaderVersion>1.0</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Clock" Datatype="Struct" Remanence="Retain">
+      <Member Name="Act" Datatype="Date_And_Time" />
+      <Member Name="Tar" Datatype="Date_And_Time" />
+      <Member Name="Set" Datatype="Bool" />
+      <Member Name="Read" Datatype="Bool" />
+    </Member>
+    <Member Name="operatingHours" Datatype="DInt" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">complete operating hours from Cpu</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">complete operating hours from Cpu</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="TimeOfDay" Datatype="Time_Of_Day" Remanence="Retain" />
+    <Member Name="TimeStamp" Datatype="DTL" Version="1.0" Remanence="Retain" />
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>Hmi</Name>
+      <Namespace />
+      <Number>75</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

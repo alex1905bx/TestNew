@@ -1,0 +1,2348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="Var" Datatype="&quot;TypeVar&quot;">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="T" Datatype="Array[1..20] of IEC_TIMER" Version="1.0">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="blowOff" Datatype="Bool">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="breakTime" Datatype="Time">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="intervallTime" Datatype="Time">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="intervallTimeOff" Datatype="Time">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+    </Member>
+    <Member Name="bottom" Datatype="Struct">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Member Name="delayStart" Datatype="Time" />
+      <Member Name="Impuls" Datatype="Time" />
+      <Member Name="start" Datatype="Bool" />
+      <Member Name="blowOff" Datatype="Bool" />
+    </Member>
+    <Member Name="left" Datatype="Struct">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Member Name="delayStart" Datatype="Time" />
+      <Member Name="Impuls" Datatype="Time" />
+      <Member Name="start" Datatype="Bool" />
+      <Member Name="blowOff" Datatype="Bool" />
+    </Member>
+    <Member Name="right" Datatype="Struct">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Member Name="delayStart" Datatype="Time" />
+      <Member Name="Impuls" Datatype="Time" />
+      <Member Name="start" Datatype="Bool" />
+      <Member Name="blowOff" Datatype="Bool" />
+    </Member>
+    <Member Name="xray" Datatype="Struct">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Member Name="delayStart" Datatype="Time" />
+      <Member Name="Impuls" Datatype="Time" />
+      <Member Name="start" Datatype="Bool" />
+      <Member Name="blowOff" Datatype="Bool" />
+    </Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>BlowOffValve</Name>
+      <Namespace />
+      <Number>550</Number>
+      <ProgrammingLanguage>FBD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>true</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="G" />
+        <Component Name="pneOk" />
+      </Symbol>
+    </Access>
+    <Part Name="Coil" UId="23" />
+  </Parts>
+  <Wires>
+    <Wire UId="24">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="in" />
+    </Wire>
+    <Wire UId="25">
+      <IdentCon UId="22" />
+      <NameCon UId="23" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>pneumatic ok</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v4">
+  <NewLine UId="21" />
+  <Access Scope="LocalVariable" UId="22">
+    <Symbol UId="23">
+      <Component Name="breakTime" UId="24" />
+    </Symbol>
+  </Access>
+  <Blank UId="25" />
+  <Token Text=":=" UId="26" />
+  <Blank UId="27" />
+  <Access Scope="Call" UId="28">
+    <Instruction Name="INT_TO_TIME" UId="29">
+      <Token Text="(" UId="30" />
+      <NamelessParameter UId="31">
+        <Access Scope="GlobalVariable" UId="32">
+          <Symbol UId="33">
+            <Component Name="Param" UId="34">
+              <BooleanAttribute Name="HasQuotes" UId="35">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="36" />
+            <Component Name="Rd" UId="37" />
+            <Token Text="." UId="38" />
+            <Component Name="blowOffIbreak" UId="39" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="41" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="42" />
+  <NewLine UId="43" />
+  <Access Scope="LocalVariable" UId="44">
+    <Symbol UId="45">
+      <Component Name="intervallTime" UId="46" />
+    </Symbol>
+  </Access>
+  <Blank UId="47" />
+  <Token Text=":=" UId="48" />
+  <Blank UId="49" />
+  <Access Scope="Call" UId="50">
+    <Instruction Name="UDINT_TO_TIME" UId="51">
+      <Token Text="(" UId="52" />
+      <NamelessParameter UId="53">
+        <Access Scope="Call" UId="54">
+          <Instruction Name="INT_TO_UDINT" UId="55">
+            <Token Text="(" UId="56" />
+            <NamelessParameter UId="57">
+              <Access Scope="GlobalVariable" UId="58">
+                <Symbol UId="59">
+                  <Component Name="Param" UId="60">
+                    <BooleanAttribute Name="HasQuotes" UId="61">true</BooleanAttribute>
+                  </Component>
+                  <Token Text="." UId="62" />
+                  <Component Name="Rd" UId="63" />
+                  <Token Text="." UId="64" />
+                  <Component Name="blowOffintervall" UId="65" />
+                </Symbol>
+              </Access>
+            </NamelessParameter>
+            <Token Text=")" UId="67" />
+          </Instruction>
+        </Access>
+        <Blank UId="68" />
+        <Token Text="*" UId="69" />
+        <Blank UId="70" />
+        <Access Scope="LiteralConstant" UId="71">
+          <Constant UId="72">
+            <ConstantValue UId="74">1000</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="76" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="77" />
+  <NewLine UId="78" />
+  <Access Scope="LocalVariable" UId="79">
+    <Symbol UId="80">
+      <Component Name="intervallTimeOff" UId="81" />
+    </Symbol>
+  </Access>
+  <Blank UId="82" />
+  <Token Text=":=" UId="83" />
+  <Blank UId="84" />
+  <Access Scope="Call" UId="85">
+    <Instruction Name="UDINT_TO_TIME" UId="86">
+      <Token Text="(" UId="87" />
+      <NamelessParameter UId="88">
+        <Access Scope="Call" UId="89">
+          <Instruction Name="INT_TO_UDINT" UId="90">
+            <Token Text="(" UId="91" />
+            <NamelessParameter UId="92">
+              <Access Scope="GlobalVariable" UId="93">
+                <Symbol UId="94">
+                  <Component Name="Param" UId="95">
+                    <BooleanAttribute Name="HasQuotes" UId="96">true</BooleanAttribute>
+                  </Component>
+                  <Token Text="." UId="97" />
+                  <Component Name="Rd" UId="98" />
+                  <Token Text="." UId="99" />
+                  <Component Name="blowOffintervallOff" UId="100" />
+                </Symbol>
+              </Access>
+            </NamelessParameter>
+            <Token Text=")" UId="102" />
+          </Instruction>
+        </Access>
+        <Blank UId="103" />
+        <Token Text="*" UId="104" />
+        <Blank UId="105" />
+        <Access Scope="LiteralConstant" UId="106">
+          <Constant UId="107">
+            <ConstantValue UId="109">1000</ConstantValue>
+          </Constant>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="111" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="112" />
+  <NewLine Num="2" UId="113" />
+  <LineComment UId="114">
+    <Text UId="115"> bottom</Text>
+  </LineComment>
+  <NewLine UId="116" />
+  <Access Scope="LocalVariable" UId="117">
+    <Symbol UId="118">
+      <Component Name="bottom" UId="119" />
+      <Token Text="." UId="120" />
+      <Component Name="delayStart" UId="121" />
+    </Symbol>
+  </Access>
+  <Blank UId="122" />
+  <Token Text=":=" UId="123" />
+  <Blank UId="124" />
+  <Access Scope="Call" UId="125">
+    <Instruction Name="INT_TO_TIME" UId="126">
+      <Token Text="(" UId="127" />
+      <NamelessParameter UId="128">
+        <Access Scope="GlobalVariable" UId="129">
+          <Symbol UId="130">
+            <Component Name="Param" UId="131">
+              <BooleanAttribute Name="HasQuotes" UId="132">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="133" />
+            <Component Name="Rd" UId="134" />
+            <Token Text="." UId="135" />
+            <Component Name="blowOffDelayStartBottom" UId="136" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="138" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="139" />
+  <NewLine UId="140" />
+  <Token Text="IF" UId="141" />
+  <Blank UId="142" />
+  <Access Scope="GlobalVariable" UId="143">
+    <Symbol UId="144">
+      <Component Name="Param" UId="145">
+        <BooleanAttribute Name="HasQuotes" UId="146">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="147" />
+      <Component Name="Rd" UId="148" />
+      <Token Text="." UId="149" />
+      <Component Name="blowOffImpulsBottom" UId="150" />
+    </Symbol>
+  </Access>
+  <Blank UId="151" />
+  <Token Text="&lt;&gt;" UId="152" />
+  <Blank UId="153" />
+  <Access Scope="LiteralConstant" UId="154">
+    <Constant UId="155">
+      <ConstantValue UId="157">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="158" />
+  <Token Text="THEN" UId="159" />
+  <NewLine UId="160" />
+  <Blank Num="4" UId="161" />
+  <Access Scope="LocalVariable" UId="162">
+    <Symbol UId="163">
+      <Component Name="bottom" UId="164" />
+      <Token Text="." UId="165" />
+      <Component Name="Impuls" UId="166" />
+    </Symbol>
+  </Access>
+  <Blank UId="167" />
+  <Token Text=":=" UId="168" />
+  <Blank UId="169" />
+  <Access Scope="Call" UId="170">
+    <Instruction Name="INT_TO_TIME" UId="171">
+      <Token Text="(" UId="172" />
+      <NamelessParameter UId="173">
+        <Access Scope="GlobalVariable" UId="174">
+          <Symbol UId="175">
+            <Component Name="Param" UId="176">
+              <BooleanAttribute Name="HasQuotes" UId="177">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="178" />
+            <Component Name="Rd" UId="179" />
+            <Token Text="." UId="180" />
+            <Component Name="blowOffImpulsBottom" UId="181" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="183" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="184" />
+  <NewLine UId="185" />
+  <Token Text="ELSE" UId="186" />
+  <NewLine UId="187" />
+  <Blank Num="4" UId="188" />
+  <Access Scope="LocalVariable" UId="189">
+    <Symbol UId="190">
+      <Component Name="bottom" UId="191" />
+      <Token Text="." UId="192" />
+      <Component Name="Impuls" UId="193" />
+    </Symbol>
+  </Access>
+  <Blank UId="194" />
+  <Token Text=":=" UId="195" />
+  <Blank UId="196" />
+  <Access Scope="Call" UId="197">
+    <Instruction Name="INT_TO_TIME" UId="198">
+      <Token Text="(" UId="199" />
+      <NamelessParameter UId="200">
+        <Access Scope="GlobalVariable" UId="201">
+          <Symbol UId="202">
+            <Component Name="Param" UId="203">
+              <BooleanAttribute Name="HasQuotes" UId="204">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="205" />
+            <Component Name="Rd" UId="206" />
+            <Token Text="." UId="207" />
+            <Component Name="blowOffImpuls" UId="208" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="210" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="211" />
+  <NewLine UId="212" />
+  <Token Text="END_IF" UId="213" />
+  <Token Text=";" UId="214" />
+  <NewLine Num="2" UId="215" />
+  <LineComment UId="216">
+    <Text UId="217"> left</Text>
+  </LineComment>
+  <NewLine UId="218" />
+  <Access Scope="LocalVariable" UId="219">
+    <Symbol UId="220">
+      <Component Name="left" UId="221" />
+      <Token Text="." UId="222" />
+      <Component Name="delayStart" UId="223" />
+    </Symbol>
+  </Access>
+  <Blank UId="224" />
+  <Token Text=":=" UId="225" />
+  <Blank UId="226" />
+  <Access Scope="Call" UId="227">
+    <Instruction Name="INT_TO_TIME" UId="228">
+      <Token Text="(" UId="229" />
+      <NamelessParameter UId="230">
+        <Access Scope="GlobalVariable" UId="231">
+          <Symbol UId="232">
+            <Component Name="Param" UId="233">
+              <BooleanAttribute Name="HasQuotes" UId="234">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="235" />
+            <Component Name="Rd" UId="236" />
+            <Token Text="." UId="237" />
+            <Component Name="blowOffDelayStartLeft" UId="238" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="240" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="241" />
+  <NewLine UId="242" />
+  <Token Text="IF" UId="243" />
+  <Blank UId="244" />
+  <Access Scope="GlobalVariable" UId="245">
+    <Symbol UId="246">
+      <Component Name="Param" UId="247">
+        <BooleanAttribute Name="HasQuotes" UId="248">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="249" />
+      <Component Name="Rd" UId="250" />
+      <Token Text="." UId="251" />
+      <Component Name="blowOffImpulsLeft" UId="252" />
+    </Symbol>
+  </Access>
+  <Blank UId="253" />
+  <Token Text="&lt;&gt;" UId="254" />
+  <Blank UId="255" />
+  <Access Scope="LiteralConstant" UId="256">
+    <Constant UId="257">
+      <ConstantValue UId="259">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="260" />
+  <Token Text="THEN" UId="261" />
+  <NewLine UId="262" />
+  <Blank Num="4" UId="263" />
+  <Access Scope="LocalVariable" UId="264">
+    <Symbol UId="265">
+      <Component Name="left" UId="266" />
+      <Token Text="." UId="267" />
+      <Component Name="Impuls" UId="268" />
+    </Symbol>
+  </Access>
+  <Blank UId="269" />
+  <Token Text=":=" UId="270" />
+  <Blank UId="271" />
+  <Access Scope="Call" UId="272">
+    <Instruction Name="INT_TO_TIME" UId="273">
+      <Token Text="(" UId="274" />
+      <NamelessParameter UId="275">
+        <Access Scope="GlobalVariable" UId="276">
+          <Symbol UId="277">
+            <Component Name="Param" UId="278">
+              <BooleanAttribute Name="HasQuotes" UId="279">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="280" />
+            <Component Name="Rd" UId="281" />
+            <Token Text="." UId="282" />
+            <Component Name="blowOffImpulsLeft" UId="283" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="285" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="286" />
+  <NewLine UId="287" />
+  <Token Text="ELSE" UId="288" />
+  <NewLine UId="289" />
+  <Blank Num="4" UId="290" />
+  <Access Scope="LocalVariable" UId="291">
+    <Symbol UId="292">
+      <Component Name="left" UId="293" />
+      <Token Text="." UId="294" />
+      <Component Name="Impuls" UId="295" />
+    </Symbol>
+  </Access>
+  <Blank UId="296" />
+  <Token Text=":=" UId="297" />
+  <Blank UId="298" />
+  <Access Scope="Call" UId="299">
+    <Instruction Name="INT_TO_TIME" UId="300">
+      <Token Text="(" UId="301" />
+      <NamelessParameter UId="302">
+        <Access Scope="GlobalVariable" UId="303">
+          <Symbol UId="304">
+            <Component Name="Param" UId="305">
+              <BooleanAttribute Name="HasQuotes" UId="306">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="307" />
+            <Component Name="Rd" UId="308" />
+            <Token Text="." UId="309" />
+            <Component Name="blowOffImpuls" UId="310" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="312" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="313" />
+  <NewLine UId="314" />
+  <Token Text="END_IF" UId="315" />
+  <Token Text=";" UId="316" />
+  <NewLine Num="2" UId="317" />
+  <LineComment UId="318">
+    <Text UId="319"> right</Text>
+  </LineComment>
+  <NewLine UId="320" />
+  <Access Scope="LocalVariable" UId="321">
+    <Symbol UId="322">
+      <Component Name="right" UId="323" />
+      <Token Text="." UId="324" />
+      <Component Name="delayStart" UId="325" />
+    </Symbol>
+  </Access>
+  <Blank UId="326" />
+  <Token Text=":=" UId="327" />
+  <Blank UId="328" />
+  <Access Scope="Call" UId="329">
+    <Instruction Name="INT_TO_TIME" UId="330">
+      <Token Text="(" UId="331" />
+      <NamelessParameter UId="332">
+        <Access Scope="GlobalVariable" UId="333">
+          <Symbol UId="334">
+            <Component Name="Param" UId="335">
+              <BooleanAttribute Name="HasQuotes" UId="336">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="337" />
+            <Component Name="Rd" UId="338" />
+            <Token Text="." UId="339" />
+            <Component Name="blowOffDelayStartRight" UId="340" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="342" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="343" />
+  <NewLine UId="344" />
+  <Token Text="IF" UId="345" />
+  <Blank UId="346" />
+  <Access Scope="GlobalVariable" UId="347">
+    <Symbol UId="348">
+      <Component Name="Param" UId="349">
+        <BooleanAttribute Name="HasQuotes" UId="350">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="351" />
+      <Component Name="Rd" UId="352" />
+      <Token Text="." UId="353" />
+      <Component Name="blowOffImpulsRight" UId="354" />
+    </Symbol>
+  </Access>
+  <Blank UId="355" />
+  <Token Text="&lt;&gt;" UId="356" />
+  <Blank UId="357" />
+  <Access Scope="LiteralConstant" UId="358">
+    <Constant UId="359">
+      <ConstantValue UId="361">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="362" />
+  <Token Text="THEN" UId="363" />
+  <NewLine UId="364" />
+  <Blank Num="4" UId="365" />
+  <Access Scope="LocalVariable" UId="366">
+    <Symbol UId="367">
+      <Component Name="right" UId="368" />
+      <Token Text="." UId="369" />
+      <Component Name="Impuls" UId="370" />
+    </Symbol>
+  </Access>
+  <Blank UId="371" />
+  <Token Text=":=" UId="372" />
+  <Blank UId="373" />
+  <Access Scope="Call" UId="374">
+    <Instruction Name="INT_TO_TIME" UId="375">
+      <Token Text="(" UId="376" />
+      <NamelessParameter UId="377">
+        <Access Scope="GlobalVariable" UId="378">
+          <Symbol UId="379">
+            <Component Name="Param" UId="380">
+              <BooleanAttribute Name="HasQuotes" UId="381">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="382" />
+            <Component Name="Rd" UId="383" />
+            <Token Text="." UId="384" />
+            <Component Name="blowOffImpulsRight" UId="385" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="387" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="388" />
+  <NewLine UId="389" />
+  <Token Text="ELSE" UId="390" />
+  <NewLine UId="391" />
+  <Blank Num="4" UId="392" />
+  <Access Scope="LocalVariable" UId="393">
+    <Symbol UId="394">
+      <Component Name="right" UId="395" />
+      <Token Text="." UId="396" />
+      <Component Name="Impuls" UId="397" />
+    </Symbol>
+  </Access>
+  <Blank UId="398" />
+  <Token Text=":=" UId="399" />
+  <Blank UId="400" />
+  <Access Scope="Call" UId="401">
+    <Instruction Name="INT_TO_TIME" UId="402">
+      <Token Text="(" UId="403" />
+      <NamelessParameter UId="404">
+        <Access Scope="GlobalVariable" UId="405">
+          <Symbol UId="406">
+            <Component Name="Param" UId="407">
+              <BooleanAttribute Name="HasQuotes" UId="408">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="409" />
+            <Component Name="Rd" UId="410" />
+            <Token Text="." UId="411" />
+            <Component Name="blowOffImpuls" UId="412" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="414" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="415" />
+  <NewLine UId="416" />
+  <Token Text="END_IF" UId="417" />
+  <Token Text=";" UId="418" />
+  <NewLine Num="2" UId="419" />
+  <LineComment UId="420">
+    <Text UId="421"> xray</Text>
+  </LineComment>
+  <NewLine UId="422" />
+  <Access Scope="LocalVariable" UId="423">
+    <Symbol UId="424">
+      <Component Name="xray" UId="425" />
+      <Token Text="." UId="426" />
+      <Component Name="delayStart" UId="427" />
+    </Symbol>
+  </Access>
+  <Blank UId="428" />
+  <Token Text=":=" UId="429" />
+  <Blank UId="430" />
+  <Access Scope="Call" UId="431">
+    <Instruction Name="INT_TO_TIME" UId="432">
+      <Token Text="(" UId="433" />
+      <NamelessParameter UId="434">
+        <Access Scope="GlobalVariable" UId="435">
+          <Symbol UId="436">
+            <Component Name="Param" UId="437">
+              <BooleanAttribute Name="HasQuotes" UId="438">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="439" />
+            <Component Name="Rd" UId="440" />
+            <Token Text="." UId="441" />
+            <Component Name="blowOffDelayStartXray" UId="442" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="444" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="445" />
+  <NewLine UId="446" />
+  <Token Text="IF" UId="447" />
+  <Blank UId="448" />
+  <Access Scope="GlobalVariable" UId="449">
+    <Symbol UId="450">
+      <Component Name="Param" UId="451">
+        <BooleanAttribute Name="HasQuotes" UId="452">true</BooleanAttribute>
+      </Component>
+      <Token Text="." UId="453" />
+      <Component Name="Rd" UId="454" />
+      <Token Text="." UId="455" />
+      <Component Name="blowOffImpulsXray" UId="456" />
+    </Symbol>
+  </Access>
+  <Blank UId="457" />
+  <Token Text="&lt;&gt;" UId="458" />
+  <Blank UId="459" />
+  <Access Scope="LiteralConstant" UId="460">
+    <Constant UId="461">
+      <ConstantValue UId="463">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank UId="464" />
+  <Token Text="THEN" UId="465" />
+  <NewLine UId="466" />
+  <Blank Num="4" UId="467" />
+  <Access Scope="LocalVariable" UId="468">
+    <Symbol UId="469">
+      <Component Name="xray" UId="470" />
+      <Token Text="." UId="471" />
+      <Component Name="Impuls" UId="472" />
+    </Symbol>
+  </Access>
+  <Blank UId="473" />
+  <Token Text=":=" UId="474" />
+  <Blank UId="475" />
+  <Access Scope="Call" UId="476">
+    <Instruction Name="INT_TO_TIME" UId="477">
+      <Token Text="(" UId="478" />
+      <NamelessParameter UId="479">
+        <Access Scope="GlobalVariable" UId="480">
+          <Symbol UId="481">
+            <Component Name="Param" UId="482">
+              <BooleanAttribute Name="HasQuotes" UId="483">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="484" />
+            <Component Name="Rd" UId="485" />
+            <Token Text="." UId="486" />
+            <Component Name="blowOffImpulsXray" UId="487" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="489" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="490" />
+  <NewLine UId="491" />
+  <Token Text="ELSE" UId="492" />
+  <NewLine UId="493" />
+  <Blank Num="4" UId="494" />
+  <Access Scope="LocalVariable" UId="495">
+    <Symbol UId="496">
+      <Component Name="xray" UId="497" />
+      <Token Text="." UId="498" />
+      <Component Name="Impuls" UId="499" />
+    </Symbol>
+  </Access>
+  <Blank UId="500" />
+  <Token Text=":=" UId="501" />
+  <Blank UId="502" />
+  <Access Scope="Call" UId="503">
+    <Instruction Name="INT_TO_TIME" UId="504">
+      <Token Text="(" UId="505" />
+      <NamelessParameter UId="506">
+        <Access Scope="GlobalVariable" UId="507">
+          <Symbol UId="508">
+            <Component Name="Param" UId="509">
+              <BooleanAttribute Name="HasQuotes" UId="510">true</BooleanAttribute>
+            </Component>
+            <Token Text="." UId="511" />
+            <Component Name="Rd" UId="512" />
+            <Token Text="." UId="513" />
+            <Component Name="blowOffImpuls" UId="514" />
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="516" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="517" />
+  <NewLine UId="518" />
+  <Token Text="END_IF" UId="519" />
+  <Token Text=";" UId="520" />
+  <NewLine UId="521" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>blow-off valve - parameter</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="Sen" />
+        <Component Name="1BTR2+SGV" />
+        <Component Name="occ" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="intervallTimeOff" />
+      </Symbol>
+    </Access>
+    <Part Name="TON" Version="1.0" UId="23">
+      <Instance Scope="LocalVariable" UId="24">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>5</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+      <Negated Name="IN" />
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="IN" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="23" Name="PT" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="23" Name="ET" />
+      <OpenCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="16" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>blow-off valve - if no board pass switches off after this time [s]</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="19" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="Sen" />
+        <Component Name="1BTR2+SGV" />
+        <Component Name="occ" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>5</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="intervallTimeOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="TypedConstant" UId="25">
+      <Constant>
+        <ConstantValue>T#0ms</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="intervallTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="Sen" />
+        <Component Name="1BTR2+SGV" />
+        <Component Name="occNe" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="breakTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="status" />
+        <Component Name="Auto" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Part Name="Eq" UId="32">
+      <TemplateValue Name="SrcType" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="O" UId="33">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <Negated Name="in1" />
+    </Part>
+    <Part Name="A" UId="34">
+      <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
+      <Negated Name="in1" />
+      <Negated Name="in2" />
+    </Part>
+    <Part Name="TON" Version="1.0" UId="35">
+      <Instance Scope="LocalVariable" UId="36">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>1</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="O" UId="37">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="TOF" Version="1.0" UId="38">
+      <Instance Scope="LocalVariable" UId="39">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>2</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+      <Negated Name="Q" />
+    </Part>
+    <Part Name="A" UId="40">
+      <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="41" />
+  </Parts>
+  <Wires>
+    <Wire UId="44">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in1" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="25" />
+      <NameCon UId="32" Name="in2" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="32" Name="out" />
+      <NameCon UId="33" Name="in2" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="23" />
+      <NameCon UId="33" Name="in1" />
+    </Wire>
+    <Wire UId="48">
+      <NameCon UId="33" Name="out" />
+      <NameCon UId="34" Name="in3" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="21" />
+      <NameCon UId="34" Name="in1" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="22" />
+      <NameCon UId="34" Name="in2" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="34" Name="out" />
+      <NameCon UId="35" Name="IN" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="26" />
+      <NameCon UId="35" Name="PT" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="35" Name="ET" />
+      <OpenCon UId="42" />
+    </Wire>
+    <Wire UId="54">
+      <NameCon UId="35" Name="Q" />
+      <NameCon UId="37" Name="in1" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="27" />
+      <NameCon UId="37" Name="in2" />
+    </Wire>
+    <Wire UId="56">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="40" Name="in1" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="IN" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="29" />
+      <NameCon UId="38" Name="PT" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="38" Name="ET" />
+      <OpenCon UId="43" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="38" Name="Q" />
+      <NameCon UId="40" Name="in2" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="in3" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="in" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="31" />
+      <NameCon UId="41" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>blow-off valve - timer</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="20" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>12</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="bottom" />
+        <Component Name="start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="bottom" />
+        <Component Name="delayStart" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>11</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="bottom" />
+        <Component Name="Impuls" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="bottom" />
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>14</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="left" />
+        <Component Name="start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="left" />
+        <Component Name="delayStart" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>13</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="left" />
+        <Component Name="Impuls" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="left" />
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>16</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="right" />
+        <Component Name="start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="right" />
+        <Component Name="delayStart" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>15</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="right" />
+        <Component Name="Impuls" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="right" />
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>18</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
+        <Component Name="xray" />
+        <Component Name="start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="42">
+      <Symbol>
+        <Component Name="xray" />
+        <Component Name="delayStart" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>17</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="44">
+      <Symbol>
+        <Component Name="xray" />
+        <Component Name="Impuls" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="xray" />
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Part Name="A" UId="46">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Sr" UId="47" />
+    <Part Name="TON" Version="1.0" UId="48">
+      <Instance Scope="LocalVariable" UId="49">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>11</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="A" UId="50">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="TOF" Version="1.0" UId="51">
+      <Instance Scope="LocalVariable" UId="52">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>12</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="53" />
+    <Part Name="Sr" UId="54" />
+    <Part Name="TON" Version="1.0" UId="55">
+      <Instance Scope="LocalVariable" UId="56">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>13</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="A" UId="57">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="TOF" Version="1.0" UId="58">
+      <Instance Scope="LocalVariable" UId="59">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>14</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="60" />
+    <Part Name="Sr" UId="61" />
+    <Part Name="TON" Version="1.0" UId="62">
+      <Instance Scope="LocalVariable" UId="63">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>15</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="A" UId="64">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="TOF" Version="1.0" UId="65">
+      <Instance Scope="LocalVariable" UId="66">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>16</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="67" />
+    <Part Name="Sr" UId="68" />
+    <Part Name="TON" Version="1.0" UId="69">
+      <Instance Scope="LocalVariable" UId="70">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>17</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="A" UId="71">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="TOF" Version="1.0" UId="72">
+      <Instance Scope="LocalVariable" UId="73">
+        <Component Name="T" AccessModifier="Array">
+          <Access Scope="LiteralConstant">
+            <Constant>
+              <ConstantType>DInt</ConstantType>
+              <ConstantValue>18</ConstantValue>
+            </Constant>
+          </Access>
+        </Component>
+      </Instance>
+      <TemplateValue Name="time_type" Type="Type">Time</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="74" />
+  </Parts>
+  <Wires>
+    <Wire UId="83">
+      <IdentCon UId="21" />
+      <NameCon UId="46" Name="in1" />
+    </Wire>
+    <Wire UId="84">
+      <NameCon UId="46" Name="out" />
+      <NameCon UId="47" Name="s" />
+      <NameCon UId="54" Name="s" />
+      <NameCon UId="61" Name="s" />
+      <NameCon UId="68" Name="s" />
+    </Wire>
+    <Wire UId="85">
+      <IdentCon UId="22" />
+      <NameCon UId="47" Name="r1" />
+    </Wire>
+    <Wire UId="86">
+      <IdentCon UId="23" />
+      <NameCon UId="47" Name="operand" />
+    </Wire>
+    <Wire UId="87">
+      <NameCon UId="47" Name="q" />
+      <NameCon UId="48" Name="IN" />
+    </Wire>
+    <Wire UId="88">
+      <IdentCon UId="24" />
+      <NameCon UId="48" Name="PT" />
+    </Wire>
+    <Wire UId="89">
+      <NameCon UId="48" Name="ET" />
+      <OpenCon UId="75" />
+    </Wire>
+    <Wire UId="90">
+      <NameCon UId="48" Name="Q" />
+      <NameCon UId="50" Name="in1" />
+    </Wire>
+    <Wire UId="91">
+      <IdentCon UId="25" />
+      <NameCon UId="50" Name="in2" />
+    </Wire>
+    <Wire UId="92">
+      <NameCon UId="50" Name="out" />
+      <NameCon UId="51" Name="IN" />
+    </Wire>
+    <Wire UId="93">
+      <IdentCon UId="26" />
+      <NameCon UId="51" Name="PT" />
+    </Wire>
+    <Wire UId="94">
+      <NameCon UId="51" Name="ET" />
+      <OpenCon UId="76" />
+    </Wire>
+    <Wire UId="95">
+      <NameCon UId="51" Name="Q" />
+      <NameCon UId="53" Name="in" />
+    </Wire>
+    <Wire UId="96">
+      <IdentCon UId="27" />
+      <NameCon UId="53" Name="operand" />
+    </Wire>
+    <Wire UId="97">
+      <IdentCon UId="28" />
+      <NameCon UId="54" Name="r1" />
+    </Wire>
+    <Wire UId="98">
+      <IdentCon UId="29" />
+      <NameCon UId="54" Name="operand" />
+    </Wire>
+    <Wire UId="99">
+      <NameCon UId="54" Name="q" />
+      <NameCon UId="55" Name="IN" />
+    </Wire>
+    <Wire UId="100">
+      <IdentCon UId="30" />
+      <NameCon UId="55" Name="PT" />
+    </Wire>
+    <Wire UId="101">
+      <NameCon UId="55" Name="ET" />
+      <OpenCon UId="77" />
+    </Wire>
+    <Wire UId="102">
+      <NameCon UId="55" Name="Q" />
+      <NameCon UId="57" Name="in1" />
+    </Wire>
+    <Wire UId="103">
+      <IdentCon UId="31" />
+      <NameCon UId="57" Name="in2" />
+    </Wire>
+    <Wire UId="104">
+      <NameCon UId="57" Name="out" />
+      <NameCon UId="58" Name="IN" />
+    </Wire>
+    <Wire UId="105">
+      <IdentCon UId="32" />
+      <NameCon UId="58" Name="PT" />
+    </Wire>
+    <Wire UId="106">
+      <NameCon UId="58" Name="ET" />
+      <OpenCon UId="78" />
+    </Wire>
+    <Wire UId="107">
+      <NameCon UId="58" Name="Q" />
+      <NameCon UId="60" Name="in" />
+    </Wire>
+    <Wire UId="108">
+      <IdentCon UId="33" />
+      <NameCon UId="60" Name="operand" />
+    </Wire>
+    <Wire UId="109">
+      <IdentCon UId="34" />
+      <NameCon UId="61" Name="r1" />
+    </Wire>
+    <Wire UId="110">
+      <IdentCon UId="35" />
+      <NameCon UId="61" Name="operand" />
+    </Wire>
+    <Wire UId="111">
+      <NameCon UId="61" Name="q" />
+      <NameCon UId="62" Name="IN" />
+    </Wire>
+    <Wire UId="112">
+      <IdentCon UId="36" />
+      <NameCon UId="62" Name="PT" />
+    </Wire>
+    <Wire UId="113">
+      <NameCon UId="62" Name="ET" />
+      <OpenCon UId="79" />
+    </Wire>
+    <Wire UId="114">
+      <NameCon UId="62" Name="Q" />
+      <NameCon UId="64" Name="in1" />
+    </Wire>
+    <Wire UId="115">
+      <IdentCon UId="37" />
+      <NameCon UId="64" Name="in2" />
+    </Wire>
+    <Wire UId="116">
+      <NameCon UId="64" Name="out" />
+      <NameCon UId="65" Name="IN" />
+    </Wire>
+    <Wire UId="117">
+      <IdentCon UId="38" />
+      <NameCon UId="65" Name="PT" />
+    </Wire>
+    <Wire UId="118">
+      <NameCon UId="65" Name="ET" />
+      <OpenCon UId="80" />
+    </Wire>
+    <Wire UId="119">
+      <NameCon UId="65" Name="Q" />
+      <NameCon UId="67" Name="in" />
+    </Wire>
+    <Wire UId="120">
+      <IdentCon UId="39" />
+      <NameCon UId="67" Name="operand" />
+    </Wire>
+    <Wire UId="121">
+      <IdentCon UId="40" />
+      <NameCon UId="68" Name="r1" />
+    </Wire>
+    <Wire UId="122">
+      <IdentCon UId="41" />
+      <NameCon UId="68" Name="operand" />
+    </Wire>
+    <Wire UId="123">
+      <NameCon UId="68" Name="q" />
+      <NameCon UId="69" Name="IN" />
+    </Wire>
+    <Wire UId="124">
+      <IdentCon UId="42" />
+      <NameCon UId="69" Name="PT" />
+    </Wire>
+    <Wire UId="125">
+      <NameCon UId="69" Name="ET" />
+      <OpenCon UId="81" />
+    </Wire>
+    <Wire UId="126">
+      <NameCon UId="69" Name="Q" />
+      <NameCon UId="71" Name="in1" />
+    </Wire>
+    <Wire UId="127">
+      <IdentCon UId="43" />
+      <NameCon UId="71" Name="in2" />
+    </Wire>
+    <Wire UId="128">
+      <NameCon UId="71" Name="out" />
+      <NameCon UId="72" Name="IN" />
+    </Wire>
+    <Wire UId="129">
+      <IdentCon UId="44" />
+      <NameCon UId="72" Name="PT" />
+    </Wire>
+    <Wire UId="130">
+      <NameCon UId="72" Name="ET" />
+      <OpenCon UId="82" />
+    </Wire>
+    <Wire UId="131">
+      <NameCon UId="72" Name="Q" />
+      <NameCon UId="74" Name="in" />
+    </Wire>
+    <Wire UId="132">
+      <IdentCon UId="45" />
+      <NameCon UId="74" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="21" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>blow-off valve - timer</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="27" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="bottom" />
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Active" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Q2.3" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Active" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="G" />
+        <Component Name="pneOk" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="O_2YV1/2.B+SGV" />
+      </Symbol>
+    </Access>
+    <Part Name="A" UId="27">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <Negated Name="in2" />
+    </Part>
+    <Part Name="A" UId="28">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="O" UId="29">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="A" UId="30">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="31" />
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="29" Name="in1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="in1" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in2" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in2" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="28" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="2B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>blow-off valve SGV - bottom</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="left" />
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Active" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Q2.4" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Active" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="G" />
+        <Component Name="pneOk" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="O_2YV1.L+SGV" />
+      </Symbol>
+    </Access>
+    <Part Name="A" UId="27">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <Negated Name="in2" />
+    </Part>
+    <Part Name="A" UId="28">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="O" UId="29">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="A" UId="30">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="31" />
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="29" Name="in1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="in1" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in2" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in2" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="32" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>blow-off valve SGV - left</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="right" />
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Active" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Q2.5" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Active" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="G" />
+        <Component Name="pneOk" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="O_2YV1.R+SGV" />
+      </Symbol>
+    </Access>
+    <Part Name="A" UId="27">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <Negated Name="in2" />
+    </Part>
+    <Part Name="A" UId="28">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="O" UId="29">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="A" UId="30">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="31" />
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="29" Name="in1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="in1" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in2" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in2" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="36" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="38" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="39" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="3A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>blow-off valve SGV - right</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="xray" />
+        <Component Name="blowOff" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Active" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Q2.6" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="ComRd" />
+        <Component Name="Data" />
+        <Component Name="TestOutput" />
+        <Component Name="Active" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="G" />
+        <Component Name="pneOk" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="O_5YV1+SGX" />
+      </Symbol>
+    </Access>
+    <Part Name="A" UId="27">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <Negated Name="in2" />
+    </Part>
+    <Part Name="A" UId="28">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="O" UId="29">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="A" UId="30">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="31" />
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="29" Name="in1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="in1" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in2" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in2" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="3F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="40" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>de-DE</Culture>
+                  <Text>blow-off valve SGX - xray</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="42" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="43" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="44" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="45" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

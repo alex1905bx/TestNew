@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <DBAccessibleFromOPCUA>false</DBAccessibleFromOPCUA>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Top" Datatype="Struct">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment top</MultiLanguageText>
+      </Comment>
+      <Member Name="Mode" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1=VAI / 2=SIN VA / 3=Bestehorn VAJ </MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="Test" Datatype="Struct">
+        <Member Name="ModeActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">mode test active (move between testpos 1 and 2)</MultiLanguageText>
+          </Comment>
+          <StartValue>false</StartValue>
+        </Member>
+        <Member Name="TarPos" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>5.0</StartValue>
+        </Member>
+        <Member Name="TarPos1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon 1 [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>5.0</StartValue>
+        </Member>
+        <Member Name="TarPos2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon 2 [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>155.0</StartValue>
+        </Member>
+        <Member Name="TimePosOk" Datatype="Time">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">time for position ok to switch to other position</MultiLanguageText>
+          </Comment>
+          <StartValue>T#2s</StartValue>
+        </Member>
+      </Member>
+      <Member Name="VAI" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">acceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>12.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>12.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="SinVA" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maixmal acceleration/deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>18.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">not used</MultiLanguageText>
+          </Comment>
+          <StartValue>0.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="BestehornVAJ" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maixmal acceleration/deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>24.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal jerk [m/s³]</MultiLanguageText>
+          </Comment>
+          <StartValue>450.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="Current" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">current monitoring</MultiLanguageText>
+        </Comment>
+        <Member Name="Man" Datatype="Struct">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">manual mode</MultiLanguageText>
+          </Comment>
+          <Member Name="War" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-3.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>2.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">warning error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+          <Member Name="Err" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-3.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>2.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+        </Member>
+        <Member Name="Auto" Datatype="Struct">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">auto mode</MultiLanguageText>
+          </Comment>
+          <Member Name="War" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-15.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>16.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">warning error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+          <Member Name="Err" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-15.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>16.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+        </Member>
+      </Member>
+    </Member>
+    <Member Name="Left" Datatype="Struct">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment left</MultiLanguageText>
+      </Comment>
+      <Member Name="Mode" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1=VAI / 2=SIN VA / 3=Bestehorn VAJ </MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="Test" Datatype="Struct">
+        <Member Name="ModeActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">mode test active (move between testpos 1 and 2)</MultiLanguageText>
+          </Comment>
+          <StartValue>false</StartValue>
+        </Member>
+        <Member Name="TarPos" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>5.0</StartValue>
+        </Member>
+        <Member Name="TarPos1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon 1 [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>5.0</StartValue>
+        </Member>
+        <Member Name="TarPos2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon 2 [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>155.0</StartValue>
+        </Member>
+        <Member Name="TimePosOk" Datatype="Time">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">time for position ok to switch to other position</MultiLanguageText>
+          </Comment>
+          <StartValue>T#2s</StartValue>
+        </Member>
+      </Member>
+      <Member Name="VAI" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">acceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>12.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>12.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="SinVA" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maixmal acceleration/deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>18.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">not used</MultiLanguageText>
+          </Comment>
+          <StartValue>0.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="BestehornVAJ" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maixmal acceleration/deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>24.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal jerk [m/s³]</MultiLanguageText>
+          </Comment>
+          <StartValue>450.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="Current" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">current monitoring</MultiLanguageText>
+        </Comment>
+        <Member Name="Man" Datatype="Struct">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">manual mode</MultiLanguageText>
+          </Comment>
+          <Member Name="War" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-3.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>2.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">warning error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+          <Member Name="Err" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-3.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>2.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+        </Member>
+        <Member Name="Auto" Datatype="Struct">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">auto mode</MultiLanguageText>
+          </Comment>
+          <Member Name="War" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-15.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>16.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">warning error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+          <Member Name="Err" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-15.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>16.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+        </Member>
+      </Member>
+    </Member>
+    <Member Name="Right" Datatype="Struct">
+      <AttributeList>
+        <BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute>
+        <BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute>
+      </AttributeList>
+      <Comment>
+        <MultiLanguageText Lang="de-DE">adjustment right</MultiLanguageText>
+      </Comment>
+      <Member Name="Mode" Datatype="Int">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">1=VAI / 2=SIN VA / 3=Bestehorn VAJ </MultiLanguageText>
+        </Comment>
+        <StartValue>0</StartValue>
+      </Member>
+      <Member Name="Test" Datatype="Struct">
+        <Member Name="ModeActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">mode test active (move between testpos 1 and 2)</MultiLanguageText>
+          </Comment>
+          <StartValue>false</StartValue>
+        </Member>
+        <Member Name="TarPos" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>5.0</StartValue>
+        </Member>
+        <Member Name="TarPos1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon 1 [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>5.0</StartValue>
+        </Member>
+        <Member Name="TarPos2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon 2 [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>155.0</StartValue>
+        </Member>
+        <Member Name="TimePosOk" Datatype="Time">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">time for position ok to switch to other position</MultiLanguageText>
+          </Comment>
+          <StartValue>T#2s</StartValue>
+        </Member>
+      </Member>
+      <Member Name="VAI" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">acceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>12.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>12.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="SinVA" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maixmal acceleration/deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>18.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">not used</MultiLanguageText>
+          </Comment>
+          <StartValue>0.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="BestehornVAJ" Datatype="Struct">
+        <Member Name="Par1" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">target positon [mm]</MultiLanguageText>
+          </Comment>
+          <StartValue>50.0</StartValue>
+        </Member>
+        <Member Name="Par2" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal velocity [m/s]</MultiLanguageText>
+          </Comment>
+          <StartValue>2.0</StartValue>
+        </Member>
+        <Member Name="Par3" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maixmal acceleration/deceleration [m/s²]</MultiLanguageText>
+          </Comment>
+          <StartValue>24.0</StartValue>
+        </Member>
+        <Member Name="Par4" Datatype="Real">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">maximal jerk [m/s³]</MultiLanguageText>
+          </Comment>
+          <StartValue>450.0</StartValue>
+        </Member>
+      </Member>
+      <Member Name="Current" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">current monitoring</MultiLanguageText>
+        </Comment>
+        <Member Name="Man" Datatype="Struct">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">manual mode</MultiLanguageText>
+          </Comment>
+          <Member Name="War" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-3.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>2.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">warning error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+          <Member Name="Err" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-3.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>2.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+        </Member>
+        <Member Name="Auto" Datatype="Struct">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">auto mode</MultiLanguageText>
+          </Comment>
+          <Member Name="War" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-15.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>16.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">warning error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+          <Member Name="Err" Datatype="Struct">
+            <Member Name="MinValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">min current value</MultiLanguageText>
+              </Comment>
+              <StartValue>-15.0</StartValue>
+            </Member>
+            <Member Name="MaxValue" Datatype="Real">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">max current value</MultiLanguageText>
+              </Comment>
+              <StartValue>16.0</StartValue>
+            </Member>
+            <Member Name="Err" Datatype="Bool">
+              <Comment>
+                <MultiLanguageText Lang="de-DE">error</MultiLanguageText>
+              </Comment>
+            </Member>
+          </Member>
+        </Member>
+      </Member>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>AdjFast</Name>
+      <Namespace />
+      <Number>506</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

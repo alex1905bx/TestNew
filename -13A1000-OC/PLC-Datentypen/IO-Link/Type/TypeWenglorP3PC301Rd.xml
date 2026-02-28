@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="Measure" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Actual measured value 60.000...66000µm (-1= Read error)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Scale" Datatype="SInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Scale -6 = µm</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="SCC1" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Signal output 1 (1= Occ)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="SCC2" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Signal output 2 (1= Occ)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Err" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Signal sensor error (1= Error)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Warn" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Signal sensor warning(1= warning)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Warn1" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Indication Error / Warning (1= true)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Warn2" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Indication Error / Warning (1= true)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Warn3" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Indication Error / Warning (1= true)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Warn4" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Indication Error / Warning (1= true)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>TypeWenglorP3PC301Rd</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

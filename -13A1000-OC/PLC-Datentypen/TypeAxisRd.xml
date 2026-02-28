@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="TargetPos" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">target position [mm/10]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="CalibratePos" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">calibrated position [mm/10]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="RefPosToBoard" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">reference position to board [mm/10]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="SetCalibratePos" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">set calibrated position</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ManModeActive" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual mode active</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ManPlus" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual plus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ManMinus" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual minus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ManRefRun" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">manual reference run</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>TypeAxisRd</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

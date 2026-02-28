@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="ActualEncPos" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">actual encoder position [mm/10]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ActualPos" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">actual position [mm/10]</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="LimitSwitchMin" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">limit switch min active</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="LimitSwitchMax" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">limit switch max active</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Err" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">error</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="ErrEnc" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">error encoder</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PosOk" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">position ok</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Plus" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">moves plus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Minus" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">moves minus</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="refRun" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">reference running</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="refOk" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">reference ok</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="SetCalibratePosOk" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">set calibrated position ok</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>TypeAxisSd</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

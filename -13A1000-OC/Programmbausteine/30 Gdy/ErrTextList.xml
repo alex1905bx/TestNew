@@ -1,0 +1,2218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="language" Datatype="Array[1..10] of WString[2]" Remanence="Retain">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">language for alarm text [ISO639-1]</MultiLanguageText>
+      </Comment>
+      <Subelement Path="1">
+        <StartValue>WSTRING#'de'</StartValue>
+      </Subelement>
+      <Subelement Path="2">
+        <StartValue>WSTRING#'en'</StartValue>
+      </Subelement>
+      <Subelement Path="3">
+        <StartValue>WSTRING#'it'</StartValue>
+      </Subelement>
+      <Subelement Path="4">
+        <StartValue>WSTRING#'fr'</StartValue>
+      </Subelement>
+      <Subelement Path="5">
+        <StartValue>WSTRING#'es'</StartValue>
+      </Subelement>
+    </Member>
+    <Member Name="writeMessage" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">write message from program to data block</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="err" Datatype="Array[2000..2205] of Struct">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">alarm text</MultiLanguageText>
+      </Comment>
+      <Member Name="idProd" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">producer Id (for Plc: 0=Program_Alarm, 4=SysDiag, 5=MotionControl, 6=Security, 8=GRAPH, 9=ProDiag)</MultiLanguageText>
+        </Comment>
+        <Subelement Path="2031">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2032">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2033">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2034">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2035">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2036">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2037">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2038">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2039">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2040">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2160">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2161">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2162">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2163">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2164">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2165">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2166">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2167">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2170">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2171">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2172">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2173">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2174">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2175">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2176">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2177">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2180">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2181">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2182">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2183">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2184">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2185">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2186">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2187">
+          <StartValue>0</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="id" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">alarm Id</MultiLanguageText>
+        </Comment>
+        <Subelement Path="2031">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2032">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2033">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2034">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2035">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2036">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2037">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2038">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2039">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2040">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2160">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2161">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2162">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2163">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2164">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2165">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2166">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2167">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2170">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2171">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2172">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2173">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2174">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2175">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2176">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2177">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2180">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2181">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2182">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2183">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2184">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2185">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2186">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2187">
+          <StartValue>0</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="prio" Datatype="UInt">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">0 .. 16  (0-1=info, 2=safety, 3=warning, 4-16=fault)</MultiLanguageText>
+        </Comment>
+        <Subelement Path="2000">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2001">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2002">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2004">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2005">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2010">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2011">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2013">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2014">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2016">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2017">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2019">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2020">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2030">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2031">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2032">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2033">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2034">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2035">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2036">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2037">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2038">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2039">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2040">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2050">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2052">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2054">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2060">
+          <StartValue>10</StartValue>
+        </Subelement>
+        <Subelement Path="2075">
+          <StartValue>2</StartValue>
+        </Subelement>
+        <Subelement Path="2080">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="2081">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="2082">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="2083">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="2090">
+          <StartValue>9</StartValue>
+        </Subelement>
+        <Subelement Path="2091">
+          <StartValue>9</StartValue>
+        </Subelement>
+        <Subelement Path="2100">
+          <StartValue>10</StartValue>
+        </Subelement>
+        <Subelement Path="2101">
+          <StartValue>10</StartValue>
+        </Subelement>
+        <Subelement Path="2102">
+          <StartValue>10</StartValue>
+        </Subelement>
+        <Subelement Path="2110">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2111">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2120">
+          <StartValue>12</StartValue>
+        </Subelement>
+        <Subelement Path="2121">
+          <StartValue>7</StartValue>
+        </Subelement>
+        <Subelement Path="2122">
+          <StartValue>7</StartValue>
+        </Subelement>
+        <Subelement Path="2123">
+          <StartValue>7</StartValue>
+        </Subelement>
+        <Subelement Path="2124">
+          <StartValue>7</StartValue>
+        </Subelement>
+        <Subelement Path="2125">
+          <StartValue>7</StartValue>
+        </Subelement>
+        <Subelement Path="2150">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="2151">
+          <StartValue>10</StartValue>
+        </Subelement>
+        <Subelement Path="2152">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2153">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2154">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2156">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2160">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="2161">
+          <StartValue>10</StartValue>
+        </Subelement>
+        <Subelement Path="2162">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2163">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2164">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2165">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2166">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2167">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2170">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="2171">
+          <StartValue>10</StartValue>
+        </Subelement>
+        <Subelement Path="2172">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2173">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2174">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2175">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2176">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2177">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2180">
+          <StartValue>11</StartValue>
+        </Subelement>
+        <Subelement Path="2181">
+          <StartValue>10</StartValue>
+        </Subelement>
+        <Subelement Path="2182">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2183">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2184">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2185">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2186">
+          <StartValue>1</StartValue>
+        </Subelement>
+        <Subelement Path="2187">
+          <StartValue>0</StartValue>
+        </Subelement>
+        <Subelement Path="2189">
+          <StartValue>8</StartValue>
+        </Subelement>
+        <Subelement Path="2190">
+          <StartValue>9</StartValue>
+        </Subelement>
+      </Member>
+      <Member Name="alarm" Datatype="Array[1..8] of WString[150]">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">alarm text</MultiLanguageText>
+        </Comment>
+        <Subelement Path="2000,1">
+          <StartValue>WSTRING#'PLC - Not Aus Taster gedrückt am Pc Terminal (-14SB0+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2000,2">
+          <StartValue>WSTRING#'PLC - Emergency stop pressed at Pc terminal (-14SB0+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2000,3">
+          <StartValue>WSTRING#'PLC - Tasto per arresto di emergenza premuto sul terminale Pc (-14SB0+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2000,4">
+          <StartValue>WSTRING#'PLC - Arrêt d`urgence appuyé sur le terminal PC (-14SB0+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2000,5">
+          <StartValue>WSTRING#'PLC - Parada de emergencia presionada en terminal Pc (-14SB0+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2001,1">
+          <StartValue>WSTRING#'PLC - Not Aus Schlüsselschalter ausgeschalten am Pc Terminal (-14SB1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2001,2">
+          <StartValue>WSTRING#'PLC - Emergency enable key switch off at Pc terminal (-14SB1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2001,3">
+          <StartValue>WSTRING#'PLC - Interruttore a chiave per aresto di emergenza spento sul terminale del PC (-14SB1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2001,4">
+          <StartValue>WSTRING#'PLC - Interrupteur d`urgence désactivé sur le terminal PC (-14SB1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2001,5">
+          <StartValue>WSTRING#'PLC - Interruptor de llave de parada de emergencia apagado en la terminal de la PC (-14SB1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2002,1">
+          <StartValue>WSTRING#'PLC - Quittierung notwendig für Not Aus Taster/Schlüsselschalter am Pc Terminal (-14SB0/1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2002,2">
+          <StartValue>WSTRING#'PLC - Acknowledge required for emergency stop/key switch at Pc terminal (-14SB0/1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2002,3">
+          <StartValue>WSTRING#'PLC - Reset richiesto per pulsante/interrutore di arresto di emergenza sul terminale PC (-14SB0/1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2002,4">
+          <StartValue>WSTRING#'PLC - Reconnaissance nécessaire pour l`arrêt d`urgence/interrupteur à clé sur le terminal PC (-14SB0/1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2002,5">
+          <StartValue>WSTRING#'PLC - Es necesario reiniciar para el botónIinterruptor de emergencia en terminal de PC (-14SB0/1+HMI.GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2004,1">
+          <StartValue>WSTRING#'PLC - Not Aus von externe machine (-XNA+SGV) - aktiv'</StartValue>
+        </Subelement>
+        <Subelement Path="2004,2">
+          <StartValue>WSTRING#'PLC - Emergency stop from external machine (-XNA+SGV) - active'</StartValue>
+        </Subelement>
+        <Subelement Path="2004,3">
+          <StartValue>WSTRING#'PLC - Arresto di emergenza da macchina esterna (-XNA+SGV) - attivo'</StartValue>
+        </Subelement>
+        <Subelement Path="2004,4">
+          <StartValue>WSTRING#'PLC - Arrêt d`urgence depuis une machine externe (-XNA+SGV) - actif'</StartValue>
+        </Subelement>
+        <Subelement Path="2004,5">
+          <StartValue>WSTRING#'PLC - Parada de emergencia desde máquina externa (-XNA+SGV) - activo'</StartValue>
+        </Subelement>
+        <Subelement Path="2005,1">
+          <StartValue>WSTRING#'PLC - Not Aus von externe machine (-XNA+SGV) - Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2005,2">
+          <StartValue>WSTRING#'PLC - Emergency stop from external machine (-XNA+SGV) - acknowledgement required'</StartValue>
+        </Subelement>
+        <Subelement Path="2005,3">
+          <StartValue>WSTRING#'PLC - Arresto di emergenza da macchina esterna (-XNA+SGV) - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2005,4">
+          <StartValue>WSTRING#'PLC - Arrêt d`urgence depuis une machine externe (-XNA+SGV) - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2005,5">
+          <StartValue>WSTRING#'PLC - Parada de emergencia desde máquina externa (-XNA+SGV) - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2010,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.TL+SGV bei Scanner für visuelle Beurteilung oben links - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2010,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.TL+SGV at scanner for visual measurement top left - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2010,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.TL+SGV sullo scanner per misurazione visiva in alto a sinistra - aperto'</StartValue>
+        </Subelement>
+        <Subelement Path="2010,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.TL+SGV au scanner pour mesure visuelle en haut à gauche - ouvert'</StartValue>
+        </Subelement>
+        <Subelement Path="2010,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.TL+SGV en el escáner para medición visual arriba a la izquierda - abierto'</StartValue>
+        </Subelement>
+        <Subelement Path="2011,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.TL+SGV bei Scanner für visuelle Beurteilung oben links - Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2011,2">
+          <StartValue>WSTRING#'PLC - safety switch -14SS1.TL+SGV at scanner for visual measurement top left - acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2011,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.TL+SGV sullo scanner per misurazione visiva in alto a sinistra - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2011,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.TL+SGV au scanner pour mesure visuelle en haut à gauche - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2011,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.TL+SGV en el escáner para medición visual arriba a la izquierda - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2013,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.BL+SGV bei Scanner für visuelle Beurteilung unten links - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2013,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.BL+SGV at scanner for visual measurement bottom left - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2013,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.BL+SGV sullo scanner per misurazione visiva in basso a sinistra - aperto'</StartValue>
+        </Subelement>
+        <Subelement Path="2013,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.BL+SGV au scanner pour mesure visuelle en bas à gauche - ouvert'</StartValue>
+        </Subelement>
+        <Subelement Path="2013,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.BL+SGV en el escáner para medición visual abajoa la izquierda - abierto'</StartValue>
+        </Subelement>
+        <Subelement Path="2014,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.BL+SGV bei Scanner für visuelle Beurteilung unten links - Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2014,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.BL+SGV at scanner for visual measurement bottom left - acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2014,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.BL+SGV sullo scanner per misurazione visiva in basso a sinistra - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2014,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.BL+SGV au scanner pour mesure visuelle en bas à gauche - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2014,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.BL+SGV en el escáner para medición visual abajoa la izquierda - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2016,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.TR+SGV bei Scanner für visuelle Beurteilung oben rechts- open'</StartValue>
+        </Subelement>
+        <Subelement Path="2016,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.TR+SGV at scanner for visual measurement top right - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2016,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.TR+SGV sullo scanner per misurazione visiva in alto a destra - aperto'</StartValue>
+        </Subelement>
+        <Subelement Path="2016,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.TR+SGV au scanner pour mesure visuelle en haut à droite - ouvert'</StartValue>
+        </Subelement>
+        <Subelement Path="2016,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.TR+SGV en el escáner para medición visual arriba a la derecha - abierto'</StartValue>
+        </Subelement>
+        <Subelement Path="2017,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.TR+SGV bei Scanner für visuelle Beurteilung oben rechts- Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2017,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.TR+SGV at scanner for visual measurement top right -  acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2017,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.TR+SGV sullo scanner per misurazione visiva in alto a destra - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2017,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.TR+SGV au scanner pour mesure visuelle en haut à droite - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2017,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.TR+SGV en el escáner para medición visual arriba a la derecha - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2019,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.BR+SGV bei Scanner für visuelle Beurteilung unten rechts - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2019,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.BR+SGV at scanner for visual measurement bottom right - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2019,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.BR+SGV sullo scanner per misurazione visiva in basso a destra - aperto'</StartValue>
+        </Subelement>
+        <Subelement Path="2019,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.BR+SGV au scanner pour mesure visuelle en bas à droite - ouvert'</StartValue>
+        </Subelement>
+        <Subelement Path="2019,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.BR+SGV en el escáner para medición visual abajo a la derecha - abierto'</StartValue>
+        </Subelement>
+        <Subelement Path="2020,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.BR+SGV bei Scanner für visuelle Beurteilung unten rechts - Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2020,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.BR+SGV at scanner for visual measurement bottom right -  acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2020,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.BR+SGV sullo scanner per misurazione visiva in basso a destra - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2020,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.BR+SGV au scanner pour mesure visuelle en bas à droite - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2020,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.BR+SGV en el escáner para medición visual abajo a la derecha - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2030,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.TL+SGX bei Scanner für X-Ray oben links - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2030,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.TL+SGX at scanner for X-Ray top left - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2030,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.TL+SGX sullo scanner per X-Ray in alto a sinistra - aperto'</StartValue>
+        </Subelement>
+        <Subelement Path="2030,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.TL+SGX au scanner pour X-Ray en haut à gauche - ouvert'</StartValue>
+        </Subelement>
+        <Subelement Path="2030,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.TL+SGX en el escáner para X-Ray arriba a la izquierda - abierto'</StartValue>
+        </Subelement>
+        <Subelement Path="2030,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2030,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2030,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2031,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.TL+SGX bei Scanner für X-Ray oben links - Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2031,2">
+          <StartValue>WSTRING#'PLC - safety switch -14SS1.TL+SGX at scanner for X-Ray top left - acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2031,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.TL+SGX sullo scanner per X-Ray in alto a sinistra - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2031,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.TL+SGX au scanner pour X-Ray en haut à gauche - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2031,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.TL+SGX en el escáner para X-Ray arriba a la izquierda - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2031,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2031,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2031,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2032,1">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2032,2">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2032,3">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2032,4">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2032,5">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2032,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2032,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2032,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2033,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.BL+SGX bei Scanner für X-Ray unten links - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2033,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.BL+SGX at scanner for X-Ray bottom left - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2033,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.BL+SGX sullo scanner per X-Ray in basso a sinistra - aperto'</StartValue>
+        </Subelement>
+        <Subelement Path="2033,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.BL+SGX au scanner pour X-Ray en bas à gauche - ouvert'</StartValue>
+        </Subelement>
+        <Subelement Path="2033,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.BL+SGX en el escáner para X-Ray abajoa la izquierda - abierto'</StartValue>
+        </Subelement>
+        <Subelement Path="2033,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2033,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2033,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2034,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.BL+SGX bei Scanner für X-Ray unten links - Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2034,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.BL+SGX at scanner for X-Rayt bottom left - acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2034,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.BL+SGX sullo scanner per X-Ray in basso a sinistra - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2034,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.BL+SGX au scanner pour X-Ray en bas à gauche - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2034,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.BL+SGX en el escáner para X-Ray abajoa la izquierda - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2034,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2034,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2034,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2035,1">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2035,2">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2035,3">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2035,4">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2035,5">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2035,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2035,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2035,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2036,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.TR+SGX bei Scanner für X-Ray oben rechts- open'</StartValue>
+        </Subelement>
+        <Subelement Path="2036,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.TR+SGX at scanner for X-Ray top right - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2036,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.TR+SGX sullo scanner per X-Ray in alto a destra - aperto'</StartValue>
+        </Subelement>
+        <Subelement Path="2036,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.TR+SGX au scanner pour X-Ray en haut à droite - ouvert'</StartValue>
+        </Subelement>
+        <Subelement Path="2036,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.TR+SGX en el escáner para X-Ray arriba a la derecha - abierto'</StartValue>
+        </Subelement>
+        <Subelement Path="2036,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2036,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2036,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2037,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.TR+SGX bei Scanner für X-Ray oben rechts- Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2037,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.TR+SGX at scanner for X-Ray top right -  acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2037,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.TR+SGX sullo scanner per X-Ray in alto a destra - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2037,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.TR+SGX au scanner pour X-Ray en haut à droite - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2037,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.TR+SGX en el escáner para X-Ray arriba a la derecha - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2037,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2037,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2037,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2038,1">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2038,2">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2038,3">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2038,4">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2038,5">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2038,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2038,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2038,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2039,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.BR+SGX bei Scanner für X-Ray unten rechts - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2039,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.BR+SGX at scanner for X-Ray bottom right - open'</StartValue>
+        </Subelement>
+        <Subelement Path="2039,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.BR+SGX sullo scanner per X-Ray in basso a destra - aperto'</StartValue>
+        </Subelement>
+        <Subelement Path="2039,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.BR+SGX au scanner pour X-Ray en bas à droite - ouvert'</StartValue>
+        </Subelement>
+        <Subelement Path="2039,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.BR+SGX en el escáner para X-Ray abajo a la derecha - abierto'</StartValue>
+        </Subelement>
+        <Subelement Path="2039,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2039,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2039,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2040,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsschalter -14SS1.BR+SGX bei Scanner für X-Ray unten rechts - Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2040,2">
+          <StartValue>WSTRING#'PLC - Safety switch -14SS1.BR+SGX at scanner for X-Ray bottom right -  acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2040,3">
+          <StartValue>WSTRING#'PLC - Interruttore di sicurezza -14SS1.BR+SGX sullo scanner per X-Ray in basso a destra - reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2040,4">
+          <StartValue>WSTRING#'PLC - interrupteur de sécurité -14SS1.BR+SGX au scanner pour X-Ray en bas à droite - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2040,5">
+          <StartValue>WSTRING#'PLC - interruptor de seguridad -14SS1.BR+SGX en el escáner para X-Ray abajo a la derecha - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2050,1">
+          <StartValue>WSTRING#'PLC - Schlüsselschalter für Einrichtbetrieb am Scanner links aktiviert (-14SB1+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2050,2">
+          <StartValue>WSTRING#'PLC - setting mode key switch at scanner left active (-14SB1+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2050,3">
+          <StartValue>WSTRING#'PLC - Interruttore a chiave per la modalità di impostazione attivato sullo scanner a sinistra (-14SB1+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2050,4">
+          <StartValue>WSTRING#'PLC - commutateur à clé du mode de réglage à gauche du scanner actif (-14SB1+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2050,5">
+          <StartValue>WSTRING#'PLC - interruptor de modo de ajuste a la izquierda del escáner activo (-14SB1+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2052,1">
+          <StartValue>WSTRING#'PLC - Taster für Freigabe Verstellungen am Scanner links aktiviert (-14SB2+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2052,2">
+          <StartValue>WSTRING#'PLC - button to enable adjustments at scanner left active (-14SB21+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2052,3">
+          <StartValue>WSTRING#'PLC - pulsante per abilitare le assi attivato sullo scanner a sinistra (-14SB2+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2052,4">
+          <StartValue>WSTRING#'PLC - bouton pour activer les réglages à gauche du scanner actif (-14SB2+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2052,5">
+          <StartValue>WSTRING#'PLC - botón para habilitar ajustes a la izquierda del escáner activo (-14SB2+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2054,1">
+          <StartValue>WSTRING#'PLC - Kühlgeräte wurden am Scanner rechts deaktiviert (-14SB2+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2054,2">
+          <StartValue>WSTRING#'PLC - air-conditioning is switched off at scanner right (-0SH1+SSTR)'</StartValue>
+        </Subelement>
+        <Subelement Path="2054,3">
+          <StartValue>WSTRING#'PLC - l`aria condizionata è stata spenta sullo scanner a destra (-14SB2+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2054,4">
+          <StartValue>WSTRING#'PLC - la climatisation est éteinte au niveau du scanner à droite (-14SB2+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2054,5">
+          <StartValue>WSTRING#'PLC - El aire acondicionado está apagado en el escáner a la derecha (-14SB2+SSTL)'</StartValue>
+        </Subelement>
+        <Subelement Path="2060,1">
+          <StartValue>WSTRING#'PLC - Störung Sicherheitsmodule'</StartValue>
+        </Subelement>
+        <Subelement Path="2060,2">
+          <StartValue>WSTRING#'PLC - fault safety modules plc'</StartValue>
+        </Subelement>
+        <Subelement Path="2060,3">
+          <StartValue>WSTRING#'PLC - errore sui moduli di sicurezza'</StartValue>
+        </Subelement>
+        <Subelement Path="2060,4">
+          <StartValue>WSTRING#'PLC - modules de sécurité contre les défauts'</StartValue>
+        </Subelement>
+        <Subelement Path="2060,5">
+          <StartValue>WSTRING#'PLC - módulos de seguridad contra fallas'</StartValue>
+        </Subelement>
+        <Subelement Path="2075,1">
+          <StartValue>WSTRING#'PLC - Sicherheitsbereich Extern oder Intern ausgeschalten - Quittierung notwendig'</StartValue>
+        </Subelement>
+        <Subelement Path="2075,2">
+          <StartValue>WSTRING#'PLC - safety area internal/external switched off - acknowledge required'</StartValue>
+        </Subelement>
+        <Subelement Path="2075,3">
+          <StartValue>WSTRING#'PLC - area di sicurezza interna/esterna spenta- reset necessario'</StartValue>
+        </Subelement>
+        <Subelement Path="2075,4">
+          <StartValue>WSTRING#'PLC - zone de sécurité interne/externe désactivée - réinitialiser requis'</StartValue>
+        </Subelement>
+        <Subelement Path="2075,5">
+          <StartValue>WSTRING#'PLC - area de seguridad interna/externa apagada - es necesario reiniciar'</StartValue>
+        </Subelement>
+        <Subelement Path="2080,1">
+          <StartValue>WSTRING#'PLC - Störung Rückführung Sicherheitsbereich - Bereich laser (-14KA1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2080,2">
+          <StartValue>WSTRING#'PLC - fault safety feedback monitoring - area laser (-14KA1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2080,3">
+          <StartValue>WSTRING#'PLC - errore monitoraggio feedback di sicurezza - area laser (-14KA1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2080,4">
+          <StartValue>WSTRING#'PLC - défaut surveillance de la sécurité - zone laser (-14KA1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2080,5">
+          <StartValue>WSTRING#'PLC - fallo de monitoreo de retroalimentación de seguridad - área de láser (-14KA1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2081,1">
+          <StartValue>WSTRING#'PLC - Störung Rückführung Sicherheitsbereich - Bereich Verstellung (-14KA2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2081,2">
+          <StartValue>WSTRING#'PLC - fault safety feedback monitoring - area adjustment (-14KA2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2081,3">
+          <StartValue>WSTRING#'PLC - errore monitoraggio feedback di sicurezza - area posizionamento (-14KA2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2081,4">
+          <StartValue>WSTRING#'PLC - défaut surveillance de la sécurité - zone réglage (-14KA2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2081,5">
+          <StartValue>WSTRING#'PLC - fallo de monitoreo de retroalimentación de seguridad - área de ajuste (-14KA2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2082,1">
+          <StartValue>WSTRING#'PLC - Störung Rückführung Sicherheitsbereich - Bereich Verstellung LINMOT (8U1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2082,2">
+          <StartValue>WSTRING#'PLC - fault safety feedback monitoring - area adjustment LINMOT (8U1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2082,3">
+          <StartValue>WSTRING#'PLC - errore monitoraggio feedback di sicurezza - area posizionamento LINMOT (8U1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2082,4">
+          <StartValue>WSTRING#'PLC - défaut surveillance de la sécurité - zone réglage LINMOT (8U1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2082,5">
+          <StartValue>WSTRING#'PLC - fallo de monitoreo de retroalimentación de seguridad - área de ajuste LINMOT (8U1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2083,1">
+          <StartValue>WSTRING#'PLC - Störung Rückführung Sicherheitsbereich - Bereich X-Ray (-5AX1+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2083,2">
+          <StartValue>WSTRING#'PLC - fault safety feedback monitoring - area X-Ray (-5AX1+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2083,3">
+          <StartValue>WSTRING#'PLC - errore monitoraggio feedback di sicurezza - area X-Ray (-5AX1+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2083,4">
+          <StartValue>WSTRING#'PLC - défaut surveillance de la sécurité - zone X-Ray (-5AX1+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2083,5">
+          <StartValue>WSTRING#'PLC - fallo de monitoreo de retroalimentación de seguridad - área X-Ray (-5AX1+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2090,1">
+          <StartValue>WSTRING#'PLC - Störung Lichtschranke im Scanner für visuelle Beurteilung (-1BTR2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2090,2">
+          <StartValue>WSTRING#'PLC - fault light barrier in scanner for visual measurement (-1BTR2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2090,3">
+          <StartValue>WSTRING#'PLC - errore sensore nel scanner per misurazione visiva (-1BTR2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2090,4">
+          <StartValue>WSTRING#'PLC - défaut capteur dans le scanner pour la mesure visuelle (-1BTR2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2090,5">
+          <StartValue>WSTRING#'PLC - fallo de sensor en escáner para medición visual (-1BTR2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2091,1">
+          <StartValue>WSTRING#'PLC - Störung Lichtschranke vor Scanner für X-Ray (-1BTR2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2091,2">
+          <StartValue>WSTRING#'PLC - fault light barrier before scanner for X-Ray (-1BTR2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2091,3">
+          <StartValue>WSTRING#'PLC - errore sensore prime dello scanner per X-Ray (-1BTR2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2091,4">
+          <StartValue>WSTRING#'PLC - défaut capteur avant le scanner pour X-Ray (-1BTR2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2091,5">
+          <StartValue>WSTRING#'PLC - fallo de sensor antes escáner para X-Ray (-1BTR2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2100,1">
+          <StartValue>WSTRING#'PLC - Störung Encoder vor Scanner (-1BCI1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2100,2">
+          <StartValue>WSTRING#'PLC - fault encoder before scanner (-1BCI1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2100,3">
+          <StartValue>WSTRING#'PLC - errore encoder davanti allo scanner (-1BCI1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2100,4">
+          <StartValue>WSTRING#'PLC - défaut codeur avant le scanner (-1BCI1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2100,5">
+          <StartValue>WSTRING#'PLC - fallo de codificador antes escáner (-1BCI1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2101,1">
+          <StartValue>WSTRING#'PLC - Störung Encoder im Scanner (-1BCM1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2101,2">
+          <StartValue>WSTRING#'PLC - fault encoder in scanner (-1BCM1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2101,3">
+          <StartValue>WSTRING#'PLC - errore encoder nello scanner (-1BCM1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2101,4">
+          <StartValue>WSTRING#'PLC - défaut codeur dans le scanner (-1BCM1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2101,5">
+          <StartValue>WSTRING#'PLC - fallo de codificador en escáner (-1BCM1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2102,1">
+          <StartValue>WSTRING#'PLC - Störung Encoder nach Scanner (-1BCO1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2102,2">
+          <StartValue>WSTRING#'PLC - fault encoder after scanner (-1BCO1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2102,3">
+          <StartValue>WSTRING#'PLC - errore encoder dopo lo scanner (-1BCO1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2102,4">
+          <StartValue>WSTRING#'PLC - défaut codeur après le scanner (-1BCO1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2102,5">
+          <StartValue>WSTRING#'PLC - fallo de codificador después del escáner (-1BCO1+GLD)'</StartValue>
+        </Subelement>
+        <Subelement Path="2110,1">
+          <StartValue>WSTRING#'PLC - Störung Kommunikation mit Goldeneye Pc'</StartValue>
+        </Subelement>
+        <Subelement Path="2110,2">
+          <StartValue>WSTRING#'PLC - fault communication with Goldeneye Pc'</StartValue>
+        </Subelement>
+        <Subelement Path="2110,3">
+          <StartValue>WSTRING#'PLC - errore comunicazione con Goldeneye Pc'</StartValue>
+        </Subelement>
+        <Subelement Path="2110,4">
+          <StartValue>WSTRING#'PLC - défaut communication avec Goldeneye Pc'</StartValue>
+        </Subelement>
+        <Subelement Path="2110,5">
+          <StartValue>WSTRING#'PLC - fallo comunicación con Goldeneye Pc'</StartValue>
+        </Subelement>
+        <Subelement Path="2111,1">
+          <StartValue>WSTRING#'PLC - Keine Freigabe vom Goldeneye Pc für den Einzug'</StartValue>
+        </Subelement>
+        <Subelement Path="2111,2">
+          <StartValue>WSTRING#'PLC - no release from Goldeneye Pc to infeed'</StartValue>
+        </Subelement>
+        <Subelement Path="2111,3">
+          <StartValue>WSTRING#'PLC - nessun permesso dal Goldeneye Pc per alimentazione '</StartValue>
+        </Subelement>
+        <Subelement Path="2111,4">
+          <StartValue>WSTRING#'PLC - pas de sortie de Goldeneye PC pour infeed'</StartValue>
+        </Subelement>
+        <Subelement Path="2111,5">
+          <StartValue>WSTRING#'PLC - no hay liberación de Goldeneye Pc para la entrada'</StartValue>
+        </Subelement>
+        <Subelement Path="2120,1">
+          <StartValue>WSTRING#'PLC - Störung elektronischer Schutzschalter (-0F1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2120,2">
+          <StartValue>WSTRING#'PLC - fault electronic circuit breaker (-0F1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2120,3">
+          <StartValue>WSTRING#'PLC - errore interruttore elettronico (-0F1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2120,4">
+          <StartValue>WSTRING#'PLC - défaut disjoncteur électronique (-0F1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2120,5">
+          <StartValue>WSTRING#'PLC - fallo disyuntor electrónico (-0F1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2121,1">
+          <StartValue>WSTRING#'PLC - Störung Kühlgerät 1 bei Scanner für visuelle Beurteilung (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2121,2">
+          <StartValue>WSTRING#'PLC - fault air-conditioning unit 1 for scannerhousing visual measurement (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2121,3">
+          <StartValue>WSTRING#'PLC - errore unità di raffreddamento 1 per scanner per misurazione visiva (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2121,4">
+          <StartValue>WSTRING#'PLC - défaut unité de refroidissement 1 chez scanner pour mesure visuelle (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2121,5">
+          <StartValue>WSTRING#'PLC - fallo unidad de refrigeración 1 para escáner para medición visual (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2122,1">
+          <StartValue>WSTRING#'PLC - Störung Kühlgerät bei Scanner für X-Ray (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2122,2">
+          <StartValue>WSTRING#'PLC - fault air-conditioning unit for scannerhousing  X-Ray (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2122,3">
+          <StartValue>WSTRING#'PLC - errore unità di raffreddamento per scanner per X-Ray (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2122,4">
+          <StartValue>WSTRING#'PLC - défaut unité de refroidissement chez scanner pour X-Ray (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2122,5">
+          <StartValue>WSTRING#'PLC - fallo unidad de refrigeración para escáner para X-Ray (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2123,1">
+          <StartValue>WSTRING#'PLC - Störung Kühlgerät 2 bei Scanner für visuelle Beurteilung (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2123,2">
+          <StartValue>WSTRING#'PLC - fault air-conditioning unit 2 for scannerhousing visual measurement (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2123,3">
+          <StartValue>WSTRING#'PLC - errore unità di raffreddamento 2 per scanner per misurazione visiva (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2123,4">
+          <StartValue>WSTRING#'PLC - défaut unité de refroidissement 2 chez scanner pour mesure visuelle (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2123,5">
+          <StartValue>WSTRING#'PLC - fallo unidad de refrigeración 2 para escáner para medición visual (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2124,1">
+          <StartValue>WSTRING#'PLC - Störung Entfeuchter bei Scanner für (-0E1.2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2124,2">
+          <StartValue>WSTRING#'PLC - fault dehumidifier for scannerhousing (-0E1.2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2124,3">
+          <StartValue>WSTRING#'PLC - errore deumidificatore per scanner (-0E1.2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2124,4">
+          <StartValue>WSTRING#'PLC - défaut déshumidificateur chez scanner (-0E1.2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2124,5">
+          <StartValue>WSTRING#'PLC - fallo deshumidificador para escáner (-0E1.2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2125,1">
+          <StartValue>WSTRING#'PLC - Störung Kommunikationsschnittstelle zwischen Pc und Sps ist unterschiedlich'</StartValue>
+        </Subelement>
+        <Subelement Path="2125,2">
+          <StartValue>WSTRING#'PLC - fault communication interface between Pc and Plc is different'</StartValue>
+        </Subelement>
+        <Subelement Path="2125,3">
+          <StartValue>WSTRING#'PLC - errore l`interfaccia di comunicazione tra Pc e Plc è diversa'</StartValue>
+        </Subelement>
+        <Subelement Path="2125,4">
+          <StartValue>WSTRING#'PLC - défaut l`interface de communication entre le PC et Plc est différente'</StartValue>
+        </Subelement>
+        <Subelement Path="2125,5">
+          <StartValue>WSTRING#'PLC - fallo La interfaz de comunicación entre PC y PLC es diferente'</StartValue>
+        </Subelement>
+        <Subelement Path="2140,1">
+          <StartValue>WSTRING#'PLC - Verstellung Scanner wurde temporär deaktiviert, kann nur mehr manuel verfahren werden (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2140,2">
+          <StartValue>WSTRING#'PLC - adjustment scannerhousing is deactivated temporaly, you can move only manualy (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2140,3">
+          <StartValue>WSTRING#'PLC - posizionamento scanner è temporaneamente disattivato, è possibile muoverlo solo manualmente (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2140,4">
+          <StartValue>WSTRING#'PLC - positionnement de scanner est temporairement désactivé, vous ne pouvez le déplacer que manuellement (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2140,5">
+          <StartValue>WSTRING#'PLC - el ajuste de del escáner se desactiva temporalmente, solo se puede mover manualmente (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2141,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken oben wurde temporär deaktiviert, kann nur mehr manuel verfahren werden (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2141,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar top is deactivated temporaly, you can move only manualy (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2141,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura superiore è temporaneamente disattivato, è possibile muoverlo solo manualmente (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2141,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure supérieure est temporairement désactivé, vous ne pouvez le déplacer que manuellement (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2141,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición superior se desactiva temporalmente, solo se puede mover manualmente (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2142,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken links wurde temporär deaktiviert, kann nur mehr manuel verfahren werden (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2142,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar left is deactivated temporaly, you can move only manualy (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2142,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di sinistra è temporaneamente disattivato, è possibile muoverlo solo manualmente (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2142,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure gauche est temporairement désactivé, vous ne pouvez le déplacer que manuellement (-8M1L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2142,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición izquierda se desactiva temporalmente, solo se puede mover manualmente (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2143,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken rechts wurde temporär deaktiviert, kann nur mehr manuel verfahren werden (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2143,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar right is deactivated temporaly, you can move only manualy (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2143,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di destra è temporaneamente disattivato, è possibile muoverlo solo manualmente (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2143,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure à droite est temporairement désactivé, vous ne pouvez le déplacer que manuellement (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2143,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición derecha se desactiva temporalmente, solo se puede mover manualmente (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2144,1">
+          <StartValue>WSTRING#'PLC - Kühlgerät 1 bei Scanner für visuelle Beurteilung wurde temporär deaktiviert (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2144,2">
+          <StartValue>WSTRING#'PLC - air-conditioning unit 1 for scannerhousing visual measurement is deactivated temporaly (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2144,3">
+          <StartValue>WSTRING#'PLC - unità di raffreddamento 1 per scanner per misurazione visiva è temporaneamente disattivato (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2144,4">
+          <StartValue>WSTRING#'PLC - unité de refroidissement 1 chez scanner pour mesure visuelle est temporairement désactivé (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2144,5">
+          <StartValue>WSTRING#'PLC - unidad de refrigeración 1 para escáner para medición visual se desactiva temporalmente (-0E1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2145,1">
+          <StartValue>WSTRING#'PLC - Kühlgerät 2 bei Scanner für visuelle Beurteilung wurde temporär deaktiviert (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2145,2">
+          <StartValue>WSTRING#'PLC - air-conditioning unit 2 for scannerhousing visual measurement is deactivated temporaly (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2145,3">
+          <StartValue>WSTRING#'PLC - unità di raffreddamento 2 per scanner per misurazione visiva è temporaneamente disattivato (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2145,4">
+          <StartValue>WSTRING#'PLC - unité de refroidissement 2 chez scanner pour mesure visuelle est temporairement désactivé (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2145,5">
+          <StartValue>WSTRING#'PLC - unidad de refrigeración 2 para escáner para medición visual se desactiva temporalmente (-0E1.1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2146,1">
+          <StartValue>WSTRING#'PLC - Kühlgerät bei Scanner für X-Ray wurde temporär deaktiviert (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2146,2">
+          <StartValue>WSTRING#'PLC - air-conditioning unit for scannerhousing X-Ray measurement is deactivated temporaly (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2146,3">
+          <StartValue>WSTRING#'PLC - unità di raffreddamento per scanner per X-Ray è temporaneamente disattivato (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2146,4">
+          <StartValue>WSTRING#'PLC - unité de refroidissement chez scanner pour X-Ray est temporairement désactivé (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2146,5">
+          <StartValue>WSTRING#'PLC - unidad de refrigeración 1 para escáner paraX-Ray se desactiva temporalmente (-0E2+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2147,1">
+          <StartValue>WSTRING#'PLC - Entfeuchter bei Scanner wurde temporär deaktiviert (-0E3+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2147,2">
+          <StartValue>WSTRING#'PLC - dehumidifier for scannerhousing is deactivated temporaly (-0E3+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2147,3">
+          <StartValue>WSTRING#'PLC - deumidificatore per scanner è temporaneamente disattivato (-0E3+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2147,4">
+          <StartValue>WSTRING#'PLC - déshumidificateur chez scanner est temporairement désactivé (-0E3+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2147,5">
+          <StartValue>WSTRING#'PLC - deshumidificador para escáner se desactiva temporalmente (-0E3+SGX)'</StartValue>
+        </Subelement>
+        <Subelement Path="2150,1">
+          <StartValue>WSTRING#'PLC - Störung Verstellung Scanner (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2150,2">
+          <StartValue>WSTRING#'PLC - fault adjustment scannerhousing (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2150,3">
+          <StartValue>WSTRING#'PLC - errore posizionamento scanner (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2150,4">
+          <StartValue>WSTRING#'PLC - défaut positionnement de scanner (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2150,5">
+          <StartValue>WSTRING#'PLC - fallo el ajuste de del escáner (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2151,1">
+          <StartValue>WSTRING#'PLC - Störung Encoder - Verstellung Scanner (-8B1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2151,2">
+          <StartValue>WSTRING#'PLC - fault encoder - adjustment scannerhousing (-8B1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2151,3">
+          <StartValue>WSTRING#'PLC - errore encoder - posizionamento scanner (-8B1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2151,4">
+          <StartValue>WSTRING#'PLC - défaut codeur - positionnement de scanner (-8B1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2151,5">
+          <StartValue>WSTRING#'PLC - fallo codificador - el ajuste de del escáner (-8B1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2152,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor Endstellung links - Verstellung Scanner (-8S1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2152,2">
+          <StartValue>WSTRING#'PLC - fault sensor limit switch position left - adjustment scannerhousing (-8S1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2152,3">
+          <StartValue>WSTRING#'PLC - errore sensore posizione sinistra - posizionamento scanner (-8S1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2152,4">
+          <StartValue>WSTRING#'PLC - défaut capteur position du fin de course à gauche - positionnement de scanner (-8S1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2152,5">
+          <StartValue>WSTRING#'PLC - fallo sensor posición de límite a la izquierda - el ajuste de del escáner (-8S1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2153,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor Endstellung rechts - Verstellung Scanner (-8S2.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2153,2">
+          <StartValue>WSTRING#'PLC - fault sensor limit switch position right - adjustment scannerhousing (-8S2.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2153,3">
+          <StartValue>WSTRING#'PLC - errore sensore posizione destra - posizionamento scanner (-8S2.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2153,4">
+          <StartValue>WSTRING#'PLC - défaut capteur position du fin de course à droite - positionnement de scanner (-8S2.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2153,5">
+          <StartValue>WSTRING#'PLC - fallo sensor posición de límite a la derecha - el ajuste de del escáner (-8S2.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2154,1">
+          <StartValue>WSTRING#'PLC - Verstellung Scanner nicht referenziert, händisch neu referenzieren (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2154,2">
+          <StartValue>WSTRING#'PLC - adjustment scannerhousing reference not ok, reference manualy (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2154,3">
+          <StartValue>WSTRING#'PLC - posizionamento scanner riferimento non coretto, fare corsa di riferimento (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2154,4">
+          <StartValue>WSTRING#'PLC - positionnement de scanner référence non correcte, manuel de référence (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2154,5">
+          <StartValue>WSTRING#'PLC - el ajuste de del escáner referencia no ok, manual de referencia (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2155,1">
+          <StartValue>WSTRING#'PLC - Verstellung Scanner Referenzfahrt aktiv  (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2155,2">
+          <StartValue>WSTRING#'PLC - adjustment scannerhousing reference run active (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2155,3">
+          <StartValue>WSTRING#'PLC - posizionamento scanner corsa di riferimento attiva (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2155,4">
+          <StartValue>WSTRING#'PLC - positionnement de scanner exécution de référence active (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2155,5">
+          <StartValue>WSTRING#'PLC - el ajuste de del escáner ejecución de referencia activa (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2156,1">
+          <StartValue>WSTRING#'PLC - Verstellung Scanner nicht in Position (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2156,2">
+          <StartValue>WSTRING#'PLC - adjustment scannerhousing not in position (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2156,3">
+          <StartValue>WSTRING#'PLC - posizionamento scanner non in posizione (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2156,4">
+          <StartValue>WSTRING#'PLC - positionnement de scanner pas en position (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2156,5">
+          <StartValue>WSTRING#'PLC - el ajuste de del escáner no está en posición (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2157,1">
+          <StartValue>WSTRING#'PLC - Verstellung Scanner am Pc auf Hand geschalten (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2157,2">
+          <StartValue>WSTRING#'PLC - adjustment scannerhousing set on manual mode on Pc (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2157,3">
+          <StartValue>WSTRING#'PLC - posizionamento scanner attivata modalità manuale sul Pc (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2157,4">
+          <StartValue>WSTRING#'PLC - positionnement de scanner passé en mode manuel sur le Pc (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2157,5">
+          <StartValue>WSTRING#'PLC - el ajuste de del escáner cambiado a manual en la Pc (-8M1.B+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2160,1">
+          <StartValue>WSTRING#'PLC - Störung Verstellung Messbalken oben (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2160,2">
+          <StartValue>WSTRING#'PLC - fault adjustment metering bar top (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2160,3">
+          <StartValue>WSTRING#'PLC - errore posizionamento barra di misura superiore (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2160,4">
+          <StartValue>WSTRING#'PLC - défaut positionnement de barre de mesure supérieure (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2160,5">
+          <StartValue>WSTRING#'PLC - fallo el ajuste de barra de medición superior (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2160,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2160,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2160,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2161,1">
+          <StartValue>WSTRING#'PLC - Störung Encoder - Verstellung Messbalken oben (-8B1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2161,2">
+          <StartValue>WSTRING#'PLC - fault encoder - adjustment metering bar top (-8B1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2161,3">
+          <StartValue>WSTRING#'PLC - errore encoder - posizionamento barra di misura superiore (-8B1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2161,4">
+          <StartValue>WSTRING#'PLC - défaut codeur - positionnement de barre de mesure supérieure (-8B1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2161,5">
+          <StartValue>WSTRING#'PLC - fallo codificador - el ajuste de barra de medición superior (-8B1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2161,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2161,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2161,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2162,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor Endstellung links - Verstellung Messbalken oben (-8S1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2162,2">
+          <StartValue>WSTRING#'PLC - fault sensor limit switch position left - adjustment metering bar top (-8S1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2162,3">
+          <StartValue>WSTRING#'PLC - errore sensore posizione sinistra - posizionamento barra di misura superiore (-8S1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2162,4">
+          <StartValue>WSTRING#'PLC - défaut capteur position du fin de course à gauche - positionnement de barre de mesure supérieure (-8S1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2162,5">
+          <StartValue>WSTRING#'PLC - fallo sensor posición de límite a la izquierda - el ajuste de barra de medición superior (-8S1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2162,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2162,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2162,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2163,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor Endstellung rechts - Verstellung Messbalken oben (-8S2.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2163,2">
+          <StartValue>WSTRING#'PLC - fault sensor limit switch position right - adjustment metering bar top (-8S2.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2163,3">
+          <StartValue>WSTRING#'PLC - errore sensore posizione destra - posizionamento barra di misura superiore (-8S2.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2163,4">
+          <StartValue>WSTRING#'PLC - défaut capteur position du fin de course à droite - positionnement de barre de mesure supérieure (-8S2.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2163,5">
+          <StartValue>WSTRING#'PLC - fallo sensor posición de límite a la derecha - el ajuste de barra de medición superior (-8S2.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2163,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2163,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2163,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2164,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken oben nicht referenziert, händisch neu referenzieren (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2164,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar top reference not ok, reference manualy (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2164,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura superiore riferimento non coretto, fare corsa di riferimento (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2164,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure supérieure référence non correcte, manuel de référence (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2164,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición superior referencia no ok, manual de referencia (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2164,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2164,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2164,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2165,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken oben Referenzfahrt aktiv  (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2165,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar top reference run active (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2165,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura superiore corsa di riferimento attiva (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2165,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure supérieure exécution de référence active (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2165,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición superior ejecución de referencia activa (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2165,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2165,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2165,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2166,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken oben nicht in Position (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2166,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar top not in position (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2166,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura superiore non in posizione (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2166,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure supérieure pas en position (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2166,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición superior no está en posición (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2166,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2166,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2166,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2167,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken oben am Pc auf Hand geschalten (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2167,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar top set on manual mode on Pc (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2167,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura superiore attivata modalità manuale sul Pc (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2167,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure supérieure passé en mode manuel sur le Pc (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2167,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición superior cambiado a manual en la Pc (-8M1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2170,1">
+          <StartValue>WSTRING#'PLC - Störung Verstellung Messbalken links (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2170,2">
+          <StartValue>WSTRING#'PLC - fault adjustment metering bar left (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2170,3">
+          <StartValue>WSTRING#'PLC - errore posizionamento barra di misura di sinistra (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2170,4">
+          <StartValue>WSTRING#'PLC - défaut positionnement de barre de mesure gauche (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2170,5">
+          <StartValue>WSTRING#'PLC - fallo el ajuste de barra de medición izquierda (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2170,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2170,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2170,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2171,1">
+          <StartValue>WSTRING#'PLC - Störung Encoder - Verstellung Messbalken links (-8B1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2171,2">
+          <StartValue>WSTRING#'PLC - fault encoder - adjustment metering bar left (-8B1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2171,3">
+          <StartValue>WSTRING#'PLC - errore encoder - posizionamento barra di misura di sinistra (-8B1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2171,4">
+          <StartValue>WSTRING#'PLC - défaut codeur - positionnement de barre de mesure gauche (-8B1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2171,5">
+          <StartValue>WSTRING#'PLC - fallo codificador - el ajuste de barra de medición izquierda (-8B1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2171,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2171,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2171,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2172,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor Endstellung links - Verstellung Messbalken links (-8S1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2172,2">
+          <StartValue>WSTRING#'PLC - fault sensor limit switch position left - adjustment metering bar left (-8S1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2172,3">
+          <StartValue>WSTRING#'PLC - errore sensore posizione sinistra - posizionamento barra di misura di sinistra (-8S1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2172,4">
+          <StartValue>WSTRING#'PLC - défaut capteur position du fin de course à gauche - positionnement de barre de mesure gauche (-8S1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2172,5">
+          <StartValue>WSTRING#'PLC - fallo sensor posición de límite a la izquierda - el ajuste de barra de medición izquierda (-8S1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2172,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2172,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2172,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2173,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor Endstellung rechts - Verstellung Messbalken links (-8S2.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2173,2">
+          <StartValue>WSTRING#'PLC - fault sensor limit switch position right - adjustment metering bar left (-8S2.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2173,3">
+          <StartValue>WSTRING#'PLC - errore sensore posizione destra - posizionamento barra di misura di sinistra (-8S2.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2173,4">
+          <StartValue>WSTRING#'PLC - défaut capteur position du fin de course à droite - positionnement de barre de mesure gauche (-8S2.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2173,5">
+          <StartValue>WSTRING#'PLC - fallo sensor posición de límite a la derecha - el ajuste de barra de medición izquierda (-8S2.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2173,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2173,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2173,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2174,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken links nicht referenziert, händisch neu referenzieren (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2174,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar left reference not ok, reference manualy (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2174,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di sinistra riferimento non coretto, fare corsa di riferimento (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2174,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure gauche référence non correcte, manuel de référence (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2174,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición izquierda referencia no ok, manual de referencia (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2174,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2174,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2174,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2175,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken links Referenzfahrt aktiv  (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2175,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar left reference run active (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2175,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di sinistra corsa di riferimento attiva (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2175,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure gauche exécution de référence active (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2175,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición izquierda ejecución de referencia activa (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2175,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2175,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2175,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2176,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken links nicht in Position (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2176,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar left not in position (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2176,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di sinistra non in posizione (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2176,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure gauche pas en position (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2176,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición izquierda no está en posición (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2176,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2176,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2176,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2177,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken links am Pc auf Hand geschalten (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2177,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar left set on manual mode on Pc (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2177,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di sinistra attivata modalità manuale sul Pc (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2177,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure gauche passé en mode manuel sur le Pc (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2177,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición izquierda cambiado a manual en la Pc (-8M1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2177,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2177,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2177,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2180,1">
+          <StartValue>WSTRING#'PLC - Störung Verstellung Messbalken rechts (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2180,2">
+          <StartValue>WSTRING#'PLC - fault adjustment metering bar right (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2180,3">
+          <StartValue>WSTRING#'PLC - errore posizionamento barra di misura di destra (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2180,4">
+          <StartValue>WSTRING#'PLC - défaut positionnement de barre de mesure à droite (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2180,5">
+          <StartValue>WSTRING#'PLC - fallo el ajuste de barra de medición derecha (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2180,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2180,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2180,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2181,1">
+          <StartValue>WSTRING#'PLC - Störung Encoder - Verstellung Messbalken rechts (-8B1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2181,2">
+          <StartValue>WSTRING#'PLC - fault encoder - adjustment metering bar right (-8B1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2181,3">
+          <StartValue>WSTRING#'PLC - errore encoder - posizionamento barra di misura di destra (-8B1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2181,4">
+          <StartValue>WSTRING#'PLC - défaut codeur - positionnement de barre de mesure à droite (-8B1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2181,5">
+          <StartValue>WSTRING#'PLC - fallo codificador - el ajuste de barra de medición derecha (-8B1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2181,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2181,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2181,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2182,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor Endstellung links - Verstellung Messbalken rechts (-8S1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2182,2">
+          <StartValue>WSTRING#'PLC - fault sensor limit switch position left - adjustment metering bar right (-8S1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2182,3">
+          <StartValue>WSTRING#'PLC - errore sensore posizione sinistra - posizionamento barra di misura di destra (-8S1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2182,4">
+          <StartValue>WSTRING#'PLC - défaut capteur position du fin de course à gauche - positionnement de barre de mesure à droite (-8S1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2182,5">
+          <StartValue>WSTRING#'PLC - fallo sensor posición de límite a la izquierda - el ajuste de barra de medición derecha (-8S1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2182,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2182,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2182,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2183,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor Endstellung rechts - Verstellung Messbalken rechts (-8S2.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2183,2">
+          <StartValue>WSTRING#'PLC - fault sensor limit switch position right - adjustment metering bar right (-8S2.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2183,3">
+          <StartValue>WSTRING#'PLC - errore sensore posizione destra - posizionamento barra di misura di destra (-8S2.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2183,4">
+          <StartValue>WSTRING#'PLC - défaut capteur position du fin de course à droite - positionnement de barre de mesure à droite (-8S2.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2183,5">
+          <StartValue>WSTRING#'PLC - fallo sensor posición de límite a la derecha - el ajuste de barra de medición derecha (-8S2.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2183,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2183,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2183,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2184,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken rechts nicht referenziert, händisch neu referenzieren (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2184,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar right reference not ok, reference manualy (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2184,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di destra riferimento non coretto, fare corsa di riferimento (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2184,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure à droite référence non correcte, manuel de référence (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2184,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición derecha referencia no ok, manual de referencia (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2184,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2184,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2184,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2185,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken rechts Referenzfahrt aktiv  (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2185,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar right reference run active (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2185,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di destra corsa di riferimento attiva (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2185,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure à droite exécution de référence active (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2185,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición derecha ejecución de referencia activa (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2185,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2185,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2185,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2186,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken rechts nicht in Position (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2186,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar right not in position (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2186,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di destra non in posizione (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2186,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure à droite pas en position (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2186,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición derecha no está en posición (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2186,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2186,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2186,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2187,1">
+          <StartValue>WSTRING#'PLC - Verstellung Messbalken rechts am Pc auf Hand geschalten (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2187,2">
+          <StartValue>WSTRING#'PLC - adjustment metering bar right set on manual mode on Pc (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2187,3">
+          <StartValue>WSTRING#'PLC - posizionamento barra di misura di destra attivata modalità manuale sul Pc (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2187,4">
+          <StartValue>WSTRING#'PLC - positionnement de barre de mesure à droite passé en mode manuel sur le Pc (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2187,5">
+          <StartValue>WSTRING#'PLC - el ajuste de barra de medición derecha cambiado a manual en la Pc (-8M1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2187,6">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2187,7">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2187,8">
+          <StartValue>WSTRING#''</StartValue>
+        </Subelement>
+        <Subelement Path="2190,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor für Distanzmessung von oben (-8B1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2190,2">
+          <StartValue>WSTRING#'PLC - fault sensor distance measurement from top (-8B1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2190,3">
+          <StartValue>WSTRING#'PLC - errore sensore misurazione della distanza dall`alto(-8B1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2190,4">
+          <StartValue>WSTRING#'PLC - défaut capteur mesure de distance en haut (-8B1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2190,5">
+          <StartValue>WSTRING#'PLC - fallo de sensor medición de distancia del sensor superior (-8B1+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2191,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor für Distanzmessung von links (-8B2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2191,2">
+          <StartValue>WSTRING#'PLC - fault sensor distance measurement from left (-8B2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2191,3">
+          <StartValue>WSTRING#'PLC - errore sensore misurazione della distanza da sinistra (-8B2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2191,4">
+          <StartValue>WSTRING#'PLC - défaut capteur mesure de distance de gauche à droite (-8B2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2191,5">
+          <StartValue>WSTRING#'PLC - fallo de sensor medición de distancia del sensor desde la izquierda (-8B2+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2192,1">
+          <StartValue>WSTRING#'PLC - Störung Sensor für Distanzmessung von rechts (-8B3+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2192,2">
+          <StartValue>WSTRING#'PLC - fault sensor distance measurement from right (-8B3+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2192,3">
+          <StartValue>WSTRING#'PLC - errore sensore misurazione della distanza da destra (-8B3+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2192,4">
+          <StartValue>WSTRING#'PLC - défaut capteur mesure de distance de droite à gauche (-8B3+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2192,5">
+          <StartValue>WSTRING#'PLC - fallo de sensor medición de distancia del sensor desde la derecha (-8B3+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2200,1">
+          <StartValue>WSTRING#'PLC - Störung Profinet Slave LINMOT Servodrive - Verstellung Messbalken oben (-8U1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2200,2">
+          <StartValue>WSTRING#'PLC - fault profinet-slave LINMOT Servodrive - adjustment metering bar top (-8U1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2200,3">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - posizionamento barra di misura superiore (-8U1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2200,4">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - positionnement de barre de mesure supérieure (-8U1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2200,5">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - el ajuste de barra de medición superior (-8U1.T+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2201,1">
+          <StartValue>WSTRING#'PLC - Störung Profinet Slave LINMOT Servodrive - Verstellung Messbalken links (-8U1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2201,2">
+          <StartValue>WSTRING#'PLC - fault profinet-slave LINMOT Servodrive - adjustment metering bar left (-8U1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2201,3">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - posizionamento barra di misura di sinistra (-8U1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2201,4">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - positionnement de barre de mesure gauche (-8U1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2201,5">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - el ajuste de barra de medición izquierda (-8U1.L+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2202,1">
+          <StartValue>WSTRING#'PLC - Störung Profinet Slave LINMOT Servodrive - Verstellung Messbalken rechts (-8U1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2202,2">
+          <StartValue>WSTRING#'PLC - fault profinet-slave LINMOT Servodrive - adjustment metering bar right (-8U1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2202,3">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - posizionamento barra di misura di destra(-8U1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2202,4">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - positionnement de barre de mesure à droite (-8U1.R+SGV)'</StartValue>
+        </Subelement>
+        <Subelement Path="2202,5">
+          <StartValue>WSTRING#'PLC - profinet-slave LINMOT Servodrive - el ajuste de barra de medición derecha (-8U1.R+SGV)'</StartValue>
+        </Subelement>
+      </Member>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>0</MemoryReserve>
+      <Name>ErrTextList</Name>
+      <Namespace />
+      <Number>371</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>

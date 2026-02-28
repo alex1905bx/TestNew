@@ -1,0 +1,811 @@
+﻿FUNCTION_BLOCK "Diag_IOSystemCheck"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      ioSystemHwId { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : HW_IOSYSTEM := 16#0000;   // This ID is representing the IO System (PN or DP), find the ID in the system constants
+   END_VAR
+
+   VAR_OUTPUT 
+      error { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool := FALSE;   // Rising edge informs that an error occurred during the execution of the FB
+      status { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word := #STATUS_EXECUTION_FINISHED;   // Current status of FB
+      statusID { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word;   // Current status ID of calling instruction
+   END_VAR
+
+   VAR_IN_OUT 
+      ioData : "UserDiag_typeIOSystem";   // IO-System diagnostics data
+   END_VAR
+
+   VAR 
+      statError { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool := FALSE;   // Static value for output error
+      statStatus { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word := #STATUS_EXECUTION_FINISHED;   // Static value for output status
+      statStatusID { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Word;   // Static value for output statusID
+      statActualConfiguredDevices { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Int := 0;   // Actual number of devices/slaves in the IOSystem/DP-Mastersystem
+      statGeoAddr {InstructionName := 'GEOADDR'; LibVersion := '1.0'; ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : GEOADDR;   // Slot information
+      statGeoLaddr { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : HW_ANY := 16#0000;   // GEO2LOG hardware identifier
+      statConfiguredDevices { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#DEVICES_STATES_UPPER_LIM] of Bool;   // Temporary storage of the return of "DeviceStates", to combine the states of the devices/slaves with numbers and names
+      statExistingDevices { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#DEVICES_STATES_UPPER_LIM] of Bool;   // Temporary storage of the return of "DeviceStates", to combine the states of the devices/slaves with numbers and names
+      statFaultyDevices { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#DEVICES_STATES_UPPER_LIM] of Bool;   // Temporary storage of the return of "DeviceStates", to combine the states of the devices/slaves  with numbers and names
+      statDisabledDevices { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#DEVICES_STATES_UPPER_LIM] of Bool;   // Temporary storage of the return of "DeviceStates", to combine the states of the devices/slaves  with numbers and names
+      statProblemDevices { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#DEVICES_STATES_UPPER_LIM] of Bool;   // Temporary storage of the return of "DeviceStates", to combine the states of the devices/slaves  with numbers and names
+      statDeviceProblemModules { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#MODULES_STATES_UPPER_LIM] of Bool;   // Storage of the status of all modules in the PN Devices / PB Slaves --> State: Problem
+      statDeviceFaultyModules { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#MODULES_STATES_UPPER_LIM] of Bool;   // Storage of the status of all modules in the PN Devices / PB Slaves --> State: Faulty
+      statDeviceExistingModules { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..#MODULES_STATES_UPPER_LIM] of Bool;   // Storage of the status of all modules in the PN Devices / PB Slaves --> State: Existing
+      instGetNameDevices {InstructionName := 'Get_Name'; LibVersion := '1.3'; ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Get_Name;   // Instance of the system function "GetName"
+      statInitString { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : String;   // Used to initialize the temporary string to convert into STRING[50]
+      statFirstDevice { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : UInt;   // Station number of the first device of the list
+      statFirstDeviceFlag { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool := TRUE;   // Help tag for the first device in the linked list
+      statLastDevice { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : UInt;   // Station number of the last device of the list
+      statMaxDevices { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Int;   // Max devices per IO system
+      instGetStationInfo {InstructionName := 'GetStationInfo'; LibVersion := '1.1'; ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : GetStationInfo;   // Instance of GetStationInfo
+      statActHwId : HW_IOSYSTEM;
+   END_VAR
+
+   VAR_TEMP 
+      tempIndex : Int;   // Index of configured devices/slaves
+      tempDeviceIndex : Int;   // Device/slave index
+      tempSlotIndex : Int;   // Slot index
+      tempSlotNum : Int;   // Index module number
+      tempRetValGeo : Int;   // GEO2LOG error information
+      tempRetValDeviceStates : Int;   // DeviceStates error information
+      tempRetValModuleStates : Int;   // Return value of the system function "ModuleStates"
+      tempStringConvert : String;   // Store the device names temporary here, to convert them into STRING[50]
+      tempLastDevice : UInt;   // Temporary storage of the actual index, if it´s the last device --> store it in static
+      tempDeviceInit : "UserDiag_typeDevice";   // Initalization of the device/slave diagnostic structure
+      tempIP {InstructionName := 'IF_CONF_v4'; LibVersion := '1.0'} : IF_CONF_v4;   // Temporary IP address
+   END_VAR
+
+   VAR CONSTANT 
+      STATUS_EXECUTION_FINISHED : Word := 16#0000;   // Execution finished without errors
+      ERR_MAX_SLOTS_PER_DEVICE : Word := 16#8400;   // There are more modules configured as defined with the user constant: USERDIAG_SLOTS_PER_DEVICE_UPPER_LIM
+      ERR_MAX_DEVICES_PER_IOSYSTEM : Word := 16#8401;   // There are more modules configured as defined with the user constant: USERDIAG_DEVICES_PER_IO_SYTEM_UPPER_LIM
+      ID_LOCAL : Word := 1;   // StatusID local
+      ID_MODULE_STATES_CONFIGURED : Word := 2;   // StatusID during ModuleStates command (configured mode)
+      ID_MODULE_STATES_FAULTY : Word := 3;   // StatusID during ModuleStates command (faulty mode)
+      ID_MODULE_STATES_PROBLEM : Word := 4;   // StatusID during ModuleStates command (problem mode)
+      ID_MODULE_STATES_EXISTING : Word := 5;   // StatusID during ModuleStates command (existing mode)
+      ID_DEVICE_STATES_CONFIGURED : Word := 6;   // StatusID during DeviceStates command (configuration mode)
+      ID_DEVICE_STATES_FAULTY : Word := 7;   // StatusID during DeviceStates command (fault mode)
+      ID_DEVICE_STATES_PROBLEM : Word := 8;   // StatusID during DeviceStates command (problem mode)
+      ID_DEVICE_STATES_EXISTING : Word := 9;   // StatusID during DeviceStates command (existing mode)
+      ID_DEVICE_STATES_DISABLED : Word := 10;   // StatusID during DeviceStates command (disable mode)
+      ID_GET_NAME : Word := 11;   // StatusID during GET_NAME command
+      ID_GET_STATION_INFO : Word := 12;   // StatusID during GetStationInfo command
+      MODE_CONFIGURED : USInt := 1;   // Used for instruction DeviceStates/ModuleStates, read out all configured devices/slaves
+      MODE_FAULTY : USInt := 2;   // Used for instruction DeviceStates/ModuleStates, read out all faulty devices/slaves
+      MODE_DISABLED : USInt := 3;   // Used for instruction DeviceStates/ModuleStates, read out all disabled devices/slaves
+      MODE_EXIST : USInt := 4;   // Used for instruction DeviceStates/ModuleStates, read out all devices/slaves not reachable
+      MODE_PROBLEM : USInt := 5;   // Used for instruction DeviceStates/ModuleStates, read out all devices with several problems
+      DEVICE_SLAVE : USInt := 2;   // GEO2LOG structure: HW type = 2
+      MODULE_OF_DEVICE : USInt := 4;   // GEO2LOG structure: HW type = 4
+      IO_SYSTEM_AREA : USInt := 1;   // GEO2LOG structure: Area = 1
+      DP_SYSTEM_AREA : USInt := 2;   // GEO2LOG structure: Area = 2
+      STATE_OK : USInt := 1;   // Device/modul state: ok
+      STATE_FAULT : USInt := 2;   // Device/modul state: fault
+      STATE_LOST_CON : USInt := 3;   // Device/modul state: lost connection
+      STATE_DISABLED : USInt := 4;   // Device/modul state: disabled
+      STATE_PROBLEM : USInt := 5;   // Device/modul state: problem
+      STATE_WAS_FAULT : USInt := 12;   // Device/modul state: was fault
+      STATE_WAS_LOST : USInt := 13;   // Device/modul state: connection was lost
+      STATE_WAS_DISABLED : USInt := 14;   // Device/modul state: device/slave was disabled
+      STATE_PROBLEM_GONE : USInt := 15;   // Device/modul state: had a problem
+      MODULES_STATES_UPPER_LIM : Int := 127;   // Upper array limit for output tag of instruction ModuleStates
+      DEVICES_STATES_UPPER_LIM : Int := 1023;   // Upper array limit for output tag of instruction DeviceStates
+      ERR_HWID_NOT_EXISTENT : Int := 16#8091;   // Hardware identifier of the LADDR parameter does not exist. Check (for example, in the system constants) whether the value for LADDR exists in the project.
+      ERR_LADDR_ADDRESS : Int := 16#8092;   // LADDR does not address a PROFINET IO or DP master system.
+      POS_FIRST_CHAR : Int := 50;   // Position of first character to be deleted
+      NUMBER_CHAR : Int := 204;   // Number of characters to be deleted
+      MAX_SLAVES_DP : Int := 127;   // Max number of slaves in a PROFIBUS IO system
+      LAST_DEVICE : Int := -1;   // No next device
+      MODE_IPV4 : UInt := 1;   // Address parameter according to IPv4
+   END_VAR
+
+
+BEGIN
+	//=============================================================================
+	//SIEMENS AG
+	//(c)Copyright 2017 All Rights Reserved
+	//-----------------------------------------------------------------------------
+	//Library: 
+	//Tested with: S7-1516-3 PN/DP FW 2.0
+	//Engineering: TIA Portal V14 Update1
+	//Restrictions: Call in cyclic OB
+	//Requirements: -
+	//Functionality: Determine hardware identifier and module states from local and
+	//               device modules 
+	//-----------------------------------------------------------------------------
+	//Change log table:
+	//Version  Date       Expert in charge                Changes applied
+	//01.00.00 27.01.2017 Siemens Industry Online Support First released version
+	//=============================================================================
+	
+	IF (#ioSystemHwId <> #ioData.hardwareId)
+	THEN
+	  // New IO System detected at input
+	  #statFirstDeviceFlag := TRUE;
+	  #statFirstDevice := 1;
+	  #statLastDevice := 1;
+	  
+	  #statActualConfiguredDevices := 0;
+	  #tempDeviceIndex := 1;
+	  
+	  #statError := FALSE;
+	  #statStatus := #STATUS_EXECUTION_FINISHED;
+	  #statStatusID := 0;
+	  #ioData.error := FALSE;
+	  #statActHwId := #ioData.hardwareId := #ioSystemHwId;
+	  
+	  // Find out the number of the assigned IO system
+	  #tempRetValGeo := LOG2GEO(LADDR := #ioSystemHwId,
+	                            GEOADDR := #statGeoAddr);
+	  // Set IO system ID
+	  #ioData.number := #statGeoAddr.IOSYSTEM;
+	  
+	  // Initialize the structure for system function GEO2LOG
+	  #statGeoAddr.HWTYPE := #DEVICE_SLAVE;   // Hardware type 2: IO device
+	  
+	  // Predefine the type OF IO system. Either Profinet IO or Profibus DP
+	  IF (#statGeoAddr.AREA = #IO_SYSTEM_AREA)     // Area ID 1: PROFINET IO
+	  THEN
+	    #statMaxDevices := "USERDIAG_DEVICES_PER_IO_SYSTEM_UPPER_LIM";
+	  ELSIF (#statGeoAddr.AREA = #DP_SYSTEM_AREA) // Area ID 2: Profibus DP
+	  THEN
+	    IF ("USERDIAG_DEVICES_PER_IO_SYSTEM_UPPER_LIM" > #MAX_SLAVES_DP)
+	    THEN
+	      #statMaxDevices := #MAX_SLAVES_DP;
+	    ELSE
+	      #statMaxDevices := "USERDIAG_DEVICES_PER_IO_SYSTEM_UPPER_LIM";
+	    END_IF;
+	  ELSE
+	    #statMaxDevices := "USERDIAG_DEVICES_PER_IO_SYSTEM_UPPER_LIM";
+	  END_IF;
+	  
+	  // Set all other devices to not configured
+	  FOR #tempIndex := 1 TO "USERDIAG_DEVICES_PER_IO_SYSTEM_UPPER_LIM" DO
+	    #ioData.devices[#tempIndex] := #tempDeviceInit;
+	  END_FOR;
+	  
+	  //=============================================================================
+	  // CONFIGURED DEVICES
+	  //=============================================================================
+	  // Find out how much devices are configured in the IO System --> PROFINET IO
+	  // This number is the maximum number of devices, which will be checked in the
+	  // following programm
+	  #tempRetValDeviceStates := DeviceStates(LADDR := #ioSystemHwId,
+	                                          MODE := #MODE_CONFIGURED,
+	                                          STATE := #statConfiguredDevices);
+	  
+	  // Check if the block call was successful
+	  IF (#tempRetValDeviceStates = 0)
+	  THEN
+	    // Call ok
+	    ;
+	  ELSIF (#tempRetValDeviceStates = #ERR_HWID_NOT_EXISTENT)
+	    OR (#tempRetValDeviceStates = #ERR_LADDR_ADDRESS)
+	  THEN
+	    #ioData.error := TRUE;
+	    #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	    #statStatusID := #ID_DEVICE_STATES_CONFIGURED;
+	    #statError := TRUE;
+	  ELSE
+	    // Error handling
+	    #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	    #statStatusID := #ID_DEVICE_STATES_CONFIGURED;
+	    #statError := TRUE;
+	  END_IF;
+	  
+	  // Check if further devices are configured
+	  FOR #tempIndex := 1 TO #DEVICES_STATES_UPPER_LIM DO
+	    IF (((#statConfiguredDevices[#tempIndex] = TRUE)
+	      AND (#tempIndex > #statMaxDevices))
+	      AND (
+	      ((#statGeoAddr.AREA = #DP_SYSTEM_AREA)
+	      AND (#tempIndex < #MAX_SLAVES_DP))
+	      OR (#statGeoAddr.AREA = #IO_SYSTEM_AREA))
+	      )
+	    THEN
+	      // In the IOSystem are more devices configured as defined with the user constant
+	      #statStatus := #ERR_MAX_DEVICES_PER_IOSYSTEM;
+	      #statStatusID := #ID_LOCAL;
+	      #statError := TRUE;
+	    END_IF;
+	  END_FOR;
+	  
+	  //=============================================================================
+	  // Go trough all devices and get the status of the configured
+	  //=============================================================================
+	  FOR #tempIndex := 1 TO #statMaxDevices DO
+	    // The devices are configured --> Read out the logical address and the
+	    // device name
+	    IF (#statConfiguredDevices[#tempIndex] = TRUE)
+	    THEN
+	      // Store the first configured device for the linked list
+	      IF (#statFirstDeviceFlag = TRUE)
+	      THEN
+	        #statFirstDevice := INT_TO_UINT(#tempIndex);
+	        #ioData.firstDevice := UINT_TO_INT(#statFirstDevice);
+	        #statFirstDeviceFlag := FALSE;
+	        #tempLastDevice := INT_TO_UINT(#tempIndex);
+	        // It´s not the first bit --> Store the actual index as "next device"
+	        // in the further one!
+	      ELSE
+	        #ioData.devices[#tempLastDevice].nextDevice := #tempIndex;
+	        #tempLastDevice := INT_TO_UINT(#tempIndex);
+	      END_IF;
+	      // Store the index of the last device for the exit condition of the
+	      // followiing instructions
+	      #statLastDevice := #tempLastDevice;
+	      #ioData.lastDevice := UINT_TO_INT(#statLastDevice);
+	      
+	      // Initialize the structure for system function GEO2LOG
+	      #statGeoAddr.STATION := INT_TO_UINT(#tempIndex); // Station number 
+	      #statGeoAddr.HWTYPE := #DEVICE_SLAVE;   // Hardware type 2: IO device
+	      
+	      // Read LADDR from devices
+	      #tempRetValGeo := GEO2LOG(GEOADDR := #statGeoAddr,
+	                                LADDR => #statGeoLaddr);
+	      // Everything is ok!
+	      IF (#tempRetValGeo = 0)
+	      THEN
+	        // Store LADDR from devices in diagnostics data block
+	        #ioData.devices[#tempIndex].hardwareId := #statGeoLaddr;
+	        #ioData.devices[#tempIndex].number := INT_TO_UINT(#tempIndex);
+	        #ioData.devices[#tempIndex].configured := TRUE;
+	        
+	        // Store the device name, if the device is existing
+	        // Get name is an acyclic instruction. In the startup OB, the
+	        // instruction has to be repeated until it is done or error
+	      
+	        REPEAT
+	          // Get device name of each decive in PN System
+	          #instGetNameDevices(LADDR := #ioSystemHwId,
+	                              STATION_NR := #statGeoAddr.STATION,
+	                              DATA := #tempStringConvert);
+	      
+	        UNTIL ((#instGetNameDevices.DONE = TRUE)
+	            OR (#instGetNameDevices.ERROR = TRUE))
+	        END_REPEAT;
+	        
+	        IF (#instGetNameDevices.ERROR = TRUE)
+	        THEN
+	          // Error handling
+	          #statStatus := #instGetNameDevices.STATUS;
+	          #statStatusID := #ID_GET_NAME;
+	          #statError := TRUE;
+	          
+	          // Everything is ok --> Convert the String[254] into String[50]    
+	        ELSIF (#instGetNameDevices.DONE = TRUE)
+	        THEN
+	          // Cut all characters more than 50 to reduce the string length
+	          #ioData.devices[#tempIndex].name := DELETE(IN := #tempStringConvert,
+	                                                           L := #NUMBER_CHAR,
+	                                                           P := #POS_FIRST_CHAR);
+	          
+	          // Initialize the temporary string before next loop
+	          #tempStringConvert := #statInitString;
+	        ELSE
+	          ;
+	        END_IF;
+	        
+	        
+	        // Store the IP address, if the device is existing
+	        // GetStationInfo is an acyclic instruction. In the startup OB, the
+	        // instruction has to be repeated until it is done or error
+	        IF (#statGeoAddr.AREA = #IO_SYSTEM_AREA)
+	        THEN
+	          REPEAT
+	            // Get IP address of each decive in PN System
+	            #instGetStationInfo(REQ := TRUE,
+	                                LADDR := #statGeoLaddr,
+	                                MODE := #MODE_IPV4,
+	                                DATA := #tempIP);
+	            
+	          UNTIL ((#instGetStationInfo.DONE = TRUE)
+	            OR (#instGetStationInfo.ERROR = TRUE))
+	          END_REPEAT;
+	          
+	          IF (#instGetStationInfo.ERROR = TRUE)
+	          THEN
+	            // Error handling
+	            #statStatus := #instGetStationInfo.STATUS;
+	            #statStatusID := #ID_GET_STATION_INFO;
+	            #statError := TRUE;
+	            
+	            // Everything is ok --> Copy IP address    
+	          ELSIF (#instGetStationInfo.DONE = TRUE)
+	          THEN
+	            #ioData.devices[#tempIndex].ipAddress := #tempIP.InterfaceAddress;
+	          ELSE
+	            ;
+	          END_IF;
+	        ELSE
+	          #ioData.devices[#tempIndex].ipAddress.ADDR[1] := 0;
+	          #ioData.devices[#tempIndex].ipAddress.ADDR[2] := 0;
+	          #ioData.devices[#tempIndex].ipAddress.ADDR[3] := 0;
+	          #ioData.devices[#tempIndex].ipAddress.ADDR[4] := 0;
+	        END_IF;
+	        
+	        //=============================================================================
+	        // Get the logical address of all modules and store the actual number of
+	        // modules from each device
+	        //=============================================================================
+	        
+	        // Initialize the structure for system function GEO2LOG
+	        #statGeoAddr.HWTYPE := #MODULE_OF_DEVICE;   // Hardware type 4: Module
+	        
+	        FOR #tempSlotNum := 0 TO "USERDIAG_SLOTS_PER_DEVICE_UPPER_LIM" DO
+	          // Slot number
+	          #statGeoAddr.SLOT := INT_TO_UINT(#tempSlotNum);
+	          // read LADDR from modules
+	          #tempRetValGeo := GEO2LOG(GEOADDR := #statGeoAddr,
+	                                    LADDR => #statGeoLaddr);
+	          // check Retval
+	          IF (#tempRetValGeo = 0)
+	          THEN
+	            // Store LADDR from modules in diagnostic data block
+	            #ioData.devices[#tempIndex].slots[#tempSlotNum].hardwareId := #statGeoLaddr;
+	            #ioData.devices[#tempIndex].actualConfiguredSlots := #ioData.devices[#tempIndex].actualConfiguredSlots + 1;
+	            
+	            #ioData.devices[#tempIndex].slots[#tempSlotNum].configured := TRUE;
+	            
+	          ELSE
+	            // If the return value is not 0 --> the device/system/module is
+	            // not configured --> No error handling
+	            // set LADDR from modules to 0 in diagnostic data block
+	            #ioData.devices[#tempIndex].slots[#tempSlotNum].hardwareId := 0;
+	          END_IF;
+	        END_FOR;
+	        
+	        // Check if further slots are configured
+	        #statGeoAddr.SLOT := INT_TO_UINT(#tempSlotNum);
+	        
+	        #tempRetValGeo := GEO2LOG(GEOADDR := #statGeoAddr,
+	                                  LADDR => #statGeoLaddr);
+	        
+	        IF ((#tempRetValGeo = 0)
+	          AND (#statGeoLaddr <> 16#0))
+	        THEN
+	          // In the PLC are more slots configured as defined with the user constant
+	          #statStatus := #ERR_MAX_SLOTS_PER_DEVICE;
+	          #statStatusID := #ID_LOCAL;
+	          #statError := TRUE;
+	        END_IF;
+	        
+	        // Increment the actual configured devices, store the state and
+	        // HW_ID as an numerical value (UINT)
+	        #statActualConfiguredDevices := #statActualConfiguredDevices + 1;
+	      ELSE
+	        ;
+	      END_IF;
+	      
+	    ELSE
+	      ; // Device not configured
+	    END_IF;
+	  END_FOR;
+	  
+	  #ioData.actualConfiguredDevices := #statActualConfiguredDevices;
+	  
+	  // Mark parameter "Next Device" of the last device in the list
+	  // --> "Next Device" = negative --> Last device in the list
+	  #ioData.devices[#statLastDevice].nextDevice := #LAST_DEVICE;
+	  
+	END_IF; // New IO System detected at input
+	
+	#ioData.error := FALSE; // Reset the IO-System error status
+	
+	
+	//=============================================================================
+	// START DIAGNOSTICS EVALUATION
+	//=============================================================================
+	
+	//=============================================================================
+	// EXISTING DEVICES
+	//=============================================================================
+	#tempRetValDeviceStates := DeviceStates(LADDR := #ioSystemHwId,
+	                                        MODE := #MODE_EXIST,
+	                                        STATE := #statExistingDevices);
+	
+	// Check if the block call was successful
+	IF (#tempRetValDeviceStates = 0)
+	THEN
+	  // Call ok 
+	  ;
+	ELSIF ((#tempRetValDeviceStates = #ERR_HWID_NOT_EXISTENT)
+	  OR (#tempRetValDeviceStates = #ERR_LADDR_ADDRESS))
+	THEN
+	  #ioData.error := TRUE;
+	  #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	  #statStatusID := #ID_DEVICE_STATES_EXISTING;
+	  #statError := TRUE;
+	ELSE
+	  // Error handling
+	  #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	  #statStatusID := #ID_DEVICE_STATES_EXISTING;
+	  #statError := TRUE;
+	END_IF;
+	
+	//=============================================================================
+	// FAULTY DEVICES
+	//=============================================================================
+	#tempRetValDeviceStates := DeviceStates(LADDR := #ioSystemHwId,
+	                                        MODE := #MODE_FAULTY,
+	                                        STATE := #statFaultyDevices);
+	
+	// Check if the block call was successful
+	IF (#tempRetValDeviceStates = 0)
+	THEN
+	  // Call ok
+	  ;
+	ELSIF ((#tempRetValDeviceStates = #ERR_HWID_NOT_EXISTENT)
+	  OR (#tempRetValDeviceStates = #ERR_LADDR_ADDRESS))
+	THEN
+	  #ioData.error := TRUE;
+	  #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	  #statStatusID := #ID_DEVICE_STATES_FAULTY;
+	  #statError := TRUE;
+	ELSE
+	  // Error handling
+	  #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	  #statStatusID := #ID_DEVICE_STATES_FAULTY;
+	  #statError := TRUE;
+	END_IF;
+	
+	//=============================================================================
+	// DISABLED DEVICES
+	//=============================================================================
+	#tempRetValDeviceStates := DeviceStates(LADDR := #ioSystemHwId,
+	                                        MODE := #MODE_DISABLED,
+	                                        STATE := #statDisabledDevices);
+	
+	// Check if the block call was successful
+	IF (#tempRetValDeviceStates = 0)
+	THEN
+	  // Call ok
+	  ;
+	ELSIF ((#tempRetValDeviceStates = #ERR_HWID_NOT_EXISTENT)
+	  OR (#tempRetValDeviceStates = #ERR_LADDR_ADDRESS))
+	THEN
+	  #ioData.error := TRUE;
+	  #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	  #statStatusID := #ID_DEVICE_STATES_DISABLED;
+	  #statError := TRUE;
+	ELSE
+	  // Error handling
+	  #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	  #statStatusID := #ID_DEVICE_STATES_DISABLED;
+	  #statError := TRUE;
+	END_IF;
+	
+	//=============================================================================
+	// PROBLEM DEVICES
+	//=============================================================================
+	#tempRetValDeviceStates := DeviceStates(LADDR := #ioSystemHwId,
+	                                        MODE := #MODE_PROBLEM,
+	                                        STATE := #statProblemDevices);
+	
+	// Check if the block call was successful
+	IF (#tempRetValDeviceStates = 0)
+	THEN
+	  // Call ok
+	  ;
+	ELSIF ((#tempRetValDeviceStates = #ERR_HWID_NOT_EXISTENT)
+	  OR (#tempRetValDeviceStates = #ERR_LADDR_ADDRESS))
+	THEN
+	  #ioData.error := TRUE;
+	  #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	  #statStatusID := #ID_DEVICE_STATES_PROBLEM;
+	  #statError := TRUE;
+	ELSE
+	  // Error handling
+	  #statStatus := INT_TO_WORD(#tempRetValDeviceStates);
+	  #statStatusID := #ID_DEVICE_STATES_PROBLEM;
+	  #statError := TRUE;
+	END_IF;
+	
+	//=============================================================================
+	// Go through configured devices and check for error
+	//=============================================================================
+	// Initialize the pointer for the first run 
+	#tempDeviceIndex := #ioData.firstDevice;
+	
+	WHILE ((#tempDeviceIndex <= "USERDIAG_DEVICES_PER_IO_SYSTEM_UPPER_LIM")
+	  AND (#tempDeviceIndex > 0))
+	DO
+	  
+	  IF (#ioData.devices[#tempDeviceIndex].configured = TRUE)
+	  THEN
+	    
+	    IF (#statDisabledDevices[#tempDeviceIndex] = TRUE)
+	    THEN
+	      //===================
+	      // Device is disabled
+	      //===================
+	      #ioData.devices[#tempDeviceIndex].disabled := TRUE;
+	      #ioData.devices[#tempDeviceIndex].error := FALSE;
+	      #ioData.devices[#tempDeviceIndex].faulty := FALSE;
+	      #ioData.devices[#tempDeviceIndex].problem := FALSE;
+	      #ioData.devices[#tempDeviceIndex].state := #STATE_DISABLED;
+	      
+	    ELSE
+	      #ioData.devices[#tempDeviceIndex].disabled := FALSE;
+	      
+	      IF (#statExistingDevices[#tempDeviceIndex] = TRUE)
+	      THEN
+	        #ioData.devices[#tempDeviceIndex].exists := TRUE;
+	        
+	        CASE #ioData.devices[#tempDeviceIndex].state OF
+	          #STATE_WAS_FAULT,
+	          #STATE_WAS_LOST,
+	          #STATE_WAS_DISABLED,
+	          #STATE_PROBLEM_GONE:
+	            ;
+	          #STATE_FAULT:
+	            #ioData.devices[#tempDeviceIndex].state := #STATE_WAS_FAULT;
+	          #STATE_LOST_CON:
+	            #ioData.devices[#tempDeviceIndex].state := #STATE_WAS_LOST;
+	          #STATE_DISABLED:
+	            #ioData.devices[#tempDeviceIndex].state := #STATE_WAS_DISABLED;
+	          #STATE_PROBLEM:
+	            #ioData.devices[#tempDeviceIndex].state := #STATE_PROBLEM_GONE;
+	          ELSE
+	            #ioData.devices[#tempDeviceIndex].state := #STATE_OK;
+	        END_CASE;
+	        
+	      ELSE
+	        // Device not existent
+	        #ioData.devices[#tempDeviceIndex].error := TRUE;
+	        #ioData.error := TRUE; // TODO: kann weg?
+	        #ioData.devices[#tempDeviceIndex].exists := FALSE;
+	      END_IF; // End: Device exists
+	      
+	      
+	      IF (#statFaultyDevices[#tempDeviceIndex] = FALSE)
+	      THEN
+	        // Device is not faulty
+	        #ioData.devices[#tempDeviceIndex].error := FALSE;
+	        #ioData.devices[#tempDeviceIndex].faulty := FALSE;
+	        
+	        IF (#statProblemDevices[#tempDeviceIndex] = FALSE)
+	        THEN
+	          //============================
+	          // Device has no problem
+	          //============================
+	          #ioData.devices[#tempDeviceIndex].error := FALSE;
+	          #ioData.devices[#tempDeviceIndex].problem := FALSE;
+	        ELSE
+	          //============================
+	          // Device has a problem
+	          //============================
+	          #ioData.devices[#tempDeviceIndex].error := TRUE;
+	          #ioData.error := TRUE;
+	          #ioData.devices[#tempDeviceIndex].problem := TRUE;
+	          #ioData.devices[#tempDeviceIndex].state := #STATE_PROBLEM;
+	        END_IF;
+	        
+	      ELSE
+	        // Device is faulty, don't matter what happened
+	        #ioData.devices[#tempDeviceIndex].error := TRUE;
+	        #ioData.error := TRUE;
+	        #ioData.devices[#tempDeviceIndex].faulty := TRUE;
+	        
+	        IF (#statProblemDevices[#tempDeviceIndex] = FALSE)
+	        THEN
+	          //============================
+	          // Device has no problem
+	          //============================
+	          #ioData.devices[#tempDeviceIndex].problem := FALSE;
+	        ELSE
+	          //============================
+	          // Device has a problem
+	          //============================
+	          #ioData.devices[#tempDeviceIndex].problem := TRUE;
+	        END_IF;
+	        
+	        IF (#statExistingDevices[#tempDeviceIndex] = FALSE)
+	        THEN
+	          //==========================
+	          // Device is lost
+	          //==========================
+	          #ioData.devices[#tempDeviceIndex].state := #STATE_LOST_CON;
+	          #ioData.devices[#tempDeviceIndex].exists := FALSE;
+	        ELSE
+	          //==========================
+	          // Device is faulty
+	          //==========================
+	          #ioData.devices[#tempDeviceIndex].state := #STATE_FAULT;
+	          #ioData.devices[#tempDeviceIndex].exists := TRUE;
+	        END_IF;
+	      END_IF; // End: // Device is not faulty
+	      
+	    END_IF;
+	    
+	    //=============================================================================
+	    // Set module states
+	    //=============================================================================
+	    // Check ModuleStates if device has a problem or is faulty
+	    IF ((#ioData.devices[#tempDeviceIndex].problem = TRUE)
+	      OR (#ioData.devices[#tempDeviceIndex].faulty = TRUE))
+	    THEN
+	      
+	      // PROBLEM MODULE
+	      #tempRetValModuleStates := ModuleStates(LADDR := #ioData.devices[#tempDeviceIndex].hardwareId,
+	                                              MODE := #MODE_PROBLEM,
+	                                              STATE := #statDeviceProblemModules);
+	      
+	      // Check if the block call was successful
+	      IF (#tempRetValModuleStates = 0)
+	      THEN
+	        // Call ok 
+	        ;
+	      ELSIF ((#tempRetValModuleStates = #ERR_HWID_NOT_EXISTENT)
+	        OR (#tempRetValModuleStates = #ERR_LADDR_ADDRESS))
+	      THEN
+	        #ioData.error := TRUE;
+	        #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	        #statStatusID := #ID_MODULE_STATES_PROBLEM;
+	        #statError := TRUE;
+	      ELSE
+	        // Error handling
+	        #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	        #statStatusID := #ID_MODULE_STATES_PROBLEM;
+	        #statError := TRUE;
+	      END_IF;
+	      
+	      // FAULTY MODULE
+	      #tempRetValModuleStates := ModuleStates(LADDR := #ioData.devices[#tempDeviceIndex].hardwareId,
+	                                              MODE := #MODE_FAULTY,
+	                                              STATE := #statDeviceFaultyModules);
+	      
+	      // Check if the block call was successful
+	      IF (#tempRetValModuleStates = 0)
+	      THEN
+	        // Call ok 
+	        ;
+	      ELSIF ((#tempRetValModuleStates = #ERR_HWID_NOT_EXISTENT)
+	        OR (#tempRetValModuleStates = #ERR_LADDR_ADDRESS))
+	      THEN
+	        #ioData.error := TRUE;
+	        #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	        #statStatusID := #ID_MODULE_STATES_FAULTY;
+	        #statError := TRUE;
+	      ELSE
+	        // Error handling
+	        #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	        #statStatusID := #ID_MODULE_STATES_FAULTY;
+	        #statError := TRUE;
+	      END_IF;
+	      
+	      // EXISTING MODULE
+	      #tempRetValModuleStates := ModuleStates(LADDR := #ioData.devices[#tempDeviceIndex].hardwareId,
+	                                              MODE := #MODE_EXIST,
+	                                              STATE := #statDeviceExistingModules);
+	      
+	      // Check if the block call was successful
+	      IF (#tempRetValModuleStates = 0)
+	      THEN
+	        // Call ok 
+	        ;
+	      ELSIF ((#tempRetValModuleStates = #ERR_HWID_NOT_EXISTENT)
+	        OR (#tempRetValModuleStates = #ERR_LADDR_ADDRESS))
+	      THEN
+	        #ioData.error := TRUE;
+	        #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	        #statStatusID := #ID_MODULE_STATES_EXISTING;
+	        #statError := TRUE;
+	      ELSE
+	        // Error handling
+	        #statStatus := INT_TO_WORD(#tempRetValModuleStates);
+	        #statStatusID := #ID_MODULE_STATES_EXISTING;
+	        #statError := TRUE;
+	      END_IF;
+	    END_IF;
+	    
+	    
+	    FOR #tempSlotIndex := 0 TO "USERDIAG_SLOTS_PER_DEVICE_UPPER_LIM" DO
+	      IF (#ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].configured = TRUE)
+	      THEN
+	        CASE #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state OF
+	          #STATE_WAS_FAULT,
+	          #STATE_WAS_LOST,
+	          #STATE_WAS_DISABLED,
+	          #STATE_PROBLEM_GONE:
+	            ;
+	          #STATE_FAULT:
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_WAS_FAULT;
+	          #STATE_LOST_CON:
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_WAS_LOST;
+	          #STATE_DISABLED:
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_WAS_DISABLED;
+	          #STATE_PROBLEM:
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_PROBLEM_GONE;
+	          ELSE
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_OK;
+	        END_CASE;
+	      END_IF;
+	    END_FOR;
+	    
+	    CASE #ioData.devices[#tempDeviceIndex].state OF
+	        
+	      #STATE_DISABLED:
+	        FOR #tempSlotIndex := 0 TO "USERDIAG_SLOTS_PER_DEVICE_UPPER_LIM" DO
+	          IF (#ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].configured = TRUE)
+	          THEN
+	            //NEW: Set all configured modules of device to disabled
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].disabled := TRUE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].error := FALSE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].faulty := FALSE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].problem := FALSE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_DISABLED;
+	          END_IF;
+	        END_FOR;
+	        
+	      #STATE_LOST_CON:
+	        // All modules are faulty when connection is lost
+	        FOR #tempSlotIndex := 0 TO "USERDIAG_SLOTS_PER_DEVICE_UPPER_LIM" DO
+	          IF (#ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].configured = TRUE)
+	          THEN
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].error := TRUE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].faulty := TRUE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].problem := TRUE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].exists := FALSE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_LOST_CON;
+	          END_IF;
+	        END_FOR;
+	        
+	      #STATE_FAULT,
+	      #STATE_PROBLEM:
+	        // The device is reachable, but faulty because of an error in a
+	        // subordinated system --> check the modules
+	        // Store the state of the different module in the diag DB
+	        FOR #tempSlotIndex := 0 TO "USERDIAG_SLOTS_PER_DEVICE_UPPER_LIM" DO
+	          IF (#ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].configured = TRUE)
+	          THEN
+	            IF (#statDeviceProblemModules[#tempSlotIndex + 1] = TRUE)
+	            THEN
+	              // Problem in module
+	              #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].error := TRUE;
+	              #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].problem := TRUE;
+	              #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_PROBLEM;
+	              
+	              IF (#statDeviceFaultyModules[#tempSlotIndex + 1] = TRUE)
+	              THEN
+	                // Fault in module
+	                #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].faulty := TRUE;
+	                #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].state := #STATE_FAULT;
+	              END_IF;
+	            ELSE
+	              #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].error := FALSE;
+	              #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].problem := FALSE;
+	              #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].faulty := FALSE;
+	            END_IF;
+	            IF (#statDeviceExistingModules[#tempSlotIndex + 1] = FALSE)
+	            THEN
+	              // Module not existent
+	              #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].exists := FALSE;
+	            END_IF;
+	          END_IF;
+	        END_FOR;
+	      ELSE
+	        // All modules are okay
+	        FOR #tempSlotIndex := 0 TO "USERDIAG_SLOTS_PER_DEVICE_UPPER_LIM" DO
+	          IF (#ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].configured = TRUE)
+	          THEN
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].error := FALSE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].problem := FALSE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].faulty := FALSE;
+	            #ioData.devices[#tempDeviceIndex].slots[#tempSlotIndex].exists := TRUE;
+	          END_IF;
+	        END_FOR;
+	    END_CASE;
+	  END_IF;
+	  
+	  // Initialize the pointer for the next run
+	  #tempDeviceIndex := #ioData.devices[#tempDeviceIndex].nextDevice;
+	END_WHILE;
+	
+	// Write static values to outputs
+	#error := #statError;
+	#status := #statStatus;
+	#statusID := #statStatusID;
+	
+END_FUNCTION_BLOCK
+

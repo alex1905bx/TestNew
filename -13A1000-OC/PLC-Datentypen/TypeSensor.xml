@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Types.PlcStruct ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="None">
+    <Member Name="sen" Datatype="Bool" />
+    <Member Name="onDel" Datatype="Bool" />
+    <Member Name="offDel" Datatype="Bool" />
+    <Member Name="occ" Datatype="Bool" />
+    <Member Name="occPe" Datatype="Bool" />
+    <Member Name="occNe" Datatype="Bool" />
+    <Member Name="off" Datatype="Bool" />
+    <Member Name="full" Datatype="Bool" />
+    <Member Name="free" Datatype="Bool" />
+    <Member Name="empty" Datatype="Bool" />
+    <Member Name="err" Datatype="Bool" />
+    <Member Name="errOcc" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault sensor was to long occupied, maybe dirty or misaligned</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errFree" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault sensor was to long free, maybe dirty or misaligned</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="errCycle" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">fault sensor plausibility check of cycles, after a certain amount(#errCycleVal) of trigger(#errCycleIn) the sensor had no rising or falling edge</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="war" Datatype="Bool" />
+    <Member Name="refMode" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">reference mode</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="refRun" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">reference running</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="onCntr" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">counter for on delayed</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="offCntr" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">counter for off delayed</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="occOnCntr" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">on counter for occupied</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="occOffCntr" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">on counter for occupied</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="val" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">value from sensor, if ex. the sensor is read as a analog input</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="occGap" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">gap since last occupied</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="name" Datatype="WString[30]">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">name, used for fault messages</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="description" Datatype="WString[90]">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">description, used for fault messages</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+</Sections></Interface>
+      <Name>TypeSensor</Name>
+      <Namespace />
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Types.PlcStruct>
+</Document>

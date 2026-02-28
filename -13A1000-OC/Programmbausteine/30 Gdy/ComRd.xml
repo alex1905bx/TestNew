@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V20" />
+  <SW.Blocks.GlobalDB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Static">
+    <Member Name="Plc" Datatype="&quot;TypeHeaderPlc&quot;">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Header Plc</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Pc" Datatype="&quot;TypeHeaderPcGld&quot;">
+      <Comment>
+        <MultiLanguageText Lang="de-DE">Header Pc</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Data" Datatype="Struct">
+      <Member Name="Config" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">config</MultiLanguageText>
+        </Comment>
+        <Member Name="version" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">version info</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="active" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">config active (Test Output not active)</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjScannerActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment scanner housing active</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjTopActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment metering bar top active</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjLeftActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment metering bar left active</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjRightActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment metering bar right active</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjTopLinMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment metering bar top active - linear drive</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjLeftLinMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment metering bar left active - linear drive</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjRightLinMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment metering bar right active - linear drive</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="xrayActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">xray active</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjLaserTopLeftStepMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment laser top left active - step motor</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjLaserTopRightStepMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment laser top right active - step motor</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjLaserLeftTopStepMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment laser left top active - step motor</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjLaserLeftBottomStepMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment laser left bottom active - step motor</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjLaserRightTopStepMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment laser right top active - step motor</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="adjLaserRightBottomStepMotActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">adjustment laser right bottom active - step motor</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="modeBoardPassing" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">1=left / 2=rigth / 3=middle</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="modeDimension" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">1=fixed / 2=random width / 3=random thickness / 4=random width + thickness</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="modeRandomAdj" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">1=with sensor / 2=with external data</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="spare40" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">spare</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="spare42" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">spare</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="enc1Factor" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">encoder infeed factor</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="spare46" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">spare</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="spare48" Datatype="Int">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">spare</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="enc1QuadEvalActive" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">encoder infeed - quadruple evaluation active</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="spare501" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">spare</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="spare502" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">spare</MultiLanguageText>
+          </Comment>
+        </Member>
+      </Member>
+      <Member Name="control" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">control</MultiLanguageText>
+        </Comment>
+        <Member Name="spare1" Datatype="Bool" />
+        <Member Name="spare2" Datatype="Bool" />
+      </Member>
+      <Member Name="safety" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">safety</MultiLanguageText>
+        </Comment>
+        <Member Name="AreaLaserOn" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">area laser on</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="AreaAdjustmentOn" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">area adjustment on</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="AreaXrayOn" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">area X-Ray on</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="ResetSafetyDevice" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">reset safety device</MultiLanguageText>
+          </Comment>
+        </Member>
+      </Member>
+      <Member Name="status" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">status</MultiLanguageText>
+        </Comment>
+        <Member Name="Auto" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">automatic mode scanner</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="StopFeeding" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">stop feeding scanner (error active)</MultiLanguageText>
+          </Comment>
+        </Member>
+      </Member>
+      <Member Name="batch" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">batch info</MultiLanguageText>
+        </Comment>
+        <Member Name="MinWidth" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">min width [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="MaxWidth" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">max width [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="MinThickness" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">min thickness [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="MaxThickness" Datatype="DInt">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">max thickness [mm/10]</MultiLanguageText>
+          </Comment>
+        </Member>
+      </Member>
+      <Member Name="Scanner" Datatype="&quot;TypeAxisRd&quot;">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment scanner</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Top" Datatype="&quot;TypeAxisRd&quot;">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment top</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Left" Datatype="&quot;TypeAxisRd&quot;">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment left</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Right" Datatype="&quot;TypeAxisRd&quot;">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">adjustment right</MultiLanguageText>
+        </Comment>
+      </Member>
+      <Member Name="Measure" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">measuring sensor for random width/thickness</MultiLanguageText>
+        </Comment>
+        <Member Name="SetCalibratePosTop" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">set calibrated position for sensor top</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="SetCalibratePosLeft" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">set calibrated position for sensor left</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="SetCalibratePosRight" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">set calibrated position for sensor right</MultiLanguageText>
+          </Comment>
+        </Member>
+      </Member>
+      <Member Name="TestOutput" Datatype="Struct">
+        <Comment>
+          <MultiLanguageText Lang="de-DE">test output</MultiLanguageText>
+        </Comment>
+        <Member Name="Active" Datatype="Bool">
+          <Comment>
+            <MultiLanguageText Lang="de-DE">test output active</MultiLanguageText>
+          </Comment>
+        </Member>
+        <Member Name="Q0.0" Datatype="Bool" />
+        <Member Name="Q0.1" Datatype="Bool" />
+        <Member Name="Q0.2" Datatype="Bool" />
+        <Member Name="Q0.3" Datatype="Bool" />
+        <Member Name="Q0.4" Datatype="Bool" />
+        <Member Name="Q0.5" Datatype="Bool" />
+        <Member Name="Q0.6" Datatype="Bool" />
+        <Member Name="Q0.7" Datatype="Bool" />
+        <Member Name="Q1.0" Datatype="Bool" />
+        <Member Name="Q1.1" Datatype="Bool" />
+        <Member Name="Q2.0" Datatype="Bool" />
+        <Member Name="Q2.3" Datatype="Bool" />
+        <Member Name="Q2.4" Datatype="Bool" />
+        <Member Name="Q2.5" Datatype="Bool" />
+        <Member Name="Q2.6" Datatype="Bool" />
+        <Member Name="Q900.1" Datatype="Bool" />
+        <Member Name="Q908.0" Datatype="Bool" />
+        <Member Name="Q908.1" Datatype="Bool" />
+      </Member>
+      <Member Name="res" Datatype="Array[1..200] of Byte" />
+    </Member>
+  </Section>
+</Sections></Interface>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>ComRd</Name>
+      <Namespace />
+      <Number>361</Number>
+      <ProgrammingLanguage>DB</ProgrammingLanguage>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <MultilingualText ID="4" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="5" CompositionName="Items">
+            <AttributeList>
+              <Culture>de-DE</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="6" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.GlobalDB>
+</Document>
